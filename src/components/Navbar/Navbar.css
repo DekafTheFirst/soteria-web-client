@@ -1,0 +1,277 @@
+/* Navbar */
+.navbar svg {
+    width: 25px;
+}
+
+.navbar {
+    font-family: Poppins;
+    margin: auto;
+    z-index: 100;
+    padding: 0;
+    flex-direction: row;
+    transition: top 0.3s ease;
+    height: var(--nav-height);
+    padding: 10px;
+}
+
+
+
+.navbar .container-fluid {
+    width: unset;
+    flex-grow: 1;
+    padding: 0;
+    max-width: unset;
+}
+
+/* .navbar .info {
+    display: none;
+} */
+
+
+
+
+
+/* .navbar .info .details {
+    color: var(--cl--1--);
+    font-size: 12px;
+}
+
+.navbar .info .icon {
+    color: var(--cl--2--);
+    margin-right: 3px;
+} */
+
+.navbar {
+    
+}
+.navbar * {
+    font-weight: 500;
+
+}
+
+.navbar .logo {
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+    border-radius: 15px;
+    padding: 0px;
+    margin: 0;
+    max-width: 120px;
+    max-height: 60px;
+    display: flex;
+}
+
+.navbar .logo img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    margin-right: auto;
+}
+
+
+
+.navbar .navbar-toggler {
+    border: none;
+    padding: 0;
+    margin-left: auto;
+}
+
+
+.navbar .navbar-toggler:focus {
+    border: none;
+    box-shadow: none;
+}
+
+
+
+
+.navbar .navbar-collapse .navbar-nav {
+    gap: 20px;
+}
+
+
+.navbar .dropdown-toggle::after {
+    margin-left: 0.5em
+}
+
+.navbar .dropdown {
+    display: none;
+    padding-top: 10px;
+    list-style: none;
+    gap: 5px;
+}
+
+.navbar .dropdown .nav-item {
+    margin-bottom: 10px;
+}
+
+.navbar .dropdown .nav-item:last-child {
+    margin-bottom: 0;
+}
+
+
+
+
+
+
+.navbar .navbar-nav li .dropdown.show {
+    display: block;
+}
+
+.navbar .dropdown-toggle::after {
+    margin-left: 0.5em
+}
+
+.navbar .navbar-nav {
+    gap: 10px;
+}
+
+
+.navbar .nav-link {
+    padding: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cl--1--);
+    border-bottom: 2px solid transparent;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-item-special {
+    border: 2px solid var(--cl--2--);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .nav-item-special:hover {
+    background-color: var(--cl--2--);
+    cursor: pointer;
+}
+
+.navbar .nav-item-special .nav-link {
+    color: var(--cl--2--);
+    padding: 3px 20px;
+
+
+
+}
+
+
+.navbar .nav-item-special:hover .nav-link,
+.navbar .nav-item-special .nav-link.active {
+    color: var(--cl--1--);
+}
+
+
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    color: var(--cl--2--);
+}
+
+
+
+.navbar .nav-item {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 767px) {
+    .navbar .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: -55vw;
+        height: 100vh;
+        width: 55vw;
+        padding: 15px;
+        background-color: #1A1A1A;
+        transition: left 0.5s ease;
+    }
+
+    .navbar .collapse:not(.show) {
+        display: block !important;
+    }
+
+    .navbar .navbar-collapse.show {
+        left: 0;
+    }
+
+    .navbar .navbar-nav .nav-item .nav-link {
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+
+    .navbar .dropdown {
+        margin-left: 20px;
+        padding-top: 5px;
+    }
+
+    .navbar .nav-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar .nav-item-special {
+        margin-top: 20px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .navbar .navbar-collapse {
+        position: static;
+        padding-top: 0;
+        height: 100%;
+    }
+
+
+
+    .nav-item-special {
+        margin-left: auto;
+    }
+
+
+
+    .navbar .navbar-collapse .navbar-nav {
+        gap: 25px;
+    }
+
+    .navbar .dropdown {
+        position: absolute;
+        top: 0;
+        padding-top: var(--nav-height);
+    }
+
+    .navbar .dropdown .wrapper{
+        border-top: 2px solid var(--cl--2--);
+        background-color: var(--cl-10--)
+    }
+
+    .navbar .dropdown .nav-item {
+        margin-bottom: 0;
+    }
+
+    .navbar .dropdown .nav-item:hover {
+        background-color: var(--cl-11--);
+        cursor: pointer;
+    }
+
+    .navbar .navbar-nav li:hover .dropdown {
+        display: block;
+    }
+
+    .navbar .dropdown a.nav-link {
+        padding: 10px;
+    }
+
+    .navbar .dropdown .nav-item:hover .nav-link {
+        color: var(--cl--2--);
+    }
+
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-left: 0;
+    }
+}
