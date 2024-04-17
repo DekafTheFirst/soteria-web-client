@@ -5,7 +5,7 @@
 *::before {
     box-sizing: border-box;
     font-family: "DM Sans", sans-serif;
-    font-optical-sizing: auto;    
+    font-optical-sizing: auto;
     font-weight: 500;
 }
 
@@ -25,7 +25,7 @@ body {
     --green: #214F0F;
     --offWhite: #F5F6FA;
 
-    
+
 
 
 
@@ -392,10 +392,11 @@ section {
 .hero {
     height: 100vh;
     position: relative;
+    padding: 0;
 }
 
 .hero .hero-img {
-    width: 100vw;
+    width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute !important;
@@ -407,11 +408,14 @@ section {
 .hero .container-fluid {
     display: flex;
     flex-direction: column;
-    padding-top: calc(var(--nav-height)/2);
+    justify-content: space-between;
+    height: 80%;
+    padding-top: 20px;
+    padding-bottom: 60px;
     z-index: 30;
 }
 
-.hero .hero-content {
+.hero .content {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -419,7 +423,7 @@ section {
 }
 
 
-.hero .hero-content h1 {
+.hero .content h1 {
     font-weight: 700;
     font-style: normal;
     color: var(--white--);
@@ -428,7 +432,7 @@ section {
 
 }
 
-.hero .hero-content p {
+.hero .content p {
     font-size: 18px;
     font-weight: normal;
     color: var(--white--);
@@ -436,7 +440,7 @@ section {
     z-index: 10;
 }
 
-.hero .hero-content .buttons {
+.hero .content .buttons {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -454,24 +458,24 @@ section {
 }
 
 
-.hero .hero-content h1,
-.hero .hero-content p,
-.hero .hero-content .buttons {
+.hero .content h1,
+.hero .content p,
+.hero .content .buttons {
     transform: translateX(-30px);
     filter: blur(20px);
     opacity: 0;
     animation: showContent 1s ease-out 1 forwards;
 }
 
-.hero .hero-content h1 {
+.hero .content h1 {
     animation-delay: 0.0s;
 }
 
-.hero .hero-content p {
+.hero .content p {
     animation-delay: 0.5s;
 }
 
-.hero .hero-content .buttons {
+.hero .content .buttons {
     animation-delay: 1.0s;
 }
 
@@ -482,44 +486,92 @@ section {
 
 
 
-.hero .hero-content .buttons .page-btn {
+.hero .content .buttons .page-btn {
     background: var(--gold);
     color: var(--white--);
 }
 
-.hero .hero-content .buttons .page-btn-2 {
+.hero .content .buttons .page-btn-2 {
     border: 2px solid var(--cl--1--);
     color: var(--cl--1--);
 
 }
 
-.hero .hero-content .buttons .page-btn-2:hover {
+.hero .content .buttons .page-btn-2:hover {
     background: var(--cl--1--);
 }
 
-.hero .hero-content .buttons .page-btn-2:hover,
-.hero .hero-content .buttons .page-btn-2:hover .page-btn-2-icon {
+.hero .content .buttons .page-btn-2:hover,
+.hero .content .buttons .page-btn-2:hover .page-btn-2-icon {
     color: var(--cl--6--);
 }
 
 
 
-.hero .hero-content .buttons .page-btn,
-.hero .hero-content .buttons .page-btn-2 {
+.hero .content .buttons .page-btn,
+.hero .content .buttons .page-btn-2 {
     display: flex;
     align-items: center;
 }
 
-.hero .hero-content .buttons .icon {
+.hero .content .buttons .icon {
     margin-left: 10px;
 }
 
 
 
-.hero .hero-content .buttons .page-btn-2 .icon {
+.hero .content .buttons .page-btn-2 .icon {
     rotate: -45deg;
 }
 
+.hero .event-countdown-card {
+    border-radius: 10px;
+}
+
+.hero .event-countdown-card .top {
+    padding: 10px;
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    gap: 10px;
+}
+
+.hero .event-countdown-card .title {}
+
+.hero .event-countdown-card .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    gap: 10px;
+}
+
+.hero .event-countdown-card .details .item {
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-size: 14px;
+    /* width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+
+.hero .event-countdown-card .details .item .icon {
+    margin-right: 5px;
+}
+
+
+.hero .event-countdown-card .img {
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.hero .event-countdown-card .register {
+    color: var(--green);
+}
 
 /* Header */
 
@@ -837,11 +889,11 @@ section {
     flex-direction: row-reverse;
 }
 
-.about-us .accordion-item .accordion-list{
+.about-us .accordion-item .accordion-list {
     display: flex;
     flex-direction: column;
-    gap:10px;
-    padding: 10px 0; 
+    gap: 10px;
+    padding: 10px 0;
 }
 
 
@@ -1297,7 +1349,7 @@ footer .page-btn:hover {
         width: 100%;
     }
 
-    .hero .hero-content .buttons>* {
+    .hero .content .buttons>* {
         width: 100%;
     }
 }
@@ -1403,6 +1455,12 @@ footer .page-btn:hover {
     } */
 
 
+
+
+    .reputation .container-fluid .row {
+        gap: 50px;
+    }
+
     .hero {
         background-position: center;
         background-repeat: no-repeat;
@@ -1412,11 +1470,11 @@ footer .page-btn:hover {
         margin-top: 0;
     }
 
-    .reputation .container-fluid .row {
-        gap: 50px;
+    .hero .event-countdown-card {
+        background: var(--white--);
     }
 
-    
+
 
     .give .banner {
         height: 100vh;
@@ -1428,7 +1486,7 @@ footer .page-btn:hover {
         width: 90%;
     }
 
-    
+
 
     /* .navbar .navbar-collapse {
         position: static;
@@ -1491,11 +1549,9 @@ footer .page-btn:hover {
         margin-top: 0;
     }
 
-    .hero .container-fluid {
-        padding-top: calc(var(--nav-height)/2);
-    }
 
-    .hero .hero-content {
+
+    .hero .content {
         max-width: 80%;
         gap: 15px;
     }
@@ -1571,13 +1627,13 @@ footer .page-btn:hover {
         height: 100vh;
     }
 
-    .hero-content h1 {
+    .content h1 {
         font-size: 40px;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .hero .hero-content {
+    .hero .content {
         max-width: 80%;
     }
 }
@@ -1639,7 +1695,7 @@ footer .page-btn:hover {
 
     }
 
-    .hero .hero-content {
+    .hero .content {
         max-width: 50%;
     }
 
