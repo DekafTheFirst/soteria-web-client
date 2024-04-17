@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Timer.css"
+import { CircularProgress } from "@mui/material";
 const Timer = ({ targetDateStr }) => {
     const [timeRemaining, setTimeRemaining] = useState(null);
 
@@ -39,19 +40,22 @@ const Timer = ({ targetDateStr }) => {
     return (
         <div className="timer">
             <div className="item">
-                <span className="time">{timeRemaining && timeRemaining.days}</span>
+                <span className="time">{timeRemaining ? timeRemaining.days :  <CircularProgress color="success" size="1rem"/>} </span>
                 <span className='label'>Days</span>
             </div>
+            :
             <div className="item">
-                <span className="time">{timeRemaining && timeRemaining.hours}</span>
+                <span className="time">{timeRemaining ? timeRemaining.hours : <CircularProgress color="success"  className="circularProgress" size="1rem"/>}</span>
                 <span className='label'>Hours</span>
             </div>
+            :
             <div className="item">
-                <span className="time">{timeRemaining && timeRemaining.minutes}</span>
+                <span className="time">{timeRemaining ? timeRemaining.minutes : <CircularProgress color="success"  className="circularProgress" size="1rem"/>}</span>
                 <span className='label'>Minutes</span>
             </div>
+            :
             <div className="item">
-                <span className="time">{timeRemaining && timeRemaining.seconds}</span>
+                <span className="time">{timeRemaining ? timeRemaining.seconds : <CircularProgress color="success"  className="circularProgress" size="1rem"/>}</span>
                 <span className='label'>Seconds</span>
             </div>
         </div>

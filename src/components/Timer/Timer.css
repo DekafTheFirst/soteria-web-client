@@ -1,6 +1,7 @@
 .timer {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .timer .item {
@@ -14,4 +15,9 @@
     color:  var(--forestGreen);
     font-size: 20px;
     font-weight: 700;
+}
+
+
+.circularPogress {
+    width: 12px !important;
 }
