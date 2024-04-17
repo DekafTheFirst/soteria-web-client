@@ -384,9 +384,6 @@ section {
 }
 
 
-.home {
-    height: 2000px;
-}
 
 
 /* Hero */
@@ -410,8 +407,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 80%;
-    padding-top: 20px;
+    padding-top: calc(var(--nav-height) + 30px);
     padding-bottom: 40px;
     z-index: 30;
     gap: 20px;
@@ -423,6 +419,9 @@ section {
     gap: 20px;
     max-width: 100%;
 }
+
+
+
 
 
 .hero .content h1 {
@@ -469,6 +468,7 @@ section {
 
 .hero .content h1 {
     animation-delay: 0.0s;
+    font-size: clamp(40px, 10vw, 50px);
 }
 
 .hero .content p {
@@ -534,14 +534,12 @@ section {
     height: 100%; */
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 180px;    
+    grid-template-rows: 180px;
     gap: 10px;
     max-width: 550px;
 }
 
-.hero .event-countdown-card .top {
-    
-}
+.hero .event-countdown-card .top {}
 
 .hero .event-countdown-card .title {}
 
@@ -579,12 +577,13 @@ section {
 
 
 
-.hero .event-countdown-card .register a, .hero .event-countdown-card .register .icon {
-    color: var(--green) ;
+.hero .event-countdown-card .register a,
+.hero .event-countdown-card .register .icon {
+    color: var(--green);
 }
 
 .hero .event-countdown-card .countdown {
-    grid-row: 2 / 2;
+    grid-row: 2 / 3;
     grid-column: 1/7;
     width: 100%;
     padding: 10px;
@@ -1417,11 +1416,34 @@ footer .page-btn:hover {
         transform: translateY(-100%);
     } */
 
-    .hero {
-        height: 60vh;
+    
+
+
+
+
+    .hero .event-countdown-card .countdown {
+        grid-column: 3/7;
+        padding: 0;
     }
 
-    .home-about-us .home-about-us-card {}
+    .hero .event-countdown-card {
+        grid-template-rows: repeat(3, 50px);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .hero .event-countdown-card .img {
+        grid-row: 1 / 4;
+    }
+
+    .hero .event-countdown-card .details {
+        grid-row: 1 / 3;
+    }
+
+    .hero .event-countdown-card .countdown {
+        grid-row: 3 / 4;
+    }
+
 }
 
 @media screen and (min-width: 640px) {
@@ -1487,7 +1509,7 @@ footer .page-btn:hover {
         margin-top: 0;
     }
 
-    
+
 
 
 
@@ -1555,7 +1577,7 @@ footer .page-btn:hover {
     } */
 
     .hero {
-        height: 60vh;
+        height: 70vh;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1570,6 +1592,7 @@ footer .page-btn:hover {
         max-width: 80%;
         gap: 15px;
     }
+
 
 
     /* .hero .hero-img-wrapper {
@@ -1639,7 +1662,7 @@ footer .page-btn:hover {
 
 @media screen and (max-width: 991px) and (orientation: landscape) {
     .hero {
-        height: 100vh;
+        height: 180vh;
     }
 
     .content h1 {
@@ -1648,10 +1671,15 @@ footer .page-btn:hover {
 }
 
 @media screen and (min-width: 992px) {
+    
+
     .hero .content {
         max-width: 80%;
     }
 }
+
+
+
 
 @media screen and (min-width: 1200px) {
     .overlay {
@@ -1697,38 +1725,65 @@ footer .page-btn:hover {
 
     }
 
-    .hero .dotted {
-        background-image: radial-gradient(var(--cl--3--) 2px, transparent 1px);
-        background-size: 20px 20px;
-        /* Adjust to control the spacing between dots */
-        width: 100px;
-        height: 200px;
-        position: absolute;
-        top: 45%;
-        right: 40%;
-        background-repeat: repeat;
-
+    .hero .container-fluid {
+        height: 100%;
+        width: 55%;
+        /* Width must match with width of .hero-img to form 100% */
+        padding: 0;
+        gap: 0;
     }
 
     .hero .content {
-        max-width: 50%;
+        background-color: rgba(33, 79, 15, 0.25); /* #214F0F with 50% transparency */
+        width: 100%;
+        max-width: 100%;
+        padding: calc(var(--nav-height)) 20px 30px 130px;
     }
+    
+    .hero .content .text{
+        width: 80%;
+    }
+
+    .hero .content h1 {
+        
+        color: var(--black);
+    }
+
+    .hero .content p {
+        color: var(--black);
+    }
+
+
+    
+
+    
 
     .hero .hero-img {
         width: 45% !important;
         height: 100% !important;
         object-fit: cover;
-        position: absolute !important;
-        top: 0;
-        right: 0;
+        position: static !important;
         z-index: 2;
-        filter: none;
+        filter: brightness(0.8);
+    }
+
+    .hero .event-countdown-card-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 130px;
     }
 
     .hero .event-countdown-card {
         background: none;
     }
-    
+
+    .hero .event-countdown-card {
+        padding: 0;
+        grid-template-rows: repeat(3, 60px);
+    }
+
     .container-fluid {
         width: 80%;
     }
