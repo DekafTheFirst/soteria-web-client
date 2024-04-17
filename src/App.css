@@ -23,6 +23,7 @@ body {
     --gold: #A96F00;
     --darkGray: #131314;
     --green: #214F0F;
+    --forestGreen: #228B22;
     --offWhite: #F5F6FA;
 
 
@@ -434,8 +435,6 @@ section {
 }
 
 .hero .content p {
-    font-size: 18px;
-    font-weight: normal;
     color: var(--white--);
     opacity: 1;
     z-index: 10;
@@ -580,14 +579,15 @@ section {
 
 
 
-.hero .event-countdown-card .register {
-    color: var(--green);
+.hero .event-countdown-card .register a, .hero .event-countdown-card .register .icon {
+    color: var(--green) ;
 }
 
 .hero .event-countdown-card .countdown {
     grid-row: 2 / 6;
+    grid-column: 1/7;
     width: 100%;
-    height: 70px;
+    padding: 10px;
 }
 
 /* Header */

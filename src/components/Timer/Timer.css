@@ -1,0 +1,17 @@
+.timer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.timer .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timer .item .time{ 
+    color:  var(--forestGreen);
+    font-size: 20px;
+    font-weight: 700;
+}
