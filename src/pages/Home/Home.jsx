@@ -29,7 +29,6 @@ const Home = ({ scrolled }) => {
           </div>
         </div>
         <div className="event-countdown-card">
-          <div className="top">
             <OptimizedImage src="/assets/sermon.jpg" className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" />
             <div className="details">
               <h5 className='title'>God to Live Our Faith Each day</h5>
@@ -43,7 +42,7 @@ const Home = ({ scrolled }) => {
               </div>
               <div className="register"><span>Register</span><KeyboardArrowRightOutlinedIcon className='icon'/> </div>
             </div>
-          </div>
+            <div className="countdown">countdown</div>
 
         </div>
       </div>
