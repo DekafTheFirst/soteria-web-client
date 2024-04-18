@@ -21,6 +21,7 @@ body {
     --black: #000000;
     --gray: #BDC1C6;
     --gold: #A96F00;
+    --darkGold: #7d5000;
     --darkGray: #131314;
     --green: #214F0F;
     --forestGreen: #228B22;
@@ -238,7 +239,7 @@ section {
     height: 100%;
     object-fit: cover;
     z-index: -10;
-    filter: brightness(45%);
+    filter: brightness(50%);
 }
 
 

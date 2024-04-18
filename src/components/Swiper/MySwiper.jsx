@@ -31,9 +31,9 @@ export default function App() {
         modules={[Pagination, Autoplay, EffectFade, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide><OptimizedImage src="/assets/sermon.jpg" style={{ width: "100%", height: "100%" }} /></SwiperSlide>
-        <SwiperSlide><OptimizedImage src="/assets/wisdom-and-power.jpg" style={{ width: "100%", height: "100%" }} /></SwiperSlide>
-        <SwiperSlide><OptimizedImage src="/assets/preaching.jpg" style={{ width: "100%", height: "100%" }} /></SwiperSlide>
+        <SwiperSlide><OptimizedImage src="/assets/sermon.jpg" style={{ width: "100%", height: "100%" }} className='hero-img' /></SwiperSlide>
+        <SwiperSlide><OptimizedImage src="/assets/wisdom-and-power.jpg" style={{ width: "100%", height: "100%" }} className='hero-img' /></SwiperSlide>
+        <SwiperSlide><OptimizedImage src="/assets/preaching.jpg" style={{ width: "100%", height: "100%" }} className='hero-img' /></SwiperSlide>
 
       </Swiper>
     </>

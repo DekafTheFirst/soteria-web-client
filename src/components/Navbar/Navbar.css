@@ -133,7 +133,6 @@
     padding: 0;
     font-size: 15px;
     font-weight: 500;
-    border-bottom: 2px solid transparent;
     display: flex;
     align-items: center;
 }
@@ -148,7 +147,7 @@
 }
 
 .navbar .nav-item-special:hover {
-    background-color: var(--gold);
+    background-color: var(--darkGold);
     color: var(--white);
     cursor: pointer;
 }
@@ -167,7 +166,9 @@
 
 
 .navbar .nav-link.active,
-.navbar .nav-link:hover {
+.navbar .nav-link:hover,
+.navbar.scrolled .nav-link.active,
+.navbar.scrolled .nav-link:hover {
     color: var(--gold);
 }
 
@@ -222,6 +223,8 @@
 }
 
 @media screen and (min-width: 768px) {
+    
+    
     .navbar-container {
         width: 100%;
     }
@@ -276,8 +279,16 @@
         color: var(--cl--2--);
     }
 
+    
+}
+
+@media screen and (min-width: 1200px) {
     .navbar .nav-link {
         padding-left: 0;
         color: var(--black);
+    } 
+
+    .navbar.scrolled .nav-link {
+        color: var(--gray);
     }
 }
