@@ -7,6 +7,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import Timer from '../../components/Timer/Timer';
 import { fetchEvents } from '../../api/Events';
+import MySwiper from '../../components/Swiper/MySwiper';
 
 const Home = ({ scrolled }) => {
   const [events, setEvents] = useState(null)
@@ -24,7 +25,6 @@ const Home = ({ scrolled }) => {
   return (
     <div className="home">
       <section className="hero">
-
         <div className="container-fluid">
           <div className="content">
             <div className="text">
@@ -46,6 +46,7 @@ const Home = ({ scrolled }) => {
               <Link to="/company" className='page-btn'>What's Next <ArrowForwardIcon fontSize='21' className='icon' /></Link>
             </div>
           </div>
+
           <div className="event-countdown-card-wrapper">
             <div className="event-countdown-card">
               <OptimizedImage src="/assets/sermon.jpg" className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" />
@@ -70,13 +71,16 @@ const Home = ({ scrolled }) => {
         </div>
 
 
-
-        <OptimizedImage src="/assets/preaching.jpg" className="hero-img" wrapperClassName="hero-img-wrapper" alt="hero-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" />
+        <div className="hero-img-wrapper">
+          <MySwiper />
+          {/* <OptimizedImage src="/assets/preaching.jpg" className="hero-img"  alt="hero-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" /> */}
+        </div>
         {/* <img src="/assets/preaching.jpg" className="hero-img" alt="hero-img" /> */}
 
       </section>
 
       <div className="eventList">
+        
       </div>
     </div>
 
