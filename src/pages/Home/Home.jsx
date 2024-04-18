@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
+
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import OptimizedImage from '../../components/OptimizedImage/OptimizedImage';
 import TodayIcon from '@mui/icons-material/Today';
+import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import Timer from '../../components/Timer/Timer';
+
 import { fetchEvents } from '../../api/Events';
+
 import MySwiper from '../../components/Swiper/MySwiper';
+import MediaCard from '../../components/MediaCard/MediaCard';
 
 const Home = ({ scrolled }) => {
   const [events, setEvents] = useState(null)
@@ -79,9 +84,31 @@ const Home = ({ scrolled }) => {
 
       </section>
 
-      <div className="eventList">
-        
-      </div>
+
+
+      <section className="reputation">
+        <div className="container-fluid">
+          <div className="row ">
+            <div className="col-md-6 media-card-wrapper">
+                <MediaCard />
+            </div>
+            <div className="col-md-6 content">
+              <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
+              <p>
+                Our team of seasoned professionals brings together diverse skill sets and deep industry knowledge to offer tailored solutions that address the unique needs of our clients. 
+              </p>
+
+              <p>
+                Our team of seasoned professionals brings together diverse skill sets and deep industry knowledge to offer tailored solutions that address the unique needs of our clients. and deep industry knowledge to offer tailored solutions that address the unique needs of our clients.and deep industry knowledge to offer tailored solutions that address the unique needs of our clients.
+              </p>
+              <Link to="/company"><PlayCircleIcon fontSize='large' /> See How It Works.</Link>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
     </div>
 
   )

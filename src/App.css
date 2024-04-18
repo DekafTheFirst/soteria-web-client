@@ -547,7 +547,7 @@ section {
 .reputation .content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .reputation .section-heading {
@@ -573,49 +573,27 @@ section {
 }
 
 
-.reputation .header-image {
+.reputation .media-card-wrapper {
     position: relative;
-    width: 80%;
+    
+}
+
+.reputation .media-card-wrapper .sermon-card-wrapper {
     height: 100%;
 }
 
-.reputation .header-image .header-image-wrapper {
-    height: 100%;
-}
 
 
 
-.reputation .header-image .item {
-    width: 100%;
-    height: 100%;
-    box-shadow: 0 12px 18px rgba(13, 110, 253, 0.4);
-    /* Adjust the values as needed */
-}
 
-.reputation .header-image .img,
-.reputation .header-image canvas {
+.reputation .media-card-wrapper .img,
+.reputation .media-card-wrapper canvas {
     height: 100%;
     width: 100%;
     border-radius: 8px;
 }
 
-.reputation .header-image .item:first-child {
-    margin-left: 20px;
-    margin-top: 20px;
-    border-radius: 8px;
-    overflow: hidden;
 
-}
-
-
-.reputation .header-image .item:last-child {
-    position: absolute;
-    left: -20px;
-    top: -20px;
-    z-index: -1;
-    overflow: hidden;
-
-}
 
 .reputation a {
     margin-top: 10px;
