@@ -95,13 +95,13 @@ const Home = ({ scrolled }) => {
             <div className="col-md-6 content">
               <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
               <p>
-                Our team of seasoned professionals brings together diverse skill sets and deep industry knowledge to offer tailored solutions that address the unique needs of our clients. 
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus minus itaque quia aspernatur excepturi nobis non, impedit voluptatem consequatur ducimus qui ullam? Voluptatibus.
               </p>
 
               <p>
-                Our team of seasoned professionals brings together diverse skill sets and deep industry knowledge to offer tailored solutions that address the unique needs of our clients. and deep industry knowledge to offer tailored solutions that address the unique needs of our clients.and deep industry knowledge to offer tailored solutions that address the unique needs of our clients.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nisi doloribus perferendis laboriosam. Mollitia minus dicta, aut libero ipsam tempora, dolorum temporibus voluptas possimus voluptatem ex commodi modi et quidem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nisi doloribus perferendis laboriosam. Mollitia minus dicta, aut libero ipsam tempora, dolorum temporibus voluptas possimus voluptatem ex commodi modi et quidem!
               </p>
-              <Link to="/company"><PlayCircleIcon fontSize='large' /> See How It Works.</Link>
+              <Link to="/company"><PlayCircleIcon fontSize='large' /> Learn More </Link>
             </div>
           </div>
 
