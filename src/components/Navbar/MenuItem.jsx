@@ -6,9 +6,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 const MenuItem = ({item, show, setShow, navItemSpecial, isSubmenuActive}) => {
   const [dropdown, setDropdown] = useState(false)
 
-  
-
-
   return (
     <li className={`nav-item ${navItemSpecial ? 'nav-item-special':''}`}>
         {item.submenu ? (

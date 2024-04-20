@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import "./OptimizedImage.css"
+import { Skeleton } from '@mui/material';
+// import { Blurhash } from "react-blurhash";
 
 
 const OptimizedImage = ({ src, blurhash, height, width, wrapperClassName, className, alt, effect, style, backgroundImage }) => {
@@ -40,17 +42,18 @@ const OptimizedImage = ({ src, blurhash, height, width, wrapperClassName, classN
                 width={'100%'}
                 onLoad={handleLoad}
                 beforeLoad={handleLoadStarted}
-            />
+            /> 
 
             {!isLoaded && isLoadStarted && (
                 // <Blurhash
-                //     hash={blurhash}
+                //     hash="LcLEHB~pIUIU_4xvt7j@E2NHRjof"
                 //     width={'100%'}
                 //     height={'100%'}
                 //     punch={1}
                 //     className={`blurHash`}
                 // />
-                <div className={`image-placeholder ${backgroundImage ? 'background-image':''}`} ></div>
+                // <div className={`image-placeholder ${backgroundImage ? 'background-image':''}`} ></div>
+                <Skeleton variant="rectangular" height={"100%"} width={"100%"}  className={`image-placeholder ${backgroundImage ? 'background-image':''}`}/>
             )}
         </div>
 

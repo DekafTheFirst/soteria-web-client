@@ -1,0 +1,15 @@
+.events-list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 35px;
+    margin-top: 20px;
+}
+
+.events-list .box {
+    font-size: 30px;
+    padding: .5em;
+    color: #ffffff;
+    background: #1c87c9;
+    text-align: center;
+}

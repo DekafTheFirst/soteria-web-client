@@ -10,7 +10,7 @@ export const menuItemsData = [
     },
     {
         title: 'Company',
-        url: '/company'
+        url: '/about-us'
     },
     // {
     //     title: 'Services',

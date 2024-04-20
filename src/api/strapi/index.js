@@ -1,14 +1,24 @@
 import axios from "axios"
 
-console.log("baseUrl:" + import.meta.env.VITE_BASE_URL)
 
 const api = axios.create({
-    baseURL: 'http://localhost:1337',
+    baseURL: import.meta.env.VITE_BASE_URL,
 })
 
 export const fetchEvents = async () => {
     try{
         const events = await api.get(`/api/events?populate=image`)
+        return events.data
+    } catch(error) {
+        console.log(error)
+        return error
+    }
+}
+
+export const fetchUpcomingEvents = async (noOfUpcomingEvents) => {
+
+    try{
+        const events = await api.get(`/api/events?populate=image&sort=date:asc&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
         return events.data
     } catch(error) {
         console.log(error)

@@ -37,6 +37,10 @@ function App() {
           path: "/",
           element: <Home scrolled={scrolled}/>
         },
+        {
+          path: "/about-us",
+          element: <Home scrolled={scrolled}/>
+        },
 
       ]
     }

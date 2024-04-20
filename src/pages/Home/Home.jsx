@@ -9,23 +9,27 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import Timer from '../../components/Timer/Timer';
 
-import { fetchEvents } from '../../api/Events';
+import { fetchEvents, fetchUpcomingEvents } from '../../api/strapi';
 
 import MySwiper from '../../components/Swiper/MySwiper';
 import MediaCard from '../../components/MediaCard/MediaCard';
+import EventCard from '../../components/EventCard/EventCard';
+import EventsList from '../../components/EventsList/EventsList';
+import { Skeleton } from '@mui/material';
 
 const Home = ({ scrolled }) => {
   const [events, setEvents] = useState(null)
 
   useEffect(() => {
     const fetchEventsData = async () => {
-      const response = await fetchEvents()
+      const response = await fetchUpcomingEvents(3)
       const eventsData = response.data
       setEvents(eventsData)
-      console.log(eventsData)
     }
     if (!events) fetchEventsData()
   }, [events])
+
+
 
   return (
     <div className="home">
@@ -45,7 +49,6 @@ const Home = ({ scrolled }) => {
                 efficitur.
               </p>
             </div>
-
 
             <div className="buttons">
               <Link to="/company" className='page-btn'>What's Next <ArrowForwardIcon fontSize='21' className='icon' /></Link>
@@ -90,23 +93,31 @@ const Home = ({ scrolled }) => {
         <div className="container-fluid">
           <div className="row ">
             <div className="col-md-6 media-card-wrapper">
-                <MediaCard />
+              <MediaCard />
             </div>
             <div className="col-md-6 content">
-              <h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h2>
+              <h2>Our Community: Embracing Diversity, United in Faith</h2>
               <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus minus itaque quia aspernatur excepturi nobis non, impedit voluptatem consequatur ducimus qui ullam? Voluptatibus.
-              </p>
-
+                Soteria Church is a multiracial, multi-ethnic, multicultural and multigenerational community of people who know Jesus personally, love Jesus passionately, serve Jesus purposefully and share Jesus powerfully!               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nisi doloribus perferendis laboriosam. Mollitia minus dicta, aut libero ipsam tempora, dolorum temporibus voluptas possimus voluptatem ex commodi modi et quidem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur nisi doloribus perferendis laboriosam. Mollitia minus dicta, aut libero ipsam tempora, dolorum temporibus voluptas possimus voluptatem ex commodi modi et quidem!
-              </p>
+              Soteria Church is a place where diversity is celebrated and unity is cherished. As a multiracial, multi-ethnic, multicultural, and multigenerational community, we come together with a shared passion for knowing Jesus personally, loving Him passionately, serving Him purposefully, and sharing His transformative power with others. Our vibrant congregation is a reflection of the rich tapestry of God's creation, and we are committed to walking alongside one another, supporting and encouraging each other as we journey together in faith.              </p>
               <Link to="/company"><PlayCircleIcon fontSize='large' /> Learn More </Link>
             </div>
           </div>
 
 
         </div>
+      </section>
+
+      <section className="events">
+        <div className="container-fluid">
+        <h4>Upcoming Events</h4>
+          <div className="wrapper">
+            <EventsList events={events}/>
+
+          </div>
+        </div>
+        {/* <EventCard /> */}
       </section>
 
     </div>
