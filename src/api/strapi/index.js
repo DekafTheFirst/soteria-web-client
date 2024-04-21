@@ -16,7 +16,6 @@ export const fetchEvents = async () => {
 }
 
 export const fetchUpcomingEvents = async (noOfUpcomingEvents) => {
-
     try{
         const events = await api.get(`/api/events?populate=image&sort=date:asc&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
         return events.data

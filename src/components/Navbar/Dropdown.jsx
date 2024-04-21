@@ -13,7 +13,7 @@ const Dropdown = ({ submenus, dropdown, show, setShow, }) => {
             //     return true
             //   }
             // })}} 
-            className='nav-link' to={`/services/${submenu.url}`} onClick={() => { setShow(false) }}>{submenu.title}</NavLink>
+            className='nav-link' to={`/more/${submenu.url}`} onClick={() => { setShow(false) }}>{submenu.title}</NavLink>
           </li>
         )}
       </div>

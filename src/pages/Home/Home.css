@@ -1,0 +1,465 @@
+/* Hero */
+.home .hero {
+    height: 100vh;
+    position: relative;
+    padding: 0;
+}
+
+.home .hero .hero-img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+}
+
+.home .hero .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
+    filter: brightness(50%);
+}
+
+
+.home .hero .container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: calc(var(--nav-height) + 30px);
+    padding-bottom: 40px;
+    z-index: 30;
+    gap: 20px;
+}
+
+.home .hero .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 100%;
+}
+
+
+
+
+
+.home .hero .content h1 {
+    font-weight: 700;
+    font-style: normal;
+    color: var(--white);
+    opacity: 1;
+    z-index: 10;
+
+}
+
+.home .hero .content p {
+    color: var(--white);
+    opacity: 1;
+    z-index: 10;
+}
+
+.home .hero .content .buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    opacity: 1;
+    z-index: 10;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+
+.home .hero .content h1,
+.home .hero .content p,
+.home .hero .content .buttons {
+    transform: translateX(-30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 1s ease-out 1 forwards;
+}
+
+.home .hero .content h1 {
+    animation-delay: 0.0s;
+    font-size: clamp(40px, 10vw, 50px);
+}
+
+.home .hero .content p {
+    animation-delay: 0.5s;
+}
+
+.home .hero .content .buttons {
+    animation-delay: 1.0s;
+}
+
+
+
+
+
+
+
+
+.home .hero .content .buttons .page-btn {
+    background: var(--gold);
+    color: var(--white);
+}
+
+.home .hero .content .buttons .page-btn-2 {
+    border: 2px solid var(--cl--1--);
+    color: var(--cl--1--);
+
+}
+
+.home .hero .content .buttons .page-btn-2:hover {
+    background: var(--cl--1--);
+}
+
+.home .hero .content .buttons .page-btn-2:hover,
+.home .hero .content .buttons .page-btn-2:hover .page-btn-2-icon {
+    color: var(--cl--6--);
+}
+
+
+
+.home .hero .content .buttons .page-btn,
+.home .hero .content .buttons .page-btn-2 {
+    display: flex;
+    align-items: center;
+}
+
+.home .hero .content .buttons .icon {
+    margin-left: 10px;
+}
+
+
+
+.home .hero .content .buttons .page-btn-2 .icon {
+    rotate: -45deg;
+}
+
+.home .hero .event-countdown-card {
+    border-radius: 10px;
+    padding: 10px;
+    background: var(--white);
+    /* display: flex;
+    flex-wrap: wrap; */
+    /* align-items: stretch;
+    height: 100%; */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 180px;
+    gap: 10px;
+    max-width: 550px;
+}
+
+.home .hero .event-countdown-card .top {}
+
+.home .hero .event-countdown-card .title {}
+
+.home .hero .event-countdown-card .img {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    /* width: 30%;
+    height: 100%; */
+    border-radius: 10px;
+}
+
+.home .hero .event-countdown-card .details {
+    grid-column: 3 / 7;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home .hero .event-countdown-card .details .item {
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-size: 14px;
+    /* width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+
+.home .hero .event-countdown-card .details .item .icon {
+    margin-right: 5px;
+}
+
+
+
+
+.home .hero .event-countdown-card .register a,
+.home .hero .event-countdown-card .register .icon {
+    color: var(--green);
+}
+
+.home .hero .event-countdown-card .countdown {
+    grid-row: 2 / 3;
+    grid-column: 1/7;
+    width: 100%;
+    padding: 10px;
+}
+
+
+
+/* About Us */
+.home .about-us {
+    margin-top: 70px;
+}
+
+
+
+.home .about-us .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.home .about-us .section-heading {
+    color: var(--cl--2--);
+}
+
+
+.home .about-us .content h1 {
+    /* font-size: 40px; */
+    font-weight: 600;
+}
+
+.home .about-us .content p {
+    margin-bottom: 9px;
+}
+
+
+.home .about-us .content img,
+.home .about-us .content .wrapper {
+    width: 100%;
+    border-radius: 3px;
+
+}
+
+
+.home .about-us .media-card-wrapper {
+    position: relative;
+    
+}
+
+.home .about-us .media-card-wrapper .sermon-card-wrapper {
+    height: 100%;
+}
+
+
+
+
+
+.home .about-us .media-card-wrapper .img,
+.home .about-us .media-card-wrapper canvas {
+    height: 280px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+
+.home .about-us a {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold);
+}
+
+
+
+/* Events */
+
+
+
+
+@media screen and (max-width: 375px) {
+
+
+    .home .hero .content .buttons>* {
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 567px) {
+
+    .home .hero .event-countdown-card .countdown {
+        grid-column: 3/7;
+        padding: 0;
+    }
+
+    .home .hero .event-countdown-card {
+        grid-template-rows: repeat(3, 50px);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .home .hero .event-countdown-card .img {
+        grid-row: 1 / 4;
+    }
+
+    .home .hero .event-countdown-card .details {
+        grid-row: 1 / 3;
+    }
+
+    .home .hero .event-countdown-card .countdown {
+        grid-row: 3 / 4;
+    }
+
+}
+
+
+@media screen and (max-width: 767px) {
+    .home .hero {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    
+    .home .about-us .container-fluid .row {
+        gap: 50px;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .home .hero {
+        height: 70vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .home .hero .content {
+        max-width: 80%;
+        gap: 15px;
+    }
+
+
+    .home .about-us .container-fluid>.row>div {
+        padding: 0 20px;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    
+
+    .home .hero .content {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 991px) and (orientation: landscape) {
+    .home .hero {
+        height: 180vh;
+    }
+
+    .hero .content h1 {
+        font-size: 40px;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+
+    .home .hero {
+        height: 100vh;
+        background: var(--cl--5--);
+
+    }
+
+    .home .hero .container-fluid {
+        height: 100%;
+        width: 60%;
+        /* Width must match with width of .home .hero-img to form 100% */
+        padding: 0;
+        gap: 0;
+    }
+
+    .home .hero .content {
+        justify-content: center;
+        background-color: rgba(33, 79, 15, 0.25); /* #214F0F with 50% transparency */
+        width: 100%;
+        height: 55%;
+        max-width: 100%;
+        padding: calc(var(--nav-height)) 20px 30px 130px;
+    }
+    
+    .home .hero .content .text{
+        width: 80%;
+    }
+
+    .home .hero .content h1 {
+        
+        color: var(--black);
+    }
+
+    .home .hero .content p {
+        color: var(--black);
+    }
+
+
+    
+
+    .home .hero .hero-img-wrapper {
+        width: 45% !important;
+        height: 100% !important;
+        position: static !important;
+
+    }
+
+    .home .hero .hero-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 2;
+        filter: brightness(0.8);
+    }
+
+    .home .hero .event-countdown-card-wrapper {
+        width: 100%;
+        height: 45%;
+        display: flex;
+        align-items: center;
+        padding-left: 130px;
+    }
+
+    .home .hero .event-countdown-card {
+        background: none;
+    }
+
+    .home .hero .event-countdown-card {
+        padding: 0;
+        grid-template-rows: repeat(3, 60px);
+    }
+
+
+
+    .home .about-us .container-fluid>.row {
+
+        flex-direction: row;
+    }
+
+    .home .about-us .page-btn-2 {
+        width: 100%;
+    }
+
+
+}

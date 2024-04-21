@@ -12,6 +12,10 @@ const Navbar = ({ scrolled }) => {
   // console.log(scrolled)
   const [show, setShow] = useState(false);
   const location = useLocation();
+
+  const isHomepageActive = location.pathname === "/";
+
+
   const checkIfSubmenuIsActive = (menu) => {
     if (location.pathname.includes(menu.url) && menu.url !== "/") {
       return true
@@ -44,7 +48,7 @@ const Navbar = ({ scrolled }) => {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-md fixed-top navbar-dark ${scrolled ? 'scrolled bg-dark' : ''}`}>
+    <nav className={`navbar navbar-expand-md fixed-top navbar-dark ${scrolled ? 'scrolled bg-dark' : ''} ${isHomepageActive ? 'home-page-is-active': ''}`}>
       {/* <div className={`info ${scrolled ? 'scrolled' : ''}`}>
         <div className="item">
           <PlaceIcon className='icon' />
@@ -68,22 +72,6 @@ const Navbar = ({ scrolled }) => {
                 <MenuItem item={menu} key={index} show={show} setShow={setShow} navItemSpecial={menu.navItemSpecial} isSubmenuActive={checkIfSubmenuIsActive(menu)} />
               )
             })}
-            {/* <li className="nav-item">
-              <NavLink to="/" className="nav-link" onClick={() => { setShow(false) }}>Home</NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink to="/company" className="nav-link" onClick={() => { setShow(false) }}>Company</NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink to="/services" className="nav-link" onClick={() => { setShow(false) }}>Services</NavLink>
-            </li>
-
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/projects" onClick={() => { setShow(false) }}>Projects</NavLink>
-            </li> */}
-
 
           </ul>
           <li className="nav-item nav-item-special">

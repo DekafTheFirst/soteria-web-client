@@ -257,11 +257,11 @@
         background-color: var(--cl-10--)
     }
 
-    .navbar .dropdown .nav-item {
+    .navbar .dropdown .nav_item {
         margin-bottom: 0;
     }
 
-    .navbar .dropdown .nav-item:hover {
+    .navbar .dropdown .nav_item:hover {
         background-color: var(--cl-11--);
         cursor: pointer;
     }
@@ -284,10 +284,10 @@
 @media screen and (min-width: 1200px) {
     .navbar .nav-link {
         padding-left: 0;
-        color: var(--black);
+        color: var(--gray);
     } 
 
-    .navbar.scrolled .nav-link {
-        color: var(--gray);
+    .navbar.home-page-is-active:not(.scrolled) .nav-link {
+        color: var(--black);
     }
 }

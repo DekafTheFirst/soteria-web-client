@@ -48,20 +48,26 @@ const EventsList = ({ events }) => {
   //     imgUrl: '/assets/abstract-1.jpg'
   //   }
   // ]
-  console.log("events", events)
-  return (
-    <>
-      {events ? <div className="events-list">
-         {events.map((event, index) => (
-          <EventCard event={event.attributes} />
 
+  
+  return (
+    <div className='events-list'>
+      {events ? <div className="cards">
+         {events.map((event, index) => (
+          <EventCard event={event.attributes} key={event.id}/>
         )) }
       </div>
       :
-      <><CircularProgress color='success' /></>
+      <div className='loader-wrapper'>
+        <CircularProgress color='success' />
+      </div>
       }
-      {/* <CircularProgress color='success' /> */}
-    </>
+
+      {/* <div className='loader-wrapper'>
+        <CircularProgress color='success' />
+      </div> */}
+
+    </div>
 
   )
 }

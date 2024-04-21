@@ -1,18 +1,28 @@
 import {
   RouterProvider,
   createBrowserRouter,
-  Outlet
+  Outlet,
+  useLocation
 } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
 import "./App.css"
 import Footer from './components/Footer';
 import { useEffect, useState } from 'react';
+import Events from './pages/Events/Events';
+import Banner from './components/Banner/Banner';
 
 const Layout = ({ scrolled }) => {
+  const { pathname } = useLocation()
+
+  // const currentRoute = routes.find((route) => route.path === pathname);
+  // const title = currentRoute ? currentRoute.title : '';
+
+  
   return (
     <div className="app">
       <Navbar scrolled={scrolled} />
+      {pathname !== "/" && <Banner pathname={pathname} />}
       <div className="content">
         <Outlet />
       </div>
@@ -27,6 +37,8 @@ const Layout = ({ scrolled }) => {
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
+  
+
 
   const router = createBrowserRouter([
     {
@@ -35,11 +47,19 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home scrolled={scrolled}/>
+          element: <Home />,
         },
         {
           path: "/about-us",
-          element: <Home scrolled={scrolled}/>
+          element: <Home />,
+        },
+        {
+          path: "/more/:slug",
+          element: <Events />,
+        },
+        {
+          path: "/events",
+          element: <Events />,
         },
 
       ]

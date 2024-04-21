@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 
+import './Home.css'
+
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import OptimizedImage from '../../components/OptimizedImage/OptimizedImage';
 import TodayIcon from '@mui/icons-material/Today';
@@ -17,7 +19,7 @@ import EventCard from '../../components/EventCard/EventCard';
 import EventsList from '../../components/EventsList/EventsList';
 import { Skeleton } from '@mui/material';
 
-const Home = ({ scrolled }) => {
+const Home = () => {
   const [events, setEvents] = useState(null)
 
   useEffect(() => {
@@ -89,7 +91,7 @@ const Home = ({ scrolled }) => {
 
 
 
-      <section className="reputation">
+      <section className="about-us">
         <div className="container-fluid">
           <div className="row ">
             <div className="col-md-6 media-card-wrapper">
@@ -112,10 +114,7 @@ const Home = ({ scrolled }) => {
       <section className="events">
         <div className="container-fluid">
         <h4>Upcoming Events</h4>
-          <div className="wrapper">
             <EventsList events={events}/>
-
-          </div>
         </div>
         {/* <EventCard /> */}
       </section>
