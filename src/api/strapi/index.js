@@ -7,7 +7,7 @@ const api = axios.create({
 
 export const fetchEvents = async () => {
     try{
-        const events = await api.get(`/api/events?populate=image`)
+        const events = await api.get(`/api/events?populate=*&sort=date:ASC`)
         return events.data
     } catch(error) {
         console.log(error)

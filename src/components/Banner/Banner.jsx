@@ -23,23 +23,22 @@ const Banner = ({ pathname }) => {
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb justify-content-center">
                         <li className="breadcrumb-item home"><Link to="/"><HomeIcon fontSize='small' /> </Link></li>
-                        {segments.map((segment, index) => (<>
+                        {segments.map((segment, index) => (
+                        <div className='breadcrumb-item-wrapper' key={index}>
                             <KeyboardArrowRightOutlined fontSize='small' className="breadcrumb-separator" />
-
-
                             {index >= segments.length - 2 ? (
-                                <li className="breadcrumb-item last" key={index}>
+                                <li className="breadcrumb-item last" >
                                     <span>{formatSegment(segment)}</span> 
                                 </li>
                             ) : (
-                                <li className="breadcrumb-item last" key={index}>
+                                <li className="breadcrumb-item last" >
 
                                     <Link to={`/${segments.slice(0, index + 1).join('/')}`}>
                                         {formatSegment(segment)}
                                     </Link>
                                 </li>
                             )}
-                        </>
+                        </div>
 
                         ))}
                     </ol>

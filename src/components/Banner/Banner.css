@@ -13,7 +13,10 @@
     align-items: center;
 }
 
-
+.banner .breadcrumb-item-wrapper {
+    display: flex;
+    align-items: center;
+}
 
 .banner .breadcrumb-item.home a {
     margin-bottom: 3px;

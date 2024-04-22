@@ -12,7 +12,6 @@ const OptimizedImage = ({ src, blurhash, height, width, wrapperClassName, classN
 
     const handleLoad = () => {
         setLoaded(true);
-        // console.log("loaded")
     };
 
     const handleLoadStarted = () => {

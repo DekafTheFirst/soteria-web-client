@@ -2,3 +2,20 @@
     margin-top: 70px;
     margin-bottom: 70px;
 }
+
+
+.events-page ul.filter {
+    display: flex;
+    gap: 10px;
+
+}
+
+.events-page ul.filter li.filter-item {
+    list-style: none;
+}
+
+
+
+
+
+
