@@ -1,18 +1,61 @@
-.events-page .container-fluid {
-    margin-top: 70px;
+.events-page .events .container-fluid {
+    margin-top: 40px;
     margin-bottom: 70px;
 }
 
+.events-page .filter{
+    border-bottom: 1px solid var(--gray);
 
-.events-page ul.filter {
+}
+
+
+.events-page .filter .container-fluid{
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
-
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
-.events-page ul.filter li.filter-item {
+.events-page .filter .filter-item {
     list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--green);
+    padding: 7px 25px;
+    border-radius: 999px;
+    font-weight: 500;
+    color: var(--green);
 }
+
+.events-page .filter .filter-item.active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+
+.events-page .filter .filter-item:not(.active):hover {
+    background-color: var(--lightGreen);
+    cursor: pointer;
+}
+
+
+.filter {
+    position: relative; /* Initial position */
+    /* Additional styling */
+    background-color: var(--white);
+  }
+  
+  .filter.sticky {
+    position: fixed;
+    top: var(--nav-height);
+    width: 100%;
+    z-index: 1000; /* Ensure the filter is above other content */
+    /* Additional styling for when it's sticky */
+  }
+  
+
 
 
 

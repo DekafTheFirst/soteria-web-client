@@ -10,12 +10,11 @@ const Events = () => {
   const [events, setEvents] = useState(null)
 
   const filters = ['All', 'Men', 'Women', 'Children', 'Youths', 'Others'];
-  
+
   const [currentFilter, setCurrentFilter] = useState(filters[0])
 
   const handleFilterClick = (filter) => {
     setCurrentFilter(filter)
-    console.log(filter)
   }
 
 
@@ -27,6 +26,7 @@ const Events = () => {
     }
     if (!events) fetchEventsData()
   }, [events])
+
 
   const filteredEvents = events && events.filter(event => {
     if (currentFilter == "All") {
@@ -40,19 +40,46 @@ const Events = () => {
     return event.attributes.type === currentFilter
   })
 
-  console.log(filteredEvents)
+  // Logic For Handling Scroll
+  const [isSticky, setIsSticky] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbarHeight = document.querySelector('.navbar').offsetHeight; // Height of the navbar
+      const bannerHeight = document.querySelector('.banner').offsetHeight;
+
+      const filterOffset = bannerHeight - navbarHeight; 
+      // The isn't the true offset value but the one i'll be using to give space for the navbar since the navbar is also sticky.
+
+      setIsSticky(() => {
+        if (window.scrollY > filterOffset) {
+          return true
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="events-page">
-      <div className="container-fluid">
-        <ul className='filter'>
+      <ul className={`filter ${isSticky ? 'sticky' : ''}`}>
+        <div className="container-fluid">
           {filters.map((filter, index) => (
-              <li className={`filter-item ${currentFilter == filter ? "btn-green-solid":"btn-green-outline"}`} key={index} onClick={() => handleFilterClick(filter)}>{filter}</li>
+            <li className={`filter-item ${currentFilter == filter ? "active" : ""}`} key={index} onClick={() => handleFilterClick(filter)}>{filter}</li>
           ))}
-        </ul>
-        <EventsList events={filteredEvents} />
+        </div>
+      </ul>
+      <div className="events">
+        <div className="container-fluid">
+          <EventsList events={filteredEvents} />
+        </div>
       </div>
+
     </div>
   )
 }
