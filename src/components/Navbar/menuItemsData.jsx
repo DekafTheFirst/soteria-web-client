@@ -14,7 +14,7 @@ export const menuItemsData = [
     },
     {
         title: 'Watch',
-        url: '/about-us'
+        url: '/watch'
     },
     // {
     //     title: 'Services',

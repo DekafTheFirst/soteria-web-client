@@ -1,5 +1,6 @@
 .banner {
     height: 30vh;
+    padding-top: calc(var(--nav-height) / 2);
     background-position: center;
     display: flex;
     justify-content: center;
@@ -70,13 +71,13 @@
 
 @media screen and (min-width: 768px) {
     .banner {
-        height: 50vh;
+        height: 30vh;
     }
 }
 
 
 @media screen and (min-width: 1200px) {
     .banner {
-        height: 50vh;
+        height: 40vh;
     }
 }

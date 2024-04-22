@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import { useEffect, useState } from 'react';
 import Events from './pages/Events/Events';
 import Banner from './components/Banner/Banner';
+import Watch from './pages/Watch/Watch';
 
 const Layout = ({ scrolled }) => {
   const { pathname } = useLocation()
@@ -54,13 +55,18 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/more/:slug",
-          element: <Events />,
-        },
-        {
           path: "/events",
           element: <Events />,
         },
+        {
+          path: "/watch",
+          element: <Watch />,
+        },
+        {
+          path: "/more/:slug",
+          element: <Events />,
+        },
+        
 
       ]
     }

@@ -14,7 +14,7 @@ import Timer from '../../components/Timer/Timer';
 import { fetchEvents, fetchUpcomingEvents } from '../../api/strapi';
 
 import MySwiper from '../../components/Swiper/MySwiper';
-import MediaCard from '../../components/MediaCard/MediaCard';
+import SermonCard from '../../components/SermonCard/SermonCard';
 import EventCard from '../../components/EventCard/EventCard';
 import EventsList from '../../components/EventsList/EventsList';
 import { Skeleton } from '@mui/material';
@@ -95,7 +95,7 @@ const Home = () => {
         <div className="container-fluid">
           <div className="row ">
             <div className="col-md-6 media-card-wrapper">
-              <MediaCard />
+              {/* <SermonCard sermon={{title: '', }}/> */}
             </div>
             <div className="col-md-6 content">
               <h2>Our Community: Embracing Diversity, United in Faith</h2>

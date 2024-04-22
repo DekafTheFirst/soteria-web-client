@@ -1,0 +1,6 @@
+.watch-page .container-fluid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 35px;
+    margin-top: 20px;
+}
