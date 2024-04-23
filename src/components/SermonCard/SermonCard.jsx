@@ -16,8 +16,8 @@ const SermonCard = ({ sermon, shouldIncludeDescription }) => {
                 {sermon.title}
             </h4>
             <div className="details">
-                <div className='item preacher'> <PersonOutlineIcon />{sermon.preacher}</div>
-                <div className='item date'> <TodayIcon />{sermon.date}</div>
+                <div className='item preacher'> <PersonOutlineIcon /> <span>{sermon.preacher}</span></div>
+                <div className='item date'> <TodayIcon /><span>{sermon.date}</span></div>
             </div>
 
             {shouldIncludeDescription &&

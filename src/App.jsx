@@ -2,7 +2,8 @@ import {
   RouterProvider,
   createBrowserRouter,
   Outlet,
-  useLocation
+  useLocation,
+
 } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
@@ -34,7 +35,10 @@ const Layout = ({ scrolled }) => {
 
 
 
-
+const SermonsPage = () => {
+  window.location.href = 'https://example.com/1234';
+  return null;
+}
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -60,7 +64,7 @@ function App() {
         },
         {
           path: "/watch",
-          element: <Watch />,
+          element: <Watch />
         },
         {
           path: "/more/:slug",
