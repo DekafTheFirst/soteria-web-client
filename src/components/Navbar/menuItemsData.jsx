@@ -15,15 +15,14 @@ export const menuItemsData = [
             {
                 title: 'Connect',
                 url: '',
-            },
-            
-            // {
-            //     title: 'Live Stream',
-            //     url: '/watch'
-            // },
+            },   
             {
-                title: 'Watch',
-                url: '/watch'
+                title: 'Live Stream',
+                url: '/live-stream'
+            },
+            {
+                title: 'Sermons',
+                url: '/sermons'
             },
             {
                 title: 'Prayer Request',
@@ -36,22 +35,13 @@ export const menuItemsData = [
         ]
     },
     {
+        title:'Join Us',
+        url: 'join-us',
+    },
+    {
         title: 'Events',
         url: '/events'
     },
-    {
-        title: 'Watch',
-        url: '/watch'
-    },
-    // {
-    //     title: 'Services',
-    //     url: '/services',
-
-    //     submenu: servicesList.map((service)=> ({
-    //         title: service.title,
-    //         url: service.slug
-    //     }) )
-    // },
     {
         title: 'More',
         url: '/more',

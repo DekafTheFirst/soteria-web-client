@@ -17,6 +17,9 @@ import EventDetails from './pages/Events/EventDetails/EventDetails';
 import Connect from './pages/Connect/Connect';
 import PrayerRequest from './pages/Connect/PrayerRequest/PrayerRequest';
 
+
+const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s"
+
 const Layout = ({ scrolled }) => {
   const { pathname } = useLocation()
 
@@ -36,12 +39,17 @@ const Layout = ({ scrolled }) => {
   )
 }
 
+const ExternalRedirectPage = () => {
+  useEffect(() => {
+    // Redirect to the external site in a new tab
+    window.open(soteriaYoutubeLink, '_blank');
+    window.location.href = '/';
+  }, []); // Run only once when the component mounts
 
-
-const SermonsPage = () => {
-  window.location.href = 'https://example.com/1234';
+  // Render null because there's nothing to render on this page
   return null;
-}
+};
+
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -69,7 +77,11 @@ function App() {
               element: <Connect />,
             },
             {
-              path: "watch",
+              path: "live-stream",
+              element: <ExternalRedirectPage />,
+            },
+            {
+              path: "sermons",
               element: <Watch />,
             },
             {

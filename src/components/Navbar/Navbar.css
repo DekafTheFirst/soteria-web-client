@@ -265,6 +265,11 @@
         cursor: pointer;
     }
 
+    .navbar .dropdown .nav-item:hover .nav-link {
+        color: var(--lightGold);
+
+    }
+
     .navbar .dropdown .nav-item.active {
         background-color: var(--black);
     }
@@ -286,7 +291,7 @@
 @media screen and (min-width: 1200px) {
 
     .navbar .navbar-collapse .navbar-nav {
-        gap: 25px;
+        gap: 15px;
     }
 
     .navbar .nav-link {
@@ -296,6 +301,16 @@
 
     .navbar.home-page-is-active:not(.scrolled) .nav-link{
         color: var(--black);
+    }
+
+
+
+    .navbar.home-page-is-active:not(.scrolled) .dropdown .nav-link{
+        color: var(--gray);
+    }
+
+    .navbar.home-page-is-active:not(.scrolled) .dropdown .nav-link:hover {
+        color: var(--gold);
     }
 
     .navbar.home-page-is-active:not(.scrolled) .nav-item .nav-link.active {
