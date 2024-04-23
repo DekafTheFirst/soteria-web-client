@@ -57,6 +57,7 @@
 
 .banner .banner-heading h1 {
     color: var(--white);
+    text-align: center;
 }
 
 .banner .background-img {

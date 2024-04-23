@@ -74,8 +74,8 @@ const Navbar = ({ scrolled }) => {
             })}
 
           </ul>
-          <li className="nav-item nav-item-special">
-            <NavLink className="nav-link" to="/contact" onClick={() => { setShow(false) }}>Contact</NavLink>
+          <li className="nav-item-special">
+            <NavLink className="nav-link-special" to="/connect/contact-us" onClick={() => { setShow(false) }}>Give</NavLink>
           </li>
         </div>
 

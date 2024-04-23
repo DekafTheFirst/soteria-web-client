@@ -7,13 +7,7 @@ const Dropdown = ({ menu, submenus, dropdown, show, setShow, }) => {
       <div className="wrapper">
         {submenus.map((submenu, index) =>
           <li key={index} className='nav-item'>
-            <NavLink 
-            // style={({isActive})=> {setIsActive((prev)=> {
-            //   if(prev !== true) {
-            //     return true
-            //   }
-            // })}} 
-            className='nav-link' to={`${menu.url}${submenu.url}`} onClick={() => { setShow(false) }}>{submenu.title}</NavLink>
+            <NavLink className='nav-link' to={`${menu.url}${submenu.url}`} onClick={() => { setShow(false) }} end>{submenu.title}</NavLink>
           </li>
         )}
       </div>

@@ -138,38 +138,36 @@
 }
 
 .navbar .nav-item-special {
+    list-style: none;
+    margin-left: auto;
+}
+
+
+
+.navbar .nav-item-special .nav-link-special {
     background-color: var(--gold);
     color: var(--white);
-    border-radius: 3px;
-    margin-left: auto;
-    align-items: center;
-    justify-content: center;
-}
-
-.navbar .nav-item-special:hover {
-    background-color: var(--darkGold);
-    color: var(--white);
-    cursor: pointer;
-}
-
-.navbar .nav-item-special .nav-link {
-    color: var(--cl--2--);
-    padding: 5px 20px;
+    border-radius: 5px;
+    padding: 5px 25px;
 }
 
 
-.navbar .nav-item-special:hover .nav-link,
-.navbar .nav-item-special .nav-link.active {
-    color: var(--cl--1--);
+.navbar .nav-item-special .nav-link-special:hover,
+.navbar .nav-item-special .nav-link-special.active {
+    background-color: var(--lightGold);
 }
 
+
+.navbar .nav-link:hover,
+.navbar.scrolled .nav-link:hover {
+    color: var(--gray);
+}
 
 .navbar .nav-link.active,
-.navbar .nav-link:hover,
-.navbar.scrolled .nav-link.active,
-.navbar.scrolled .nav-link:hover {
+.navbar.scrolled .nav-link.active {
     color: var(--gold);
 }
+
 
 
 
@@ -243,7 +241,7 @@
 
 
     .navbar .navbar-collapse .navbar-nav {
-        gap: 25px;
+        gap: 10px;
     }
 
     .navbar .dropdown {
@@ -253,17 +251,22 @@
     }
 
     .navbar .dropdown .wrapper{
-        border-top: 2px solid var(--cl--2--);
-        background-color: var(--cl-10--)
+        border-top: 2px solid var(--gold);
+        background-color: var(--darkGray);
+        min-width: 150px;
     }
 
-    .navbar .dropdown .nav_item {
+    .navbar .dropdown .nav-item {
         margin-bottom: 0;
     }
 
-    .navbar .dropdown .nav_item:hover {
-        background-color: var(--cl-11--);
+    .navbar .dropdown .nav-item:hover {
+        background-color: var(--black);
         cursor: pointer;
+    }
+
+    .navbar .dropdown .nav-item.active {
+        background-color: var(--black);
     }
 
     .navbar .navbar-nav li:hover .dropdown {
@@ -275,19 +278,27 @@
     }
 
     .navbar .dropdown .nav-item:hover .nav-link {
-        color: var(--cl--2--);
     }
 
     
 }
 
 @media screen and (min-width: 1200px) {
+
+    .navbar .navbar-collapse .navbar-nav {
+        gap: 25px;
+    }
+
     .navbar .nav-link {
         padding-left: 0;
         color: var(--lightGray);
     } 
 
-    .navbar.home-page-is-active:not(.scrolled) .nav-link {
+    .navbar.home-page-is-active:not(.scrolled) .nav-link{
         color: var(--black);
+    }
+
+    .navbar.home-page-is-active:not(.scrolled) .nav-item .nav-link.active {
+        color: var(--gold);
     }
 }

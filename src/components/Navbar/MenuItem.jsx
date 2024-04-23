@@ -22,7 +22,7 @@ const MenuItem = ({item, show, setShow, navItemSpecial, isSubmenuActive}) => {
               <Dropdown menu={item} submenus={item.submenu} dropdown={dropdown} show={show} setShow={setShow} />
             </>  
         ):(
-            <NavLink  to={item.url} className={`nav-link`} onClick={()=>{setShow(false)}}>{item.title}</NavLink>
+            <NavLink  to={item.url} className={`nav-link`} onClick={()=>{setShow(false)}} end>{item.title}</NavLink>
         )}
     </li>
   )
