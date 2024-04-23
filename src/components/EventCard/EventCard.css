@@ -14,12 +14,12 @@
 }
 
 .event-card .title {
-    color: var(--black);
+    color: var(--darkGreen);
 }
 
 
 .event-card .date {
-    color: var(--green);
+    color: gray;
     font-weight: 600;
     font-size: 14px;
     display: flex;

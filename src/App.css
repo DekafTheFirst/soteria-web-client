@@ -24,9 +24,10 @@ body {
     --gold: #A96F00;
     --darkGold: #7d5000;
     --darkGray: #131314;
-    --green: #214F0F;
+    --green:  #006400;
     --lightGreen: #e0ffe0;
     --forestGreen: #228B22;
+    --darkGreen: #214F0F;
     --offWhite: #F5F6FA;
 
 
@@ -147,7 +148,7 @@ section {
 }
 
 .btn-green-solid:hover {
-    background-color: var(--forestGreen);
+    background-color: var(--darkGreen);
     cursor: pointer;
 }
 
