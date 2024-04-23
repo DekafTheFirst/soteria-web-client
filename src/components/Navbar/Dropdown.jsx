@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const Dropdown = ({ submenus, dropdown, show, setShow, }) => {
+const Dropdown = ({ menu, submenus, dropdown, show, setShow, }) => {
   return (
     <ul className={`dropdown ${dropdown ? "show" : ""}`}>
       <div className="wrapper">
@@ -13,7 +13,7 @@ const Dropdown = ({ submenus, dropdown, show, setShow, }) => {
             //     return true
             //   }
             // })}} 
-            className='nav-link' to={`/more/${submenu.url}`} onClick={() => { setShow(false) }}>{submenu.title}</NavLink>
+            className='nav-link' to={`${menu.url}${submenu.url}`} onClick={() => { setShow(false) }}>{submenu.title}</NavLink>
           </li>
         )}
       </div>

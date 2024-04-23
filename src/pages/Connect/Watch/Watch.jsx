@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import SermonCard from '../../components/SermonCard/SermonCard';
 import "./Watch.css"
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';

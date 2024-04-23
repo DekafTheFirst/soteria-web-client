@@ -106,7 +106,7 @@ const Home = () => {
               } />
             </div>
             <div className="col-md-6 content">
-              <h2>Our Community: Embracing Diversity, United in Faith</h2>
+              <h2>The Church that Cares</h2>
               <p>
                 Soteria Church is a multiracial, multi-ethnic, multicultural and multigenerational community of people who know Jesus personally, love Jesus passionately, serve Jesus purposefully and share Jesus powerfully!               </p>
               <p>

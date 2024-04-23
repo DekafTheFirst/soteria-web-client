@@ -19,7 +19,7 @@ const MenuItem = ({item, show, setShow, navItemSpecial, isSubmenuActive}) => {
                 <ExpandMoreIcon fontSize='small'/>
               </span>
               
-              <Dropdown submenus={item.submenu} dropdown={dropdown} show={show} setShow={setShow} />
+              <Dropdown menu={item} submenus={item.submenu} dropdown={dropdown} show={show} setShow={setShow} />
             </>  
         ):(
             <NavLink  to={item.url} className={`nav-link`} onClick={()=>{setShow(false)}}>{item.title}</NavLink>

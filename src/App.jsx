@@ -12,8 +12,10 @@ import Footer from './components/Footer';
 import { useEffect, useState } from 'react';
 import Events from './pages/Events/Events';
 import Banner from './components/Banner/Banner';
-import Watch from './pages/Watch/Watch';
+import Watch from './pages/Connect/Watch/Watch';
 import EventDetails from './pages/Events/EventDetails/EventDetails';
+import Connect from './pages/Connect/Connect';
+import PrayerRequest from './pages/Connect/PrayerRequest/PrayerRequest';
 
 const Layout = ({ scrolled }) => {
   const { pathname } = useLocation()
@@ -60,6 +62,28 @@ function App() {
           element: <Home />,
         },
         {
+          path: "/connect",
+          children: [
+            {
+              index: true,
+              element: <Connect />,
+            },
+            {
+              path: "watch",
+              element: <Watch />,
+            },
+            {
+              path: "prayer-request",
+              element: <PrayerRequest />,
+            },
+            {
+              path: "contact-us",
+              element: <Watch />,
+            },
+          ],
+        },
+        
+        {
           path: "/events",
           element: <Events />,
         },
@@ -67,10 +91,7 @@ function App() {
           path: "/events/:eventId",
           element: <EventDetails />, // Route for individual event pages
         },
-        {
-          path: "/watch",
-          element: <Watch />
-        },
+        
         {
           path: "/more/:slug",
           element: <Events />,
