@@ -19,15 +19,16 @@ html {
 body {
     --white: #FFFFFF;
     --black: #000000;
-    --lightGray: #d9d9d9;
-    --gray: #BDC1C6;
+    --veryLightGray: #d9d9d9;
+    --lightGray: #BDC1C6;
+    --gray: gray;
+    --darkGray: #131314;
     --gold: #A96F00;
     --darkGold: #7d5000;
-    --darkGray: #131314;
-    --green:  #006400;
-    --lightGreen: #e0ffe0;
+    --green:  #214F0F;
+    --lightGreen: #2B671B;
     --forestGreen: #228B22;
-    --darkGreen: #214F0F;
+    --darkGreen: #1B3D0A;
     --offWhite: #F5F6FA;
 
 
@@ -148,7 +149,7 @@ section {
 }
 
 .btn-green-solid:hover {
-    background-color: var(--darkGreen);
+    background-color: var(--lightGreen);
     cursor: pointer;
 }
 

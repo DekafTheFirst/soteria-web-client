@@ -284,7 +284,7 @@
 @media screen and (min-width: 1200px) {
     .navbar .nav-link {
         padding-left: 0;
-        color: var(--gray);
+        color: var(--lightGray);
     } 
 
     .navbar.home-page-is-active:not(.scrolled) .nav-link {

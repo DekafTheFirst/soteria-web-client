@@ -53,9 +53,9 @@ const EventsList = ({ events }) => {
   return (
     <div className='events-list'>
       {events ? <div className="cards">
-         {events.map((event, index) => (
-          <EventCard event={event.attributes} key={event.id}/>
-        )) }
+         { events.map((event, index) => (
+          <EventCard eventObject={event} key={event.id}/>
+        ))}
       </div>
       :
       <div className='loader-wrapper'>

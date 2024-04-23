@@ -1,11 +1,15 @@
+.events-page .events.leave-space-for-filter {
+    padding-top: 70px;
+}
+
 .events-page .events .container-fluid {
     margin-top: 40px;
     margin-bottom: 70px;
 }
 
 .events-page .filter{
-    border-bottom: 1px solid var(--gray);
-
+    border-bottom: 1.5px solid var(--lightGray);
+    
 }
 
 
@@ -36,7 +40,7 @@
 
 
 .events-page .filter .filter-item:not(.active):hover {
-    background-color: var(--lightGreen);
+    background-color: var(--lightGray);
     cursor: pointer;
 }
 
@@ -51,7 +55,8 @@
     position: fixed;
     top: var(--nav-height);
     width: 100%;
-    z-index: 1000; /* Ensure the filter is above other content */
+    z-index: 1000;
+    transition: all .3s ease-in; /* Ensure the filter is above other content */
     /* Additional styling for when it's sticky */
   }
   

@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import Events from './pages/Events/Events';
 import Banner from './components/Banner/Banner';
 import Watch from './pages/Watch/Watch';
+import EventDetails from './pages/Events/EventDetails/EventDetails';
 
 const Layout = ({ scrolled }) => {
   const { pathname } = useLocation()
@@ -61,6 +62,10 @@ function App() {
         {
           path: "/events",
           element: <Events />,
+        },
+        {
+          path: "/events/:eventId",
+          element: <EventDetails />, // Route for individual event pages
         },
         {
           path: "/watch",

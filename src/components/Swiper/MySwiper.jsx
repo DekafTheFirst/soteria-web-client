@@ -11,7 +11,7 @@ import './MySwiper.css';
 import '../../App.css'
 
 // import required modules
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, EffectFade, Keyboard, Navigation, Pagination } from 'swiper/modules';
 import OptimizedImage from '../OptimizedImage/OptimizedImage';
 
 export default function App() {
@@ -26,9 +26,12 @@ export default function App() {
           disableOnInteraction: false,
           pauseOnMouseEnter: false
         }}
+        keyboard={
+          true
+        }
         loop={true}
         navigation={true}
-        modules={[Pagination, Autoplay, EffectFade, Navigation]}
+        modules={[Pagination, Autoplay, EffectFade, Navigation, Keyboard]}
         className="mySwiper"
       >
         <SwiperSlide><OptimizedImage src="/assets/sermon.jpg" style={{ width: "100%", height: "100%" }} className='hero-img' /></SwiperSlide>

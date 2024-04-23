@@ -27,11 +27,6 @@
     color: var(--green);
 }
 
-.watch-page .details .item {
-    display: flex;
-    gap: 8px;
-}
-
 .watch-page .details .item:not(.title):not(p){
     color: var(--gray);
 }

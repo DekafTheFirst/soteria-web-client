@@ -7,14 +7,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import { formatDate, formatTime } from '../../utils/time';
 
 
-const EventCard = ({ event }) => {
-    const navigate = useNavigate()
-
-    
-    
+const EventCard = ({ eventObject }) => {
+    const event = eventObject.attributes;
 
     return (
-        <Link className="card-component event-card" onClick={() => navigate('/about-us')}>
+        <Link className="card-component event-card" to={
+            {
+                pathname: `/events/${eventObject.id}`,
+               
+            }
+        } state={event}>
             <OptimizedImage src={`${import.meta.env.VITE_BASE_URL}${event.image.data.attributes.formats.small.url}`} className='img' />
             <h5 className='title'>
                 {event.title}

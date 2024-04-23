@@ -16,7 +16,7 @@
      position: absolute !important;
      height: 100%;
      width: 100%;
-     background-color: var(--lightGray) !important;
+     background-color: var(--veryLightGray) !important;
      top: 0;
      left: 0;
      overflow: hidden;
