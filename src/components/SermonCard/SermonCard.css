@@ -7,9 +7,7 @@
 
 
 .sermon-card .youtube-video {
-    width: 100% !important;
     aspect-ratio: 16 / 9;
-    height: unset !important;
     margin-bottom: 10px;
 }
 

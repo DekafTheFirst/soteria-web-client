@@ -221,22 +221,22 @@ section {
 
 
 
-.about-us .row {
+.about-us-page .row {
     align-items: center;
     margin-bottom: 70px;
     max-width: 1100px;
     margin: auto;
 }
 
-.about-us .row .col-12 {
+.about-us-page .row .col-12 {
     padding: 25px;
 }
 
-.about-us .row:nth-child(odd) {
+.about-us-page .row:nth-child(odd) {
     flex-direction: row-reverse;
 }
 
-.about-us .accordion-item .accordion-list {
+.about-us-page .accordion-item .accordion-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -245,51 +245,51 @@ section {
 
 
 
-.about-us .accordion-item {
+.about-us-page .accordion-item {
     border: none;
     margin-bottom: 10px;
 }
 
-.about-us .accordion-button {
+.about-us-page .accordion-button {
     font-weight: 600;
     padding: 15px;
 }
 
 
 
-.about-us .accordion-body {
+.about-us-page .accordion-body {
     padding: 15px;
 }
 
 
-.about-us .accordion-body ul li {
+.about-us-page .accordion-body ul li {
     margin-bottom: 15px;
 }
 
-.about-us .accordion-button:not(.collapsed) {
+.about-us-page .accordion-button:not(.collapsed) {
     color: var(--cl--6--);
     background-color: var(--cl--3--);
     -webkit-transition: 0.3s ease-in-out;
 }
 
-.about-us .accordion-button:focus {
+.about-us-page .accordion-button:focus {
     box-shadow: none;
 }
 
-.about-us .accordion-button.collapsed {
+.about-us-page .accordion-button.collapsed {
     border: 1px solid var(--cl--3--);
 }
 
-.about-us .body-text {
+.about-us-page .body-text {
     margin-bottom: 10px;
 }
 
-.about-us .our-team .wrapper {
+.about-us-page .our-team .wrapper {
     display: flex;
     justify-items: center;
 }
 
-.about-us .our-team .cards {
+.about-us-page .our-team .cards {
     display: flex;
     justify-content: center;
     justify-items: flex-start;
@@ -298,7 +298,7 @@ section {
     gap: 20px;
 }
 
-.about-us .our-team .card {
+.about-us-page .our-team .card {
     width: 300px;
     height: 470px;
     background-color: var(--cl--4--);
@@ -306,16 +306,16 @@ section {
     border: none;
 }
 
-.about-us .our-team .card * {
+.about-us-page .our-team .card * {
     color: var(--cl--2--);
 }
 
 
-.about-us .our-team .card .img-wrapper {
+.about-us-page .our-team .card .img-wrapper {
     background-color: var(--cl--2--);
 }
 
-.about-us .our-team .card .card-img {
+.about-us-page .our-team .card .card-img {
     height: 220px;
     object-fit: cover;
     object-position: top;
@@ -323,13 +323,13 @@ section {
     margin-top: 10px;
 }
 
-.about-us .our-team .card-body {
+.about-us-page .our-team .card-body {
     position: relative;
     padding: 0 15px;
 }
 
 
-.about-us .our-team .card .logo {
+.about-us-page .our-team .card .logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -342,29 +342,28 @@ section {
     background-color: var(--cl--1--);
 }
 
-.about-us .our-team .card .logo img {
+.about-us-page .our-team .card .logo img {
     width: 70%;
     height: 70%;
 }
 
-.about-us .our-team .card .content {
+.about-us-page .our-team .card .content {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.about-us .our-team .card .name {
+.about-us-page .our-team .card .name {
     border-bottom: 3px solid var(--cl--2--);
     width: fit-content;
     padding-bottom: 8px;
 }
 
 
-.about-us .our-team .card .media-links {
+.about-us-page .our-team .card .media-links {
     position: absolute;
     bottom: 0;
-
 }
 
 /* End About Us */
