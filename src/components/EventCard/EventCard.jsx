@@ -13,7 +13,7 @@ const EventCard = ({ eventObject }) => {
     return (
         <Link className="card-component event-card" to={
             {
-                pathname: `/events/${eventObject.id}`,
+                pathname: `/events/${event.slug}`,
                
             }
         } state={event}>

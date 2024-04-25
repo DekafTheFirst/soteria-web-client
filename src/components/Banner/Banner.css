@@ -55,7 +55,7 @@
     z-index: 2;
 }
 
-.banner .banner-heading h1 {
+.banner .banner-heading .title {
     color: var(--white);
     text-align: center;
 }

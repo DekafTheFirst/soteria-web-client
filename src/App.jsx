@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   Outlet,
   useLocation,
+  useParams,
 
 } from 'react-router-dom';
 import Home from './pages/Home/Home';
@@ -22,15 +23,18 @@ const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s"
 
 const Layout = ({ scrolled }) => {
   const { pathname } = useLocation()
+  const location = useLocation()
 
-  // const currentRoute = routes.find((route) => route.path === pathname);
-  // const title = currentRoute ? currentRoute.title : '';
-
+  let title;
+  if(location.state?.title) {
+    title = location.state?.title;
+  }
   
+
   return (
     <div className="app">
       <Navbar scrolled={scrolled} />
-      {pathname !== "/" && <Banner pathname={pathname} />}
+      {pathname !== "/" && <Banner pathname={pathname} title={title}  />}
       <div className="content">
         <Outlet />
       </div>
@@ -53,7 +57,7 @@ const ExternalRedirectPage = () => {
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
-  
+
 
 
   const router = createBrowserRouter([
@@ -94,7 +98,7 @@ function App() {
             },
           ],
         },
-        
+
         {
           path: "/events",
           element: <Events />,
@@ -103,12 +107,12 @@ function App() {
           path: "/events/:eventId",
           element: <EventDetails />, // Route for individual event pages
         },
-        
+
         {
           path: "/more/:slug",
           element: <Events />,
         },
-        
+
 
       ]
     }

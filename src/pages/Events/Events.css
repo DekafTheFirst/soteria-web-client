@@ -55,7 +55,7 @@
     position: fixed;
     top: var(--nav-height);
     width: 100%;
-    z-index: 1000;
+    z-index: 10;
     transition: all .3s ease-in; /* Ensure the filter is above other content */
     /* Additional styling for when it's sticky */
   }
