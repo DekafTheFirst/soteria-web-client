@@ -82,7 +82,7 @@ function App() {
             },
             {
               path: "sermons",
-              element: <Watch />,
+              element: <ExternalRedirectPage />,
             },
             {
               path: "prayer-request",

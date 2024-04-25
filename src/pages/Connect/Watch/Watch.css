@@ -20,8 +20,31 @@
 .watch-page .details {
     display: flex;
     flex-direction: column;
+    gap: 7px;
+}
+
+.watch-page .details .header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
     gap: 10px;
 }
+.watch-page .details .header span.latest-sermon{
+    font-size: 14px;
+    background: var(--gold);
+    color: var(--white);
+    padding: 5px 10px;
+    border-radius: 999px;
+}
+
+.watch-page .details .header .other-sermons{
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 999px;
+
+
+}
+
 
 .watch-page .details .title {
     color: var(--green);
