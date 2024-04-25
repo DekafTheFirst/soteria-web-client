@@ -17,6 +17,7 @@ import Watch from './pages/Connect/Watch/Watch';
 import EventDetails from './pages/Events/EventDetails/EventDetails';
 import Connect from './pages/Connect/Connect';
 import PrayerRequest from './pages/Connect/PrayerRequest/PrayerRequest';
+import AboutUs from './pages/AboutUs/AboutUs';
 
 
 const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s"
@@ -71,7 +72,7 @@ function App() {
         },
         {
           path: "/about-us",
-          element: <Home />,
+          element: <AboutUs />,
         },
         {
           path: "/connect",
