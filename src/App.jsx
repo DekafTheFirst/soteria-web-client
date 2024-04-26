@@ -18,24 +18,30 @@ import EventDetails from './pages/Events/EventDetails/EventDetails';
 import Connect from './pages/Connect/Connect';
 import PrayerRequest from './pages/Connect/PrayerRequest/PrayerRequest';
 import AboutUs from './pages/AboutUs/AboutUs';
+import JoinUs from './pages/JoinUs/JoinUs';
 
 
 const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s"
 
 const Layout = ({ scrolled }) => {
-  const { pathname } = useLocation()
-  const location = useLocation()
+  const { pathname, state } = useLocation()
 
   let title;
-  if(location.state?.title) {
-    title = location.state?.title;
+  if (state?.title) {
+    title = state?.title;
   }
-  
+
+  // List of all routes that should make the navbar stay black on mobile screens, !!!Especially Form pages like
+  // const routesWithSpecialHeader = ['/connect/prayer-requests', '/connect/prayer-requests'];
+
+  // Check if the current pathname matches any specific route
+  // const isSpecial = routesWithSpecialHeader.find(route => route === pathname) !== undefined;
+
 
   return (
     <div className="app">
       <Navbar scrolled={scrolled} />
-      {pathname !== "/" && <Banner pathname={pathname} title={title}  />}
+      {pathname !== "/" && <Banner pathname={pathname} title={title} />}
       <div className="content">
         <Outlet />
       </div>
@@ -58,7 +64,6 @@ const ExternalRedirectPage = () => {
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
-
 
 
   const router = createBrowserRouter([
@@ -90,7 +95,7 @@ function App() {
               element: <ExternalRedirectPage />,
             },
             {
-              path: "prayer-request",
+              path: "prayer-requests",
               element: <PrayerRequest />,
             },
             {
@@ -99,7 +104,10 @@ function App() {
             },
           ],
         },
-
+        {
+          path: "/join-us",
+          element: <JoinUs />,
+        },
         {
           path: "/events",
           element: <Events />,

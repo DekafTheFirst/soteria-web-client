@@ -14,6 +14,9 @@
     padding: 10px;
 }
 
+.navbar.special {
+    display: none;
+}
 
 
 .navbar .container-fluid {

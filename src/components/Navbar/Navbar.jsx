@@ -8,7 +8,7 @@ import './Navbar.css'
 // ]
 
 
-const Navbar = ({ scrolled }) => {
+const Navbar = ({ scrolled}) => {
   // console.log(scrolled)
   const [show, setShow] = useState(false);
   const location = useLocation();
@@ -48,7 +48,7 @@ const Navbar = ({ scrolled }) => {
   }, []);
 
   return (
-    <nav className={`navbar navbar-expand-md fixed-top navbar-dark ${scrolled ? 'scrolled bg-dark' : ''} ${isHomepageActive ? 'home-page-is-active': ''}`}>
+    <nav className={`navbar navbar-expand-md fixed-top navbar-dark ${scrolled ? 'scrolled bg-dark' : ''} ${isHomepageActive ? 'home-page-is-active': ''} `}>
       {/* <div className={`info ${scrolled ? 'scrolled' : ''}`}>
         <div className="item">
           <PlaceIcon className='icon' />

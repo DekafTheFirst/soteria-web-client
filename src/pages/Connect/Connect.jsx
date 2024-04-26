@@ -6,7 +6,7 @@ import OptimizedImage from '../../components/OptimizedImage/OptimizedImage'
 import { CircularProgress } from '@mui/material'
 
 const items = [
-  { title: "Prayer Requests", route: '/connect/prayer-request', desc: 'Submit your prayer requests. And we will pray with you very very soon. And we need a verse for the swifties', imgUrl: '/assets/abstract-4.jpg' },
+  { title: "Prayer Requests", route: '/connect/prayer-requests', desc: 'Submit your prayer requests. And we will pray with you very very soon. And we need a verse for the swifties', imgUrl: '/assets/abstract-4.jpg' },
   { title: "Become A Member", route: '/become-a-member', desc: 'Join Us by becoming a member', imgUrl: '/assets/abstract-5.jpg' },
   { title: "SODIP(Soteria Discipleship)", route: '/connect/sodip', desc: 'Partake in Soteria Discipleship', imgUrl: '/assets/abstract-2.jpg' },
 

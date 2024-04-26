@@ -25,8 +25,8 @@ export const menuItemsData = [
                 url: '/sermons'
             },
             {
-                title: 'Prayer Request',
-                url: '/prayer-request'
+                title: 'Prayer Requests',
+                url: '/prayer-requests'
             },
             {
                 title: 'Contact Us',
