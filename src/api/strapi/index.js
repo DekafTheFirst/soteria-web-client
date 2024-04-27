@@ -54,6 +54,17 @@ export const createPrayerRequestEntry = async (data) => {
     }
 }
 
+export const createMemberEntry = async (data) => {
+    try{
+        const response = await api.post(`/api/members`, {data})
+        return response.data        
+        
+    } catch(error) {
+        console.error('Error creating member:', error);
+        throw error
+    }
+}
+
 export const getLiveStream = async () => {
     try{
         const response = await api.get(`/api/live-stream`);

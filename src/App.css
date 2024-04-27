@@ -232,6 +232,10 @@ section {
     display: none;
 }
 
+.illustration-col {
+    padding: 60px;
+}
+
 
 
 /* .form-page .form-column {
@@ -284,7 +288,8 @@ form select,
 form textarea {
     padding: 5px 10px;
     width: 100%;
-    border: 1px solid var(--gray);
+    background-color: var(--veryLightGray);
+    border: 1px solid var(--lightGray);
     outline: none;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -724,9 +729,13 @@ footer .page-btn:hover {
         padding-bottom: 50px;
     }
 
+    .form-page .container {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    }
+
     .form-page .form-col {
         padding: 40px 25px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
     }
 

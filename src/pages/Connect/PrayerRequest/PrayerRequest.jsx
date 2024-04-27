@@ -122,7 +122,7 @@ const PrayerRequest = () => {
             <h2 className='text-center'>Do you have a prayer request?</h2>
             <p className='text-center mt-2'>Tell us about it and we will join you in prayer.</p>
 
-            <FormComponent items={items} onSubmit={onSubmit} validationSchema={validationSchema} />
+            <FormComponent items={items} onSubmit={onSubmit} validationSchema={validationSchema} submitBtnText="Submit Prayer Request"/>
           </div>
 
         </div>

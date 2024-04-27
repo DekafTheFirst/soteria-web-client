@@ -3,7 +3,7 @@ import './Form.css';
 import { ErrorMessage, Field, Form, Formik, useFormik } from 'formik';
 import InputField from '../InputField/InputField';
 
-const FormComponent = ({ items, onSubmit, validationSchema }) => {
+const FormComponent = ({ items, onSubmit, validationSchema, submitBtnText }) => {
     return (
         <Formik
             initialValues={Object.fromEntries(items.map(item => [item.name, item.initialValue]))}
@@ -19,7 +19,7 @@ const FormComponent = ({ items, onSubmit, validationSchema }) => {
 
 
                         <button type="submit" className="btn-green-solid submit-btn" disabled={isSubmitting}>
-                            Submit
+                            {submitBtnText ? submitBtnText : 'Submit'}
                         </button>
                     </Form>
                 )

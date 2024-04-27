@@ -1,31 +1,40 @@
 import React, { useRef, useState } from 'react'
-import * as yup from "yup";
-
 
 import "./JoinUs.css"
 import OptimizedImage from '../../components/OptimizedImage/OptimizedImage';
 
 import { useFormik } from 'formik'
-import { createPrayerRequestEntry } from '../../api/strapi';
+import { CircularProgress } from '@mui/material';
+import { createMemberEntry, createPrayerRequestEntry } from '../../api/strapi';
 
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
+import * as yup from "yup";
+import FormComponent from '../../components/Form/Form';
+import { useNavigate } from 'react-router-dom';
+
+
+
+
 const JoinUs = () => {
+  const navigate = useNavigate()
   const [error, setError] = useState(null)
 
 
+
   const showToastMessage = () => {
-    toast.success("Success Notification !", {
+    toast.success("Info sent successfuly !", {
       position: "top-right",
     });
     console.log("toast")
   };
 
-  const createPrayerRequest = async (data) => {
+  const createMember = async (data) => {
     try {
-      const createdPrayerRequest = await createPrayerRequestEntry(data);
+      const createdMember = await createMemberEntry(data);
       showToastMessage()
+      
     } catch (error) {
       setError(error)
       console.log(error)
@@ -36,38 +45,73 @@ const JoinUs = () => {
 
   const onSubmit = async (values, actions) => {
     console.log(values)
-    await createPrayerRequest(values)
+    await createMember(values)
     actions.resetForm()
     console.log("submitted")
   }
 
   const validationSchema = yup.object().shape({
-    firstName: yup.string(),
-    lastName: yup.string(),
-    email: yup.string().email(),
+    firstName: yup.string().required('First name is required'),
+    lastName: yup.string().required('Last Name is required'),
+    email: yup.string().email().required('Email is required'),
     phoneNumber: yup.string().matches(
       /^(\+\d{1,3})?(\d{10,14})$/, // Regex for phone number with or without country code
       'Invalid phone number'
-    ),
-    prayerRequest: yup.string().required("Please fill in the details about your prayer request")
+    ).required('Phone Number is required'),
+    address: yup.string()
   })
 
 
-  const { handleBlur, handleChange, handleSubmit, values, errors, touched, isSubmitting } = useFormik({
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phoneNumber: '',
-      prayerRequest: '',
+
+
+  // const initialValues = {
+  //   firstName: '',
+  //   lastName: '',
+  //   email: '',
+  //   phoneNumber: '',
+  //   details: '',
+  // };
+
+
+  const items = [
+    {
+      name: 'firstName',
+      label: 'First Name',
+      type: 'text',
+      placeholder: '',
+      initialValue: '',
     },
-    validationSchema,
-    onSubmit,
-  })
+    {
+      name:'lastName',
+      label: 'Last Name',
+      type: 'text',
+      placeholder: '',
+      initialValue: ''
+    },
+    {
+      name: 'email',
+      label: 'Email',
+      type: 'email',
+      placeholder: '',
+      initialValue: ''
+    },
+    {
+      name: 'phoneNumber',
+      label: 'Phone Number',
+      type: 'tel',
+      placeholder: '',
+      initialValue: ''
+    },
+    {
+      name: 'address',
+      label: 'Address',
+      type: 'text',
+      as: 'textarea',
+      placeholder: '',
+      initialValue: ''
+    },
 
-  console.log(errors)
-
-
+  ]
 
   return (
     <div className="form-page join-us-page">
@@ -75,37 +119,15 @@ const JoinUs = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 image-col">
-            <OptimizedImage src="/assets/abstract-4.jpg" className='form-image' />
+          <div className="col-lg-6 image-col illustration-col">
+            <OptimizedImage src="/assets/welcome-illustration.png" className='form-image' />
           </div>
-          <form className="col-lg-6 content" onSubmit={handleSubmit}>
-            <h2>Discover Your Spiritual Home</h2>
-            <p>Join a vibrant community dedicated to faith, fellowship, and service.</p>
-            <ul className='inputs'>
-              <li className=''><label htmlFor="firstName">First Name:</label><input type="text" id="firstName" value={values.firstName} onChange={handleChange} onBlur={handleBlur} /></li>
-              <li className=''><label htmlFor="lastName">Last Name:</label><input type="text" id="lastName" value={values.lastName} onChange={handleChange} onBlur={handleBlur} /></li>
-              <li className=''><label htmlFor="email">Email:</label><input type="email" id="email" value={values.email} onChange={handleChange} onBlur={handleBlur} /></li>
-              <li className=''><label htmlFor="phoneNumber">Phone Number:</label><input type="tel" id="phoneNumber" value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} /></li>
-              <li className='text-area'>
-                <label htmlFor="prayerRequest">Details: *</label>
-                <textarea
-                  id="prayerRequest"
-                  cols="30"
-                  rows="4"
-                  value={values.prayerRequest}
-                  onChange={handleChange}
-                  className={
-                    errors.prayerRequest && touched.prayerRequest ? "input-error" : ""
-                  }
-                />
-                <span className="error">{errors.prayerRequest}</span>
-              </li>
-              <p className='text-start'>* indicates a required field.</p>
+          <div className="col-lg-6 form-col">
+            <h2 className='text-center'>Are you interested in joining us?</h2>
+            <p className='text-center mt-2'>We are happy to have you. Kindly give us some info below.</p>
 
-            </ul>
-
-            {!isSubmitting && <button type="submit" value="Send" className="btn-green-solid mt-2">Submit Prayer Request </button>}
-          </form>
+            <FormComponent items={items} onSubmit={onSubmit} validationSchema={validationSchema} submitBtnText="Become A Member"/>
+          </div>
 
         </div>
       </div>
