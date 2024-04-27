@@ -376,6 +376,15 @@
     }
 }
 
+@media screen and (max-width: 1200px) and (orientation: landscape) {
+    .home .hero {
+        height: 100vh;
+    }
+
+    .hero .content h1 {
+        font-size: 40px;
+    }
+}
 
 @media screen and (min-width: 1200px) {
 

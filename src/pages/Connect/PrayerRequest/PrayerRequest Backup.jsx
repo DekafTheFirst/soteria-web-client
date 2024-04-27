@@ -79,10 +79,10 @@ const PrayerRequest = () => {
   console.log(touched)
 
   const items = [
-    {name: 'firstName', type: 'text', placeholder:'', initialValue: ' '},
-    {name: 'lastName', type: 'text', placeholder:'', initialValue: ' '},
-    {name: 'email', type: 'email', placeholder:'', initialValue: ' '},
-    {name: 'phoneNumber', type: 'tel', placeholder:'', initialValue: ' '},
+    {name: 'firstName', type: 'text', placeholder:'', initialValue: ''},
+    {name: 'lastName', type: 'text', placeholder:'', initialValue: ''},
+    {name: 'email', type: 'email', placeholder:'', initialValue: ''},
+    {name: 'phoneNumber', type: 'tel', placeholder:'', initialValue: ''},
   ]
 
   return (

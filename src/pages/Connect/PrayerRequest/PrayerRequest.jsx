@@ -47,42 +47,66 @@ const PrayerRequest = () => {
   }
 
   const validationSchema = yup.object().shape({
-    firstName: yup.string().required("this field is required"),
-    lastName: yup.string().required("this field is required"),
+    firstName: yup.string(),
+    lastName: yup.string(),
     email: yup.string().email(),
     phoneNumber: yup.string().matches(
       /^(\+\d{1,3})?(\d{10,14})$/, // Regex for phone number with or without country code
       'Invalid phone number'
     ),
-    prayerRequest: yup.string().required("Please fill in the details about your prayer request")
+    prayerRequest: yup.string().required("prayer request required")
   })
 
-  const initialValues = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-  };
-  
-  const { handleBlur, handleChange, handleSubmit, values, errors, touched, isSubmitting } = useFormik({
-    initialValues: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      phoneNumber: '',
-      prayerRequest: '',
-    },
-    validationSchema,
-    onSubmit,
-  })
 
-  console.log(touched)
+
+
+  // const initialValues = {
+  //   firstName: '',
+  //   lastName: '',
+  //   email: '',
+  //   phoneNumber: '',
+  //   details: '',
+  // };
+
 
   const items = [
-    {name: 'firstName', type: 'text', placeholder:'', initialValue: ' '},
-    {name: 'lastName', type: 'text', placeholder:'', initialValue: ' '},
-    {name: 'email', type: 'email', placeholder:'', initialValue: ' '},
-    {name: 'phoneNumber', type: 'tel', placeholder:'', initialValue: ' '},
+    {
+      name: 'firstName',
+      label: 'First Name',
+      type: 'text',
+      placeholder: '',
+      initialValue: '',
+    },
+    {
+      name:'lastName',
+      label: 'Last Name',
+      type: 'text',
+      placeholder: '',
+      initialValue: ''
+    },
+    {
+      name: 'email',
+      label: 'Email',
+      type: 'email',
+      placeholder: '',
+      initialValue: ''
+    },
+    {
+      name: 'phoneNumber',
+      label: 'Phone Number',
+      type: 'tel',
+      placeholder: '',
+      initialValue: ''
+    },
+    {
+      name: 'prayerRequest',
+      label: 'Prayer Request',
+      type: 'text',
+      as: 'textarea',
+      placeholder: '',
+      initialValue: ''
+    },
+
   ]
 
   return (
@@ -94,68 +118,11 @@ const PrayerRequest = () => {
           <div className="col-lg-6 image-col">
             <OptimizedImage src="/assets/abstract-4.jpg" className='form-image' />
           </div>
-          {/* <form className="col-lg-6 content" onSubmit={handleSubmit}>
+          <div className="col-lg-6 form-col">
             <h2>Do you have a prayer request?</h2>
             <p>Tell us about it and we will join you in prayer.</p>
 
-            <ul className='inputs'>
-              <li className=''>
-                <label htmlFor="firstName">First Name:</label>
-                <input
-                  type="text"
-                  id="firstName"
-                  value={values.firstName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.firstName && touched.firstName ? "input-error" : ""
-                  }
-                />
-                <span className="error">{errors.firstName && touched.firstName && errors.firstName}</span>
-              </li>
-              <li>
-                <label htmlFor="lastName">Last Name:</label>
-                <input
-                  type="text"
-                  id="lastName"
-                  value={values.lastName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.lastName && touched.lastName ? "input-error" : ""
-                  }
-                />
-                <span className="error">{errors.lastName && touched.lastName && errors.lastName}</span>
-
-              </li>
-              <li className=''><label htmlFor="email">Email:</label><input type="email" id="email" value={values.email} onChange={handleChange} onBlur={handleBlur} /></li>
-              <li className=''><label htmlFor="phoneNumber">Phone Number:</label><input type="tel" id="phoneNumber" value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} /></li>
-              <li className='text-area'>
-                <label htmlFor="prayerRequest">Details: *</label>
-                <textarea
-                  id="prayerRequest"
-                  cols="30"
-                  rows="4"
-                  value={values.prayerRequest}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={
-                    errors.prayerRequest && touched.prayerRequest ? "input-error" : ""
-                  }
-                />
-                <span className="error">{errors.prayerRequest && touched.prayerRequest && errors.prayerRequest}</span>
-
-              </li>
-              <p className='text-start'>* indicates a required field.</p>
-            </ul>
-
-            {!isSubmitting && <button type="submit" value="Send" className="btn-green-solid mt-2">Submit Prayer Request </button>}
-          </form> */}
-          <div className="col-lg-6 content">
-            <h2>Do you have a prayer request?</h2>
-            <p>Tell us about it and we will join you in prayer.</p>
-
-            <FormComponent items={items}/>
+            <FormComponent items={items} onSubmit={onSubmit} validationSchema={validationSchema} />
           </div>
 
         </div>
