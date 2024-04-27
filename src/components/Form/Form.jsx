@@ -18,7 +18,7 @@ const FormComponent = ({ items, onSubmit, validationSchema }) => {
                         ))}
 
 
-                        <button type="submit" className="btn-green-solid" disabled={isSubmitting}>
+                        <button type="submit" className="btn-green-solid submit-btn" disabled={isSubmitting}>
                             Submit
                         </button>
                     </Form>

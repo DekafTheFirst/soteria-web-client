@@ -244,7 +244,10 @@ section {
 } */
 
 
-
+.form-page .form-col {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
 
 
 
@@ -264,7 +267,13 @@ form .input-item {
 }
 
 form .input-item.text-area {
-    
+    grid-column: 1 /-1;
+}
+
+form .submit-btn {
+    grid-column: 1/-1;
+    justify-self: center;
+    width: 100%;
 }
 
 
@@ -694,6 +703,8 @@ footer .page-btn:hover {
         width: 100%;
     }
 
+    
+
 
 }
 
@@ -717,6 +728,10 @@ footer .page-btn:hover {
         padding: 40px 25px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+    }
+
+    form .submit-btn {
+        width: auto;
     }
 }
 
