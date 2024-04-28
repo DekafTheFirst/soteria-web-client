@@ -20,6 +20,7 @@ import PrayerRequest from './pages/Connect/PrayerRequest/PrayerRequest';
 import AboutUs from './pages/AboutUs/AboutUs';
 import JoinUs from './pages/JoinUs/JoinUs';
 import ContactUs from './pages/Connect/ContactUs/ContactUs';
+import Directorates from './pages/AboutUs/Directorates/Directorates';
 
 
 const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s"
@@ -78,7 +79,16 @@ function App() {
         },
         {
           path: "/about-us",
-          element: <AboutUs />,
+          children: [
+            {
+              index: true,
+              element: <AboutUs />
+            },
+            {
+              path: "directorates",
+              element: <Directorates />,
+            },
+          ]
         },
         {
           path: "/connect",
