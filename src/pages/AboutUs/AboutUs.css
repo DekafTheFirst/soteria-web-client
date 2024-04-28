@@ -77,6 +77,8 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    max-width: 90%;
+    margin: auto;
 }
 
 .about-us-page .row.special.values .list .value-card .card-content>* {
@@ -106,7 +108,7 @@
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    
+
     grid-gap: 30px;
     margin-top: 30px;
 }
@@ -120,18 +122,61 @@
     gap: 20px;
     background-color: var(--veryLightGray);
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
     aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
 }
 
-.about-us-page .row.special.directorates .list .directorate-card .card-content{
+.about-us-page .row.special.directorates .list .directorate-card:hover {
+    border: 1px solid var(--forestGreen);
+    cursor: pointer;
+   
+}
+
+.about-us-page .row.special.directorates .list .directorate-card .go-corner {
+    background-color: #00838d;
+    height: 100%;
+    width: 35px;
+    padding-right: 9px;
+    border-radius: 0;
+    transform: skew(8deg);
+    position: absolute;
+    top: 0;
+    right: -50px;
+    align-items: start;
+    background-image: linear-gradient(-45deg,  var(--gray)  1%, var(--forestGreen) 100%);
+    transition: all 0.2s ease-out;
+}
+
+.about-us-page .row.special.directorates .list .directorate-card .go-corner .go-arrow {
+    transform: skew(-8deg);
+    margin-left: -2px;
+    font-size: 14px;
+    margin-top: 3px;
+    margin-left: 3px;
+    opacity: 0;
+}
+
+.about-us-page .row.special.directorates .list .directorate-card:hover .go-corner {
+   right: -20px;
+}
+
+.about-us-page .row.special.directorates .list .directorate-card:hover .go-arrow {
+    opacity: 1;
+    color: var(--white);
+}
+
+.about-us-page .row.special.directorates .list .directorate-card .card-content {
     margin: auto;
 }
-.about-us-page .row.special.directorates .list .directorate-card .card-content .title{
+
+.about-us-page .row.special.directorates .list .directorate-card .card-content .title {
     color: var(--forestGreen);
 }
 
-.about-us-page .row.special.directorates .list .directorate-card .card-content p{
+.about-us-page .row.special.directorates .list .directorate-card .card-content p {
     color: var(--gray);
     font-size: 14px;
 }
@@ -140,8 +185,6 @@
     text-align: center;
 }
 
-.about-us-page .row.special.directorates .list .directorate-card .icon {
-}
 
 
 
@@ -179,7 +222,7 @@
 .about-us-page .accordion-button:not(.collapsed) {
     color: var(--cl--6--);
     background-color: var(--cl--3--);
-    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .about-us-page .accordion-button:focus {
@@ -283,9 +326,9 @@
 }
 
 @media screen and (max-width: 567px) {
-    .about-us-page .row.special.directorates .list  {
+    .about-us-page .row.special.directorates .list {
         padding: 0 30px;
-        
+
     }
 
     /* .about-us-page .row.special.directorates .list .directorate-card {
@@ -304,6 +347,11 @@
 
     .about-us-page .row {
         gap: 0;
+    }
+
+    .about-us-page .row.special.leadership .image-col .image {
+        padding: 0;
+        margin-top: 0;
     }
 
     .about-us-page .row .image-col .image {

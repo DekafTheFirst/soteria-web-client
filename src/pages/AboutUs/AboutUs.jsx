@@ -2,8 +2,26 @@ import React from 'react'
 import "./AboutUs.css"
 import OptimizedImage from '../../components/OptimizedImage/OptimizedImage'
 import { Diversity3, EmojiObjects, MenuBook, MusicNote, Security, VolunteerActivism, Whatshot } from '@mui/icons-material'
+import { useNavigate } from 'react-router-dom';
+
+const directoratesData = [
+  { title: 'Prayer', slug: 'prayer', description: 'Join us in fervent prayer', icon: <MenuBook fontSize='large' /> },
+  { title: 'Community', slug: 'community', description: 'Evangelism and Community Engagement', icon: <MusicNote fontSize='large' /> },
+  { title: 'First Impression', slug: 'first-impression', description: 'Creating welcoming environments', icon: <Security fontSize='large' /> },
+  { title: 'Retention and Membership', slug: 'retention-membership', description: 'Transforming visitors into members', icon: <Diversity3 fontSize='large' /> },
+  { title: 'Worship and Creative Arts', slug: 'worship-creative-arts', description: 'Expressive worship experiences', icon: <Whatshot fontSize='large' /> },
+  { title: 'Media', slug: 'media', description: 'Enhancing visual and auditory experiences', icon: <VolunteerActivism fontSize='large' /> },
+  { title: 'Finance (Chayil)', slug: 'finance', description: 'Stewarding God\'s resources wisely', icon: <EmojiObjects fontSize='large' /> },
+  { title: 'Operations', slug: 'operations', description: 'Efficient management of operations', icon: <EmojiObjects fontSize='large' /> },
+  { title: 'Missions', slug: 'missions', description: 'Missions, Church Planting, and International Relations', icon: <EmojiObjects fontSize='large' /> },
+  { title: 'So-KK', slug: 'so-kk', description: 'Soteria King’s Kids', icon: <EmojiObjects fontSize='large' /> },
+  { title: 'Catalyst', slug: 'catalyst', description: 'Empowering youth for Christ', icon: <EmojiObjects fontSize='large' /> },
+  { title: 'F.L.A.M.E', slug: 'flame', description: 'Family Life and Marriage Enrichment', icon: <EmojiObjects fontSize='large' /> },
+  { title: 'SoCARE', slug: 'socare', description: 'SOTERIA CARE GROUP', icon: <EmojiObjects fontSize='large' /> },
+];
 
 const AboutUs = () => {
+  const navigate = useNavigate()
   return (
     <div className="about-us-page">
       <div className="container">
@@ -83,6 +101,8 @@ const AboutUs = () => {
 
           </div>
         </div>
+
+        {/* Leadership */}
         <div className="row special leadership">
           <div className="col-md-6 text-col">
             <span>Leadership</span>
@@ -90,7 +110,8 @@ const AboutUs = () => {
             <p>Soteria Church is led by Drs Chuka and Ndidi Anude, dedicated pastors with a heart for God and a passion for seeing lives transformed by His grace. Under their leadership, our church continues to grow and impact our community with the love of Christ.</p>
           </div>
           <div className=" col-md-6 image-col">
-            <OptimizedImage src="assets/pastor-chuka-and-ndidi.jpg" className="image" />
+            <OptimizedImage src="/assets/pastor-chuka-and-ndidi.jpg" className="image" />
+            
           </div>
 
         </div>
@@ -102,105 +123,20 @@ const AboutUs = () => {
             <h4 className='title'>The Council of Servant Leaders (COSEL) </h4>
           </div>
           <div className="list">
-            <div className="directorate-card">
-              <MenuBook className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>Prayer</h6>
-                <p>Join us in fervent prayer</p>
+            {directoratesData.map((item) => (
+              <div className={`directorate-card`} onClick={() => navigate('/about-us/directorates')}>
+                {item.icon}
+                <div className="card-content">
+                  <h6 className='title'>{item.title}</h6>
+                  <p>{item.description}</p>
+                  <div class="go-corner" href="#">
+                    <div class="go-arrow">
+                      →
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="directorate-card">
-              <MusicNote className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>Community</h6>
-                <p>Evangelism and Community Engagement</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <Security className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>First Impression</h6>
-                <p>Creating welcoming environments</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <Diversity3 className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>Retention and Membership</h6>
-                <p>Transforming visitors into members</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <Whatshot className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>Worship and Creative Arts</h6>
-                <p>Expressive worship experiences</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <VolunteerActivism className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>Media</h6>
-                <p>Enhancing visual and auditory experiences</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <EmojiObjects className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>Finance (Chayil)</h6>
-                <p>Stewarding God's resources wisely</p>
-              </div>
-            </div>
-            
-            <div className="directorate-card">
-              <EmojiObjects className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>Operations</h6>
-                <p>Efficient management of operations</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <EmojiObjects className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>Missions</h6>
-                <p>Missions, Church Planting, and International Relations</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <EmojiObjects className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>So-KK</h6>
-                <p>(Soteria King’s Kids)</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <EmojiObjects className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>Catalyst</h6>
-                <p>Empowering youth for Christ</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <EmojiObjects className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>F.L.A.M.E</h6>
-                <p> Family Life and Marriage Enrichment</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <EmojiObjects className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>F.L.A.M.E</h6>
-                <p> Family Life and Marriage Enrichment</p>
-              </div>
-            </div>
-            <div className="directorate-card">
-              <EmojiObjects className='icon' fontSize='large' />
-              <div className="card-content">
-                <h6 className='title'>SoCARE</h6>
-                <p>SOTERIA CARE GROUP</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
