@@ -4,6 +4,7 @@ import EventCard from '../../components/EventCard/EventCard'
 import { Link, useLocation } from 'react-router-dom'
 import OptimizedImage from '../../components/OptimizedImage/OptimizedImage'
 import { CircularProgress } from '@mui/material'
+import ConnectCard from '../../components/ConnectCard/ConnectCard'
 
 const items = [
   { title: "Prayer Requests", route: '/connect/prayer-requests', desc: 'Submit your prayer requests. And we will pray with you very very soon. And we need a verse for the swifties', imgUrl: '/assets/abstract-4.jpg' },
@@ -13,25 +14,7 @@ const items = [
   
 ]
 
-const ConnectCard = ({ item }) => {
-  const location = useLocation()
-  console.log(location)
-  return (
-    <Link className="card-component connect-card" to={
-      {
-        pathname: `${item.route}`,
 
-      }
-    }>
-      <OptimizedImage src={`${item.imgUrl}`} className='img' />
-      <h5 className='title'>
-        {item.title}
-      </h5>
-      <p className='desc'>{`${item.desc.length < 80 ? item.desc : `${item.desc.substring(0, 80)}...` } `}</p>
-    </Link>
-  )
-
-}
 const Connect = () => {
   return (
     <div className='connect-page'>

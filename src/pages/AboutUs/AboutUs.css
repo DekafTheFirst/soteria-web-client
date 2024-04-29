@@ -122,8 +122,7 @@
     gap: 20px;
     background-color: var(--veryLightGray);
     border-radius: 8px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid transparent;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    
     aspect-ratio: 1 / 1;
     overflow: hidden;
     position: relative;
@@ -185,9 +184,25 @@
     text-align: center;
 }
 
+/* Connect */
+.about-us-page .row.special.connect .cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 35px;
+    margin-top: 20px;
+}
+
+.about-us-page .row.special.connect .loader-wrapper {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
-
+/* Accordion */
 .about-us-page .accordion-item .accordion-list {
     display: flex;
     flex-direction: column;

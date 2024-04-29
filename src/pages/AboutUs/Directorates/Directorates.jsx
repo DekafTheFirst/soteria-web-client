@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import "./Directorates.css"
 import OptimizedImage from '../../../components/OptimizedImage/OptimizedImage'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Diversity3, EmojiObjects, MenuBook, MusicNote, Security, VolunteerActivism, Whatshot } from '@mui/icons-material'
 
 export const directoratesData = [
@@ -126,70 +126,14 @@ export const directoratesData = [
 ];
 
 const Directorates = () => {
+
   const slug = useLocation().state?.slug || directoratesData[0].slug
-  
   const directorate = directoratesData.filter((item) => item.slug === slug)[0]
-   
+  console.log(directorate)
+
   const description = { __html: directorate.description }
-
-
-  // Filter Logic
-  const [currentFilter, setCurrentFilter] = useState(directorate.slug)
-  const handleFilterClick = (filter) => {
-    setCurrentFilter(filter)
-  }
-  
-
-
-
-  const filterRef = useRef(null);
-  const [filterHeight, setFilterHeight] = useState(0);
-
-  useEffect(() => {
-    if (filterRef.current) {
-      const height = filterRef.current.clientHeight;
-      setFilterHeight(height);
-    }
-  }, []);
-
-
-
-  // Logic For Handling Scroll
-  const [isSticky, setIsSticky] = useState(false);
-
-
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const navbarHeight = document.querySelector('.navbar').offsetHeight; // Height of the navbar
-      const bannerHeight = document.querySelector('.banner').offsetHeight;
-      const filterOffset = bannerHeight - navbarHeight;
-      // The isn't the true offset value but the one i'll be using to give space for the navbar since the navbar is also sticky.
-
-      setIsSticky(() => {
-        if (window.scrollY > filterOffset) {
-          return true
-        }
-      });
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
   return (
     <div className="directorates-page">
-      <ul className={`filter ${isSticky ? 'sticky' : ''}`} ref={filterRef}>
-        <div className="container-fluid">
-          {directoratesData.map((item, index) => (
-            <li className={`filter-item ${currentFilter == item.slug ? "active" : ""}`} key={index} onClick={() => handleFilterClick(item.slug)}>{item.title}</li>
-          ))}
-        </div>
-      </ul>
-
       <div className="container-fluid">
         <div className="text-col">
           <span>Directorate of</span>
@@ -198,6 +142,7 @@ const Directorates = () => {
         </div>
         <OptimizedImage src={directorate.imgUrl} className="image" />
 
+        <Link to="/about-us" className='learn-more'>Learn more about our other directorates</Link>
       </div>
     </div>
   )

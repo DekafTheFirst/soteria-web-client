@@ -1,78 +1,17 @@
-.directorates-page .directorate-info .container-fluid {
+
+.directorates-page .container-fluid{
     margin-top: 70px;
     margin-bottom: 70px;
-    
 
 }
-
 .directorates-page {
     flex-direction: row;
     align-items: center;
 }
 
-.directorates-page>* {
+.directorates-page >* {
     padding: 0;
 }
-
-
-/* Filter */
-.directorates-page .filter {
-    border-bottom: 1.5px solid var(--lightGray);
-
-}
-
-
-.directorates-page .filter .container-fluid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    max-width: unset;
-    width: 100%;
-}
-
-.directorates-page .filter .filter-item {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--green);
-    padding: 7px 25px;
-    border-radius: 999px;
-    font-weight: 500;
-    color: var(--green);
-}
-
-.directorates-page .filter .filter-item.active {
-    background-color: var(--green);
-    color: var(--white);
-}
-
-
-.directorates-page .filter .filter-item:not(.active):hover {
-    background-color: var(--lightGray);
-    cursor: pointer;
-}
-
-
-.filter {
-    position: relative;
-    /* Initial position */
-    /* Additional styling */
-    background-color: var(--white);
-}
-
-.filter.sticky {
-    position: fixed;
-    top: var(--nav-height);
-    width: 100%;
-    z-index: 10;
-    transition: all .3s ease-in;
-    /* Ensure the filter is above other content */
-    /* Additional styling for when it's sticky */
-}
-
 
 .directorates-page .text-col {
     display: flex;
@@ -80,7 +19,7 @@
     justify-content: center;
 }
 
-.directorates-page .text-col .description {
+.directorates-page  .text-col .description {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -88,7 +27,7 @@
 
 }
 
-.directorates-page span {
+.directorates-page  span {
     color: var(--forestGreen);
     text-transform: capitalize;
     font-weight: 600;
@@ -103,6 +42,11 @@
 }
 
 
+.directorates-page .learn-more {
+    margin-top: 20px;
+    color: var(--forestGreen);
+}
+
 
 
 
@@ -112,16 +56,16 @@
         max-width: 1000px;
     }
 
-    .directorates-page .text-col {
+    .directorates-page  .text-col {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
+    
+    
 
-
-
-    .directorates-page {
+    .directorates-page  {
         gap: 0;
     }
 }
