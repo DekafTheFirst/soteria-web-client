@@ -1,65 +1,127 @@
-
-.directorates-page .container-fluid{
+.directorates-page .directorate-info .container-fluid {
     margin-top: 70px;
     margin-bottom: 70px;
+    
 
 }
-.directorates-page .row{
+
+.directorates-page {
     flex-direction: row;
     align-items: center;
 }
 
-.directorates-page .row>* {
+.directorates-page>* {
     padding: 0;
 }
 
-.directorates-page .row .text-col {
+
+/* Filter */
+.directorates-page .filter {
+    border-bottom: 1.5px solid var(--lightGray);
+
+}
+
+
+.directorates-page .filter .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: unset;
+    width: 100%;
+}
+
+.directorates-page .filter .filter-item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--green);
+    padding: 7px 25px;
+    border-radius: 999px;
+    font-weight: 500;
+    color: var(--green);
+}
+
+.directorates-page .filter .filter-item.active {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+
+.directorates-page .filter .filter-item:not(.active):hover {
+    background-color: var(--lightGray);
+    cursor: pointer;
+}
+
+
+.filter {
+    position: relative;
+    /* Initial position */
+    /* Additional styling */
+    background-color: var(--white);
+}
+
+.filter.sticky {
+    position: fixed;
+    top: var(--nav-height);
+    width: 100%;
+    z-index: 10;
+    transition: all .3s ease-in;
+    /* Ensure the filter is above other content */
+    /* Additional styling for when it's sticky */
+}
+
+
+.directorates-page .text-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
 }
 
-.directorates-page .row span {
+.directorates-page .text-col .description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+
+}
+
+.directorates-page span {
     color: var(--forestGreen);
     text-transform: capitalize;
     font-weight: 600;
 }
 
-.directorates-page .row .image-col {
-}
 
-.directorates-page .row .image-col .image {
+
+.directorates-page .image {
     padding: 0;
     margin-top: 30px;
-    aspect-ratio: 5/4;
+    aspect-ratio: 16/9;
 }
+
+
 
 
 
 @media screen and (min-width: 768px) {
 
-    .directorates-page .container {
+    .directorates-page .container-fluid {
         max-width: 1000px;
-        padding: 0;
-        margin-top: 0;
-        gap: 0;
     }
 
-    .directorates-page .row .text-col {
+    .directorates-page .text-col {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 50px;
     }
 
-    .directorates-page .row .image-col .image  {
-        margin-top: 0;
-    }
-    
-    
 
-    .directorates-page .row {
+
+
+    .directorates-page {
         gap: 0;
     }
 }

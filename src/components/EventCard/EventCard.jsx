@@ -9,21 +9,16 @@ import { formatDate, formatTime } from '../../utils/time';
 
 const EventCard = ({ eventObject }) => {
     const event = eventObject.attributes;
-
+    const navigate = useNavigate()
     return (
-        <Link className="card-component event-card" to={
-            {
-                pathname: `/events/${event.slug}`,
-               
-            }
-        } state={event}>
+        <div className="card-component event-card" onClick={() => navigate(`/events/${eventObject.id}`, { state: { event } })}>
             <OptimizedImage src={`${import.meta.env.VITE_BASE_URL}${event.image.data.attributes.formats.small.url}`} className='img' />
             <h5 className='title'>
                 {event.title}
             </h5>
             <span className='date'><TodayIcon /> {formatDate(event.date)}</span>
             <span className='date'><AccessTimeIcon /> {formatTime(event.time)}</span>
-        </Link>
+        </div>
     )
 }
 

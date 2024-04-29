@@ -4,6 +4,9 @@
     flex-direction: column;
 }
 
+.event-card:hover {
+    cursor: pointer;
+}
 
 .event-card .img{
     width: 100% !important;

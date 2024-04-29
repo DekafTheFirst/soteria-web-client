@@ -7,16 +7,6 @@ export const menuItemsData = [
     {
         title: 'About Us',
         url: '/about-us',
-        submenu: [
-            {
-                title: 'Meet Soteria Church',
-                url: '',
-            },   
-            {
-                title: 'Directorates of Soteria Church',
-                url: '/directorates'
-            },
-        ]
     },
     {
         title: 'Connect',

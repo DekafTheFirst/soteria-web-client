@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
 
 import './Home.css'
 
@@ -21,6 +21,7 @@ import { Skeleton } from '@mui/material';
 
 const Home = () => {
   const [events, setEvents] = useState(null)
+  const location = useLocation()
 
   useEffect(() => {
     const fetchEventsData = async () => {

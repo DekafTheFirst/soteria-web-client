@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Connect.css"
 import EventCard from '../../components/EventCard/EventCard'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import OptimizedImage from '../../components/OptimizedImage/OptimizedImage'
 import { CircularProgress } from '@mui/material'
 
@@ -14,6 +14,8 @@ const items = [
 ]
 
 const ConnectCard = ({ item }) => {
+  const location = useLocation()
+  console.log(location)
   return (
     <Link className="card-component connect-card" to={
       {

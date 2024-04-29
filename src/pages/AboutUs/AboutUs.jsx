@@ -1,27 +1,17 @@
 import React from 'react'
 import "./AboutUs.css"
 import OptimizedImage from '../../components/OptimizedImage/OptimizedImage'
-import { Diversity3, EmojiObjects, MenuBook, MusicNote, Security, VolunteerActivism, Whatshot } from '@mui/icons-material'
 import { useNavigate } from 'react-router-dom';
+import { directoratesData } from './Directorates/Directorates';
+import { Diversity3, EmojiObjects, MenuBook, MusicNote, Security, VolunteerActivism, Whatshot } from '@mui/icons-material'
 
-const directoratesData = [
-  { title: 'Prayer', slug: 'prayer', description: 'Join us in fervent prayer', icon: <MenuBook fontSize='large' /> },
-  { title: 'Community', slug: 'community', description: 'Evangelism and Community Engagement', icon: <MusicNote fontSize='large' /> },
-  { title: 'First Impression', slug: 'first-impression', description: 'Creating welcoming environments', icon: <Security fontSize='large' /> },
-  { title: 'Retention and Membership', slug: 'retention-membership', description: 'Transforming visitors into members', icon: <Diversity3 fontSize='large' /> },
-  { title: 'Worship and Creative Arts', slug: 'worship-creative-arts', description: 'Expressive worship experiences', icon: <Whatshot fontSize='large' /> },
-  { title: 'Media', slug: 'media', description: 'Enhancing visual and auditory experiences', icon: <VolunteerActivism fontSize='large' /> },
-  { title: 'Finance (Chayil)', slug: 'finance', description: 'Stewarding God\'s resources wisely', icon: <EmojiObjects fontSize='large' /> },
-  { title: 'Operations', slug: 'operations', description: 'Efficient management of operations', icon: <EmojiObjects fontSize='large' /> },
-  { title: 'Missions', slug: 'missions', description: 'Missions, Church Planting, and International Relations', icon: <EmojiObjects fontSize='large' /> },
-  { title: 'So-KK', slug: 'so-kk', description: 'Soteria King’s Kids', icon: <EmojiObjects fontSize='large' /> },
-  { title: 'Catalyst', slug: 'catalyst', description: 'Empowering youth for Christ', icon: <EmojiObjects fontSize='large' /> },
-  { title: 'F.L.A.M.E', slug: 'flame', description: 'Family Life and Marriage Enrichment', icon: <EmojiObjects fontSize='large' /> },
-  { title: 'SoCARE', slug: 'socare', description: 'SOTERIA CARE GROUP', icon: <EmojiObjects fontSize='large' /> },
-];
 
 const AboutUs = () => {
   const navigate = useNavigate()
+  const itemToPass = {
+    name: "dekaf"
+  }
+
   return (
     <div className="about-us-page">
       <div className="container">
@@ -111,7 +101,7 @@ const AboutUs = () => {
           </div>
           <div className=" col-md-6 image-col">
             <OptimizedImage src="/assets/pastor-chuka-and-ndidi.jpg" className="image" />
-            
+
           </div>
 
         </div>
@@ -123,20 +113,22 @@ const AboutUs = () => {
             <h4 className='title'>The Council of Servant Leaders (COSEL) </h4>
           </div>
           <div className="list">
-            {directoratesData.map((item) => (
-              <div className={`directorate-card`} onClick={() => navigate('/about-us/directorates')}>
-                {item.icon}
-                <div className="card-content">
-                  <h6 className='title'>{item.title}</h6>
-                  <p>{item.description}</p>
-                  <div class="go-corner" href="#">
-                    <div class="go-arrow">
-                      →
+            {directoratesData.map((item, index) => {
+              console.log(item)
+              return (
+                <div className={`directorate-card`} key={index} onClick={() => navigate('/about-us/directorates', { state: { slug: item.slug } })}>
+                  {item.icon}
+                  <div className="card-content">
+                    <h6 className='title'>{item.title}</h6>
+                    <div className="go-corner" href="#">
+                      <div className="go-arrow">
+                        →
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
