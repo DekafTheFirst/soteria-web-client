@@ -32,7 +32,7 @@ const Home = () => {
     if (!events) fetchEventsData()
   }, [events])
 
-
+  const upcomingEvent =  events && events[0].attributes
 
   return (
     <div className="home">
@@ -74,7 +74,8 @@ const Home = () => {
                 <div className="register"><Link>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>
               </div>
               <div className="countdown">
-                <Timer targetDateStr={"2024-04-19T20:48:00"} />
+                {upcomingEvent && <Timer targetDateStr={`${upcomingEvent?.date}T${upcomingEvent?.time}`} />}
+                
               </div>
             </div>
           </div>

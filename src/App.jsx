@@ -4,6 +4,9 @@ import {
   Outlet,
   useLocation,
   useParams,
+  isRouteErrorResponse,
+  useRoutes,
+  useRouteError,
 
 } from 'react-router-dom';
 import Home from './pages/Home/Home';
@@ -21,6 +24,11 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import JoinUs from './pages/JoinUs/JoinUs';
 import ContactUs from './pages/Connect/ContactUs/ContactUs';
 import Directorates from './pages/AboutUs/Directorates/Directorates';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import Community from './pages/Community/Community';
+import Outreaches from './pages/Community/Outreaches/Outreaches';
+import PlanYourVisit from './pages/PlanYourVisit/PlanYourVisit';
+import MobileApp from './pages/Mobile-App/MobileApp';
 
 
 const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s"
@@ -38,7 +46,6 @@ const Layout = ({ scrolled }) => {
 
   // Check if the current pathname matches any specific route
   // const isSpecial = routesWithSpecialHeader.find(route => route === pathname) !== undefined;
-
 
   return (
     <div className="app">
@@ -72,68 +79,86 @@ function App() {
     {
       path: '/',
       element: <Layout scrolled={scrolled} />,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/about-us",
-          children: [
+      children:  [
             {
-              index: true,
-              element: <AboutUs />
+              path: "",
+              element: <Home />,
             },
             {
-              path: "directorates",
-              element: <Directorates />,
-            },
-          ]
-        },
-        {
-          path: "/connect",
-          children: [
-            {
-              index: true,
-              element: <Connect />,
+              path: "*",
+              element: <NotFoundPage />,
             },
             {
-              path: "live-stream",
-              element: <ExternalRedirectPage />,
+              path: "/about-us",
+              children: [
+                {
+                  index: true,
+                  element: <AboutUs />
+                },
+                {
+                  path: "directorates",
+                  element: <Directorates />,
+                },
+              ]
             },
             {
-              path: "sermons",
-              element: <ExternalRedirectPage />,
+              path: "/connect",
+              children: [
+                {
+                  index: true,
+                  element: <Connect />,
+                },
+                {
+                  path: "live-stream",
+                  element: <ExternalRedirectPage />,
+                },
+                {
+                  path: "sermons",
+                  element: <ExternalRedirectPage />,
+                },
+                {
+                  path: "prayer-requests",
+                  element: <PrayerRequest />,
+                },
+                {
+                  path: "contact-us",
+                  element: <ContactUs />,
+                },
+              ],
             },
             {
-              path: "prayer-requests",
-              element: <PrayerRequest />,
+              path: "/join-us",
+              element: <JoinUs />,
             },
             {
-              path: "contact-us",
-              element: <ContactUs />,
+              path: "/events",
+              element: <Events />,
             },
-          ],
-        },
-        {
-          path: "/join-us",
-          element: <JoinUs />,
-        },
-        {
-          path: "/events",
-          element: <Events />,
-        },
-        {
-          path: "/events/:eventId",
-          element: <EventDetails />, // Route for individual event pages
-        },
-
-        {
-          path: "/more/:slug",
-          element: <Events />,
-        },
-
-
+            {
+              path: "/events/:eventId",
+              element: <EventDetails />, // Route for individual event pages
+            },
+            {
+              path: "/community-engagement",
+              children: [
+                {
+                  index: true,
+                  element: <Community />,
+                },
+                {
+                  path: "outreaches",
+                  element: <Outreaches />,
+                },
+              ],
+            },
+            {
+              path: "/plan-your-visit",
+              element: <PlanYourVisit />,
+            },
+            {
+              path: "/mobile-app",
+              element: <MobileApp />,
+            },
       ]
     }
 

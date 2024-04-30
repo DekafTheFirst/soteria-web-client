@@ -122,7 +122,8 @@
     gap: 20px;
     background-color: var(--veryLightGray);
     border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
     aspect-ratio: 1 / 1;
     overflow: hidden;
     position: relative;

@@ -10,27 +10,27 @@ export const menuItemsData = [
     },
     {
         title: 'Connect',
-        url: '/connect',
+        url: "/connect",
         submenu: [
             {
                 title: 'Connect',
-                url: '',
+                url: '/connect',
             },   
             {
                 title: 'Live Stream',
-                url: '/live-stream'
+                url: '/connect/live-stream'
             },
             {
                 title: 'Sermons',
-                url: '/sermons'
+                url: '/connect/sermons'
             },
             {
                 title: 'Prayer Requests',
-                url: '/prayer-requests'
+                url: '/connect/prayer-requests'
             },
             {
                 title: 'Contact Us',
-                url: '/contact-us'
+                url: '/connect/contact-us'
             },
         ]
     },
@@ -44,11 +44,10 @@ export const menuItemsData = [
     },
     {
         title: 'More',
-        url: '/more',
         submenu: [
             {
                 title: 'Soteria In The Community',
-                url: '/community',
+                url: '/community-engagement',
             },
             {
                 title: 'Plan Your Visit',

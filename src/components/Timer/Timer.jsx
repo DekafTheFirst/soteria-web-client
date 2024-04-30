@@ -4,6 +4,7 @@ import { CircularProgress } from "@mui/material";
 const Timer = ({ targetDateStr }) => {
     const [timeRemaining, setTimeRemaining] = useState(null);
 
+
     useEffect(() => {
         // Parse the target date string into a Date object
         const targetDateLocal = new Date(targetDateStr);

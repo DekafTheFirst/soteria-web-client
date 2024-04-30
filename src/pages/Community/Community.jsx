@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Connect.css"
+import "./Community.css"
 import EventCard from '../../components/EventCard/EventCard'
 import { Link, useLocation } from 'react-router-dom'
 import OptimizedImage from '../../components/OptimizedImage/OptimizedImage'
@@ -7,17 +7,15 @@ import { CircularProgress } from '@mui/material'
 import ConnectCard from '../../components/ConnectCard/ConnectCard'
 
 const items = [
-  { title: "Prayer Requests", route: '/connect/prayer-requests', desc: 'Submit your prayer requests. And we will pray with you very very soon. ', imgUrl: '/assets/abstract-4.jpg' },
-  { title: "Become A Member", route: '/join-us', desc: 'Join Us by becoming a member', imgUrl: '/assets/abstract-5.jpg' },
-  { title: "SODIP(Soteria Discipleship)", route: '/connect/sodip', desc: 'Partake in Soteria Discipleship', imgUrl: '/assets/abstract-2.jpg' },
-
-  
+  { title: "Outreaches / Community Engagement", route: '/community-engagement/outreaches', desc: 'Soteria church loves to engage with the community. ', imgUrl: '/assets/community-outreach.jpg' },
+  { title: "July 4th (Fun in the Sun)", route: '/community-engagement/fun-in-the-sun', desc: 'Join Us to have fun in the sun on July 4th', imgUrl: '/assets/fun-in-the-sun.jpg' },
+  { title: "Vulnerable Peoples Ministry and Service", route: '/community-engagement/vulnerable-peoples-ministry-and-service', desc: 'We believe in giving back to the community and helping those around us', imgUrl: '/assets/vulnurable-people-ministry.jpg' },  
 ]
 
 
-const Connect = () => {
+const Community = () => {
   return (
-    <div className='connect-page'>
+    <div className='community-page'>
       <div className="container-fluid">
         {items ? <div className="cards">
           {items.map((item, index) => (
@@ -40,4 +38,4 @@ const Connect = () => {
   )
 }
 
-export default Connect
+export default Community

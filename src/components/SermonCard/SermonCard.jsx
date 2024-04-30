@@ -7,7 +7,6 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import ReactPlayer from 'react-player/lazy'
 
 const SermonCard = ({ sermon, shouldIncludeDescription }) => {
-    console.log(sermon)
     return (
         <div className="card-component sermon-card">
             {/* <OptimizedImage src="/assets/abstract-1.jpg" className='img' blurhash="LWH.4sD+$%kX~poeNFx]?Ht7WBxu" /> */}

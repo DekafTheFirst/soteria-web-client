@@ -1,0 +1,10 @@
+.not-found-page .container-fluid {
+    padding: 30px;
+    width: 40%;
+    margin-top: var(--nav-height);
+}
+
+.not-found-page .image {
+    height: 100%;
+    width: 100%;
+}

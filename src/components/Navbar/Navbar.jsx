@@ -23,7 +23,6 @@ const Navbar = ({ scrolled}) => {
     else {
       return false
     }
-
   }
 
   const toggleShow = () => {

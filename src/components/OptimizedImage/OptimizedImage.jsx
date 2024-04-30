@@ -51,8 +51,8 @@ const OptimizedImage = ({ src, blurhash, height, width, wrapperClassName, classN
                 //     punch={1}
                 //     className={`blurHash`}
                 // />
-                // <div className={`image-placeholder ${backgroundImage ? 'background-image':''}`} ></div>
-                <Skeleton variant="rectangular" height={"100%"} width={"100%"}  className={`image-placeholder ${backgroundImage ? 'background-image':''}`} />
+                <div className={`image-placeholder ${backgroundImage ? 'background-image':''}`} ></div>
+                // <Skeleton variant="rectangular" height={"100%"} width={"100%"}  className={`image-placeholder ${backgroundImage ? 'background-image':''}`} />
             )}
         </div>
 

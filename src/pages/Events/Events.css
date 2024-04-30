@@ -37,7 +37,7 @@
 
 
 .events-page .filter .filter-item:not(.active):hover {
-    background-color: var(--lightGray);
+    background-color: var(--veryLightGray);
     cursor: pointer;
 }
 

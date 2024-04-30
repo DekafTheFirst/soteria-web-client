@@ -1,5 +1,5 @@
 .banner {
-    height: 30vh;
+    height: 25vh;
     padding-top: calc(var(--nav-height) / 2);
     background-position: center;
     display: flex;
@@ -72,13 +72,13 @@
 
 @media screen and (min-width: 768px) {
     .banner {
-        height: 30vh;
+        height: 25vh;
     }
 }
 
 
 @media screen and (min-width: 1200px) {
     .banner {
-        height: 40vh;
+        height: 35vh;
     }
 }

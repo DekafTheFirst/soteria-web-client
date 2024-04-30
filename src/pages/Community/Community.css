@@ -1,0 +1,25 @@
+.community-page .container-fluid {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.community-page .cards {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 35px;
+    margin-top: 20px;
+}
+
+
+.community-page .loader-wrapper {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+

@@ -1,0 +1,72 @@
+.plan-your-visit-page .container {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+.plan-your-visit-page .row {
+    max-width: 1100px;
+    margin: auto;
+    gap: 10px;
+}
+
+.plan-your-visit-page .row>* {
+    padding: 0;
+}
+
+.plan-your-visit-page .row .image-col .image {
+    height: 500px;
+    width: 250px;
+    object-fit: contain;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.plan-your-visit-page .row .text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.plan-your-visit-page .row span {
+    color: var(--gold);
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+
+    .plan-your-visit-page .container {
+        max-width: 1000px;
+        padding: 0;
+        gap: 0;
+    }
+
+    .plan-your-visit-page .row {
+        gap: 0;
+    }
+
+    .plan-your-visit-page .row .image-col .image {
+        height: 100%;
+    }
+
+    .plan-your-visit-page .row .text-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .plan-your-visit-page .container {
+        max-width: 1000px;
+        padding: 0;
+        margin-bottom: 50px;
+        gap: 0;
+    }
+}

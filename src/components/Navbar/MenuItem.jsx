@@ -5,7 +5,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const MenuItem = ({item, show, setShow, navItemSpecial, isSubmenuActive}) => {
   const [dropdown, setDropdown] = useState(false)
-
   return (
     <li className={`nav-item ${navItemSpecial ? 'nav-item-special':''}`}>
         {item.submenu ? (
@@ -22,7 +21,7 @@ const MenuItem = ({item, show, setShow, navItemSpecial, isSubmenuActive}) => {
               <Dropdown menu={item} submenus={item.submenu} dropdown={dropdown} show={show} setShow={setShow} />
             </>  
         ):(
-            <NavLink  to={item.url} className={`nav-link`} onClick={()=>{setShow(false)}} end>{item.title}</NavLink>
+            <NavLink  to={item.url && item.url} className={`nav-link`} onClick={()=>{setShow(false)}} end>{item.title}</NavLink>
         )}
     </li>
   )
