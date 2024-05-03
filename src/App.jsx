@@ -84,10 +84,7 @@ function App() {
               path: "",
               element: <Home />,
             },
-            {
-              path: "*",
-              element: <NotFoundPage />,
-            },
+            
             {
               path: "/about-us",
               children: [
