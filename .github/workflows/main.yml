@@ -10,14 +10,6 @@ jobs:
     name: 🎉 Running Deployment Process
     runs-on: ubuntu-latest
     steps:
-
-    #   - name: Print Secrets
-    #     run: |
-    #         echo "SERVER: ${{secrets.FTP_SERVER}}"
-    #         echo "USERNAME: ${{secrets.FTP_USERNAME}}"
-    #         echo "PASSWORD: ${{secrets.FTP_PASSWORD}}" 
-    
-
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
     
@@ -37,3 +29,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist
+
+
