@@ -10,9 +10,17 @@ jobs:
     name: 🎉 Running Deployment Process
     runs-on: ubuntu-latest
     steps:
+
+      - name: Print Secrets
+        run: |
+            echo "SERVER: ${{secrets.FTP_SERVER}}"
+            echo "USERNAME: ${{secrets.FTP_USERNAME}}"
+            echo "PASSWORD: ${{secrets.FTP_PASSWORD}}" 
+    
+
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
-
+    
       - name: Use Node 18
         uses: actions/setup-node@v2
         with:
