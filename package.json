@@ -1,5 +1,6 @@
 {
   "name": "soteria-web-client",
+  "homepage": "https://soteriachurch.org",
   "private": true,
   "version": "0.0.0",
   "type": "module",
