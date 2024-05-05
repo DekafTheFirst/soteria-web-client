@@ -46,7 +46,7 @@ const Banner = ({ pathname, title }) => {
                     </ol>
                 </nav>
             </div>
-            <OptimizedImage src="/assets/preaching.jpg" className="background-img" alt="background-img" />
+            <OptimizedImage src="/assets/preaching-medium.jpg" className="background-img" alt="background-img" />
         </div>
     );
 };

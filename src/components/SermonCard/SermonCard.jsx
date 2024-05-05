@@ -9,7 +9,6 @@ import ReactPlayer from 'react-player/lazy'
 const SermonCard = ({ sermon, shouldIncludeDescription }) => {
     return (
         <div className="card-component sermon-card">
-            {/* <OptimizedImage src="/assets/abstract-1.jpg" className='img' blurhash="LWH.4sD+$%kX~poeNFx]?Ht7WBxu" /> */}
             <ReactPlayer url={sermon.youtubeLink} className="youtube-video" width={"100%"} height={"100%"} />
             <h4 className='title'>
                 {sermon.title}

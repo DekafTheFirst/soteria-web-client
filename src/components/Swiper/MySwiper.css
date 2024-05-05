@@ -14,6 +14,38 @@
     align-items: center;
 }
 
+.hero .hero-img-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+}
+
+.hero .swiper-slide .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
+    filter: brightness(50%);
+    background-color: var(--veryLightGray);
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-size: cover;
+}
+
+
+.hero .swiper-slide .hero-img-1 {
+    background-image: url("/assets/soteria-1-portrait.jpg");
+}
+.hero .swiper-slide .hero-img-2 {
+    background-image: url("/assets/preaching-medium-portrait.jpg");
+    
+}
+
+.hero .swiper-slide .hero-img-3 {
+    background-image: url("/assets/soteria-2-portrait.jpg");
+}
+
 .swiper-slide img {
     display: block;
     width: 100%;
@@ -31,14 +63,51 @@
     opacity: 0.9;
 }
 
-.swiper-button-prev::after, .swiper-button-next::after {
+.swiper-button-prev::after,
+.swiper-button-next::after {
     font-size: 20px;
     color: var(--white);
 }
 
+@media screen and (max-width: 768px) {
+    .hero .swiper-slide .hero-img-1 {
+        background-image: url("/assets/soteria-1.jpg");
+    }
+    .hero .swiper-slide .hero-img-2 {
+        background-image: url("/assets/preaching-medium.jpg");
+        
+    }
+    
+    .hero .swiper-slide .hero-img-3 {
+        background-image: url("/assets/soteria-2.jpg");
+    }
+}
+
+
+
 
 @media screen and (max-width: 1199px) {
-    .swiper-button-prev, .swiper-button-next {
+
+    .swiper-button-prev,
+    .swiper-button-next {
         display: none;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    .hero .hero-img-wrapper {
+        width: 45% !important;
+        height: 100% !important;
+        position: static !important;
+    }
+
+    .hero .swiper-slide .hero-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        z-index: 2;
+        filter: brightness(0.8);
+        
     }
 }

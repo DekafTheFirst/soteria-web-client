@@ -12,7 +12,6 @@ import '../../App.css'
 
 // import required modules
 import { Autoplay, EffectFade, Keyboard, Navigation, Pagination } from 'swiper/modules';
-import OptimizedImage from '../OptimizedImage/OptimizedImage';
 
 export default function App() {
   return (
@@ -21,11 +20,12 @@ export default function App() {
         pagination={{
           clickable: true
         }}
-        autoplay={{
-          delay: 2000,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false
-        }}
+        // autoplay={{
+          
+        //   delay: 2000,
+        //   disableOnInteraction: false,
+        //   pauseOnMouseEnter: false
+        // }}
         keyboard={
           true
         }
@@ -34,9 +34,9 @@ export default function App() {
         modules={[Pagination, Autoplay, EffectFade, Navigation, Keyboard]}
         className="mySwiper"
       >
-        <SwiperSlide><OptimizedImage src="/assets/sermon.jpg" style={{ width: "100%", height: "100%" }} className='hero-img' /></SwiperSlide>
-        <SwiperSlide><OptimizedImage src="/assets/wisdom-and-power.jpg" style={{ width: "100%", height: "100%" }} className='hero-img' /></SwiperSlide>
-        <SwiperSlide><OptimizedImage src="/assets/preaching.jpg" style={{ width: "100%", height: "100%" }} className='hero-img' /></SwiperSlide>
+        <SwiperSlide><div className='hero-img hero-img-1'></div></SwiperSlide>
+        <SwiperSlide><div className='hero-img hero-img-2'></div></SwiperSlide>
+        <SwiperSlide><div className='hero-img hero-img-3'></div></SwiperSlide>
 
       </Swiper>
     </>

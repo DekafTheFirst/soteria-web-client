@@ -15,7 +15,7 @@ const AboutUs = () => {
 
   const connectItems = [
     { title: "Men's Fellowship(Daniel's Men)", route: '/connect/mens-fellowship', desc: 'The Daniel’s Men is the Men’s Brotherhood and Fellowship of Soteria Church.', imgUrl: '/assets/men.jpg' },
-    { title: "Women's Fellowship(POIEMA)", route: '/connect/womens-fellowship', desc: 'Poiema (Poy- ah- mah) is the Women’s Ministry of Soteria Church. ', imgUrl: '/assets/women-breakfast.jpg' },
+    { title: "Women's Fellowship(POIEMA)", route: '/connect/womens-fellowship', desc: 'Poiema (Poy- ah- mah) is the Women’s Ministry of Soteria Church. ', imgUrl: '/assets/poima.jpg' },
     { title: "Soteria kiddies", route: '/connect/kiddies', desc: 'Kiddies time with God.', imgUrl: '/assets/soteria-kiddies.jpg' },
   ]
 
@@ -24,7 +24,7 @@ const AboutUs = () => {
       <div className="container">
         <div className="row">
           <div className=" col-md-6 image-col">
-            <OptimizedImage src="assets/abstract-1.jpg" className="image" />
+            <OptimizedImage src="assets/abstract-1-medium.jpg" className="image" />
           </div>
           <div className=" col-md-6 text-col">
             <span>Get to know us</span>
@@ -34,7 +34,7 @@ const AboutUs = () => {
         </div>
         <div className="row">
           <div className=" col-md-6 image-col">
-            <OptimizedImage src="assets/abstract-2.jpg" className="image" />
+            <OptimizedImage src="assets/abstract-2-medium.jpg" className="image" />
           </div>
           <div className=" col-md-6 text-col">
             <span>Our Vision</span>
@@ -107,7 +107,7 @@ const AboutUs = () => {
             <p>Soteria Church is led by Drs Chuka and Ndidi Anude, dedicated pastors with a heart for God and a passion for seeing lives transformed by His grace. Under their leadership, our church continues to grow and impact our community with the love of Christ.</p>
           </div>
           <div className=" col-md-6 image-col">
-            <OptimizedImage src="/assets/pastor-chuka-and-ndidi.jpg" className="image" />
+            <OptimizedImage src="/assets/pastor-chuka-and-ndidi-medium.jpg" className="image" />
 
           </div>
 
@@ -138,14 +138,14 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <section className="row special cards-row connect">
+        <section className="row special cards-row connect ">
           <div className="header">
             <span>Our Fellowships</span>
             <h4 className='title'>Get acquinted with soteria </h4>
           </div>
           {connectItems ? <div className="cards">
             {connectItems.map((item, index) => (
-              <ConnectCard item={item} key={item.slug} />
+              <ConnectCard item={item} key={index} />
             ))}
           </div>
             :

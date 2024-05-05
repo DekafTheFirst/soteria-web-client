@@ -116,7 +116,7 @@ const PrayerRequest = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-6 image-col">
-            <OptimizedImage src="/assets/abstract-4.jpg" className='form-image' />
+            <OptimizedImage src="/assets/abstract-4-medium.jpg" className='form-image' />
           </div>
           <div className="col-lg-6 form-col">
             <h2 className='text-center'>Do you have a prayer request?</h2>

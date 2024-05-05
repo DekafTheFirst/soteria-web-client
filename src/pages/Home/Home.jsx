@@ -54,13 +54,13 @@ const Home = () => {
             </div>
 
             <div className="buttons">
-              <Link to="/company" className='btn-gold-solid'>What's Next <ArrowForwardIcon fontSize='21' className='icon' /></Link>
+              <Link to="/about-us" className='btn-gold-solid'>What's Next <ArrowForwardIcon fontSize='21' className='icon' /></Link>
             </div>
           </div>
 
           <div className="event-countdown-card-wrapper">
             <div className="event-countdown-card">
-              <OptimizedImage src="/assets/sermon.jpg" className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" />
+              <OptimizedImage src="/assets/sermon-thumbnail.jpg" className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" />
               <div className="details">
                 <h5 className='title'>Upcoming Event With A Title</h5>
                 <div className="item">
@@ -85,9 +85,7 @@ const Home = () => {
 
         <div className="hero-img-wrapper">
           <MySwiper />
-          {/* <OptimizedImage src="/assets/preaching.jpg" className="hero-img"  alt="hero-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" /> */}
         </div>
-        {/* <img src="/assets/preaching.jpg" className="hero-img" alt="hero-img" /> */}
 
       </section>
 
