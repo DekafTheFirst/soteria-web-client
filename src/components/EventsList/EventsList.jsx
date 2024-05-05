@@ -1,10 +1,12 @@
-import React, { Suspense, lazy } from 'react'
+import React, { Suspense, lazy, useEffect, useState } from 'react'
 import './EventsList.css'
 import { CircularProgress } from "@mui/material";
 
 const EventCard = lazy(() => import('../EventCard/EventCard'))
 
-const EventsList = ({ events }) => {
+const EventsList = ({ events, error }) => {
+  const [isRetrying, setIsRetrying] = useState(false)
+  console.log(error)
   // const events = [
   //   {
   //     title: "Women\'s Breakfast Meeting",
@@ -48,20 +50,34 @@ const EventsList = ({ events }) => {
   //     imgUrl: '/assets/abstract-1.jpg'
   //   }
   // ]
+  // useEffect(()=>{
+  //   let icon;
+  //   if(isRetrying) {
 
-  
+  //   }
+  // }, [isRetrying])
+
+
   return (
     <div className='events-list'>
-      {events ? <div className="cards">
-         { events.map((event, index) => (
-          <EventCard eventObject={event} key={event.id}/>
-        ))}
+      <div className="wrapper">
+        {events ? <div className="cards">
+          {events.map((event, index) => (
+            <EventCard eventObject={event} key={event.id} />
+          ))}
+        </div>
+          :
+          error ?
+            <div className="error-container">
+              <span className='text-center text-danger mx-auto'>Error fetching events</span>
+            </div>
+            :
+            <div className='loader-wrapper'>
+              <CircularProgress color='success' />
+            </div>
+        }
       </div>
-      :
-      <div className='loader-wrapper'>
-        <CircularProgress color='success' />
-      </div>
-      }
+
 
       {/* <div className='loader-wrapper'>
         <CircularProgress color='success' />

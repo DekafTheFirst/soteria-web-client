@@ -385,7 +385,7 @@
     .home .hero .container-fluid {
         height: 100%;
         width: 60%;
-        /* Width must match with width of .home .hero-img to form 100% */
+        max-width: unset;
         padding: 0;
         gap: 0;
     }

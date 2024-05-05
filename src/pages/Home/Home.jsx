@@ -18,21 +18,32 @@ import SermonCard from '../../components/SermonCard/SermonCard';
 import EventCard from '../../components/EventCard/EventCard';
 import EventsList from '../../components/EventsList/EventsList';
 import { Skeleton } from '@mui/material';
+import ReplayIcon from '@mui/icons-material/Replay';
 
 const Home = () => {
   const [events, setEvents] = useState(null)
+  const [error, setError] = useState(null)
+
   const location = useLocation()
 
-  useEffect(() => {
-    const fetchEventsData = async () => {
-      const response = await fetchUpcomingEvents(3)
+  const fetchEventsData = async () => {
+    const { response, error } = await fetchUpcomingEvents(3)
+    if (error) {
+      console.log(error)
+      setError(error)
+    }
+    else {
       const eventsData = response.data
       setEvents(eventsData)
     }
+  }
+
+  useEffect(() => {
+
     if (!events) fetchEventsData()
   }, [events])
 
-  const upcomingEvent =  events && events[0].attributes
+  const upcomingEvent = events && events[0].attributes
 
   return (
     <div className="home">
@@ -75,7 +86,7 @@ const Home = () => {
               </div>
               <div className="countdown">
                 {upcomingEvent && <Timer targetDateStr={`${upcomingEvent?.date}T${upcomingEvent?.time}`} />}
-                
+
               </div>
             </div>
           </div>
@@ -122,7 +133,7 @@ const Home = () => {
       <section className="events">
         <div className="container-fluid">
           <h4>Upcoming Events</h4>
-          <EventsList events={events} />
+          <EventsList events={events} error={error} />
         </div>
         {/* <EventCard /> */}
       </section>

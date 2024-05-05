@@ -8,6 +8,7 @@ import './Events.css'
 
 const Events = () => {
   const [events, setEvents] = useState(null)
+  const [error, setError] = useState(null)
 
 
   // Filter Logic
@@ -31,9 +32,15 @@ const Events = () => {
 
   useEffect(() => {
     const fetchEventsData = async () => {
-      const response = await fetchEvents()
-      const eventsData = response.data
-      setEvents(eventsData)
+      const {response , error} = await fetchEvents()
+      if (error) {
+        console.log(error)
+        setError(error)
+      }
+      else {
+        const eventsData = response.data
+        setEvents(eventsData)
+      }
     }
     if (!events) fetchEventsData()
   }, [events])
@@ -91,10 +98,9 @@ const Events = () => {
         style={isSticky ? { paddingTop: filterHeight } : {}}      
         >
         <div className="container-fluid">
-          <EventsList events={filteredEvents} />
+          <EventsList events={filteredEvents} error={error} />
         </div>
       </div>
-
     </div>
   )
 }
