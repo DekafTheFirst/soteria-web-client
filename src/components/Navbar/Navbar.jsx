@@ -3,12 +3,13 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { menuItemsData } from './menuItemsData';
 import MenuItem from './MenuItem';
 import './Navbar.css'
+import { AccountCircleRounded, ArrowDropDown } from '@mui/icons-material/';
 // const routes = [
 //   { name: "home", path: "/", component: <Home /> }
 // ]
 
 
-const Navbar = ({ scrolled}) => {
+const Navbar = ({ scrolled }) => {
   // console.log(scrolled)
   const [show, setShow] = useState(false);
   const location = useLocation();
@@ -46,8 +47,9 @@ const Navbar = ({ scrolled}) => {
 
   }, []);
 
+  const username = "SoteriaUser";
   return (
-    <nav className={`navbar navbar-expand-md fixed-top navbar-dark ${scrolled ? 'scrolled bg-dark' : ''} ${isHomepageActive ? 'home-page-is-active': ''} `}>
+    <nav className={`navbar navbar-expand-md fixed-top navbar-dark ${scrolled ? 'scrolled bg-dark' : ''} ${isHomepageActive ? 'home-page-is-active' : ''} `}>
       {/* <div className={`info ${scrolled ? 'scrolled' : ''}`}>
         <div className="item">
           <PlaceIcon className='icon' />
@@ -58,7 +60,7 @@ const Navbar = ({ scrolled}) => {
           <a href="mailto:recipient@example.com" className='details'>dekeji1@gmail.com</a>
         </div>
       </div> */}
-            <Link className="navbar-brand logo" to="/" onClick={() => setShow(false)}><img src="/assets/soteria-logo.png" alt="" /></Link>
+      <Link className="navbar-brand logo" to="/" onClick={() => setShow(false)}><img src="/assets/soteria-logo.png" alt="" /></Link>
       <div className="navbar-container">
 
         <button className="navbar-toggler" type="button" onClick={toggleShow}>
@@ -73,9 +75,13 @@ const Navbar = ({ scrolled}) => {
             })}
 
           </ul>
-          <li className="nav-item-special">
-            <NavLink className="nav-link-special" to="/connect/contact-us" onClick={() => { setShow(false) }}>Give</NavLink>
-          </li>
+          <div className="right">
+            <div className='user-auth'><AccountCircleRounded className='user-icon' /> <span className='username'>{username}</span> <ArrowDropDown className='dropdown-icon' fontSize='small' /></div>
+            <li className="nav-item-special">
+              <NavLink className="nav-link-special" to="/connect/contact-us" onClick={() => { setShow(false) }}>Give</NavLink>
+            </li>
+          </div>
+
         </div>
 
       </div>
