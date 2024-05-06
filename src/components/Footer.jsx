@@ -32,12 +32,12 @@ const Footer = () => {
 
 
                         <div className="company-info">
-                            <div className='item'><PhoneOutlined fontSize='small' className='icon' /> <Link to="tel:+2348039490323">+2348039490323</Link></div>
-                            <div className='item'><EmailOutlined fontSize='small' className='icon' /><Link to="mailto:info@quantumexcapital.com">info@quantumexcapital.com</Link></div>
-                            <div className='item'><MyLocation fontSize='small' className='icon' /><Link to="mailto:info@quantumexcapital.com"> Suite 9, Edo House,  5th Floor, Ralph Shodeinde Street,  Central Business District, Abuja</Link></div>
+                            <div className='item'><PhoneOutlined fontSize='small' className='icon' /> <Link to="tel:+2348039490323">+ 180 394 9032</Link></div>
+                            <div className='item'><EmailOutlined fontSize='small' className='icon' /><Link to="mailto:info@soteriachurch.org">info@soteriachurch.org</Link></div>
+                            <div className='item'><MyLocation fontSize='small' className='icon' /><Link to="https://maps.app.goo.gl/VWzpguSG6oZGoiXb8"> 1928 Woodlawn Dr, Woodlawn, MD 21207, USA</Link></div>
                         </div>
-
                     </div>
+                    
                     <div className=" col-lg-7">
                         <div className="row links">
                             <div className="link-category col-6 col-lg-4">
