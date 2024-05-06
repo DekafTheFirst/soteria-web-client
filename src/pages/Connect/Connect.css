@@ -1,3 +1,8 @@
+.connect-page .container-fluid {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
 .connect-page .cards {
     display: grid;
     width: 100%;

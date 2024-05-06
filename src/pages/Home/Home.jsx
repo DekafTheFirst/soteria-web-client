@@ -122,7 +122,7 @@ const Home = () => {
                 Soteria Church is a multiracial, multi-ethnic, multicultural and multigenerational community of people who know Jesus personally, love Jesus passionately, serve Jesus purposefully and share Jesus powerfully!               </p>
               <p>
                 Soteria Church is a place where diversity is celebrated and unity is cherished. As a multiracial, multi-ethnic, multicultural, and multigenerational community, we come together with a shared passion for knowing Jesus personally, loving Him passionately, serving Him purposefully, and sharing His transformative power with others. Our vibrant congregation is a reflection of the rich tapestry of God's creation, and we are committed to walking alongside one another, supporting and encouraging each other as we journey together in faith.              </p>
-              <Link to="/company"><PlayCircleIcon fontSize='large' /> Learn More </Link>
+              <Link to="/about-us"><PlayCircleIcon fontSize='large' /> Learn More </Link>
             </div>
           </div>
 

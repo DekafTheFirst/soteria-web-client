@@ -1,84 +1,98 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom';
-
+import { LocationCityOutlined, PhoneOutlined, EmailOutlined, MyLocation, FacebookOutlined, Instagram, YouTube, Facebook, FacebookRounded, WhatsApp } from '@mui/icons-material'
+import OptimizedImage from './OptimizedImage/OptimizedImage';
 
 const Footer = () => {
     return (
-        <footer className='bg-dark'>
-            <div className="container-fluid">
+        <footer >
+            <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-md-6 col-lg-7">
-                        <div className="row links">
-                            <div className="link-category col-6 col-lg-4">
-                                <h5>Company</h5>
-                                <Link to="/company">About Us</Link>
-                                <Link to="/company">Mission</Link>
-                                <Link to="/company">Contact Us</Link>
-                            </div>
-                            <div className="link-category col-6 col-lg-4">
-                                <h5>Services</h5>
-                                <Link to="/services/legal-advisory-and-policy-development">Legal Advisory</Link>
-                                <Link to="/services/financial-consulting-and-investment-advisory">Financial Consulting</Link>
-                                <Link to="/services/environmental-management-and-sustainability-solutions">Environmental Management</Link>
-                                <Link to="/services/public-private-partnerships">Public Private Partnerships</Link>
-                                <Link to="/services/project-management">Project Management</Link>
-                            </div>
-                            <div className="link-category col-6 col-lg-4">
-                                <h5>Contact</h5>
-                                <Link to="/">Home</Link>
-                                <Link to="/company">Contact</Link>
-                            </div>
-                            <div className="link-category col-6 col-lg-4 logo-col">
-                                {/* <img src={require("../imgs/logo.png")} alt="logo-underlay" className="logo" /> */}
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="footer-content col-md-6 col-lg-5">
-
-                        <form action="">
-                            <h5>Newsletter: </h5>
-                            <div className="form-container">
-                                <input type="email" name="" id="" placeholder="Your email here" />
-                                <button type="submit" className="page-btn">Subscribe</button>
-                            </div>
-
-                        </form>
-
+                    <div className="info-col  col-lg-5">
+                        <OptimizedImage src="/assets/soteria-logo.png" className='img' />
+                        <p className='info-heading'>To be and to make devoted disciples of Jesus Christ and Transformational Servant-Leaders.</p>
                         <div className="media-links">
                             <div className="links">
+
                                 <Link to="#">
-                                    {/* <img className="media-icon" src={require("../icons/facebook.png")} alt="" /> */}
+                                    <FacebookOutlined />
                                 </Link>
                                 <Link to="#">
-                                    {/* <img className="media-icon" src={require("../icons/twitter.png")} alt="" /> */}
+                                    <Instagram />
                                 </Link>
                                 <Link to="#">
-                                    {/* <img className="media-icon" src={require("../icons/instagram.png")} alt="" /> */}
+                                    <YouTube />
                                 </Link>
                                 <Link to="#">
-                                    {/* <img className="media-icon" src={require("../icons/linkedin.png")} alt="" /> */}
+                                    <WhatsApp />
                                 </Link>
                             </div>
-
                         </div>
 
 
                         <div className="company-info">
-                            <div><span>Mobile:</span> <Link to="tel:+2348039490323">+2348039490323</Link></div>
-                            <div><span>Email:</span> <Link to="mailto:info@quantumexcapital.com">info@quantumexcapital.com</Link></div>
-                            <div><span>Address:</span> <p>Address: Suite 9, Edo House,  5th Floor, Ralph Shodeinde Street,  Central Business District, Abuja</p></div>
+                            <div className='item'><PhoneOutlined fontSize='small' className='icon' /> <Link to="tel:+2348039490323">+2348039490323</Link></div>
+                            <div className='item'><EmailOutlined fontSize='small' className='icon' /><Link to="mailto:info@quantumexcapital.com">info@quantumexcapital.com</Link></div>
+                            <div className='item'><MyLocation fontSize='small' className='icon' /><Link to="mailto:info@quantumexcapital.com"> Suite 9, Edo House,  5th Floor, Ralph Shodeinde Street,  Central Business District, Abuja</Link></div>
+                        </div>
 
+                    </div>
+                    <div className=" col-lg-7">
+                        <div className="row links">
+                            <div className="link-category col-6 col-lg-4">
+                                <span className="category-heading">About Us</span>
+                                <Link to="/about-us">Church Vision</Link>
+                                <Link to="/about-us">Core Values</Link>
+                                <Link to="/about-us">Pastoral Leadership</Link>
+                                <Link to="/about-us">Our Community</Link>
+                                <Link to="/about-us">Contact Us</Link>
+
+                            </div>
+                            <div className="link-category col-6 col-lg-4">
+                                <span className="category-heading">Ministries</span>
+                                <Link to="">Soteria King’s Kids</Link>
+                                <Link to="">Catalyst</Link>
+                                <Link to="">Daniel's Men</Link>
+                                <Link to="">Women Fellowship(Poiema)</Link>
+                                <Link to="">Project Management</Link>
+                            </div>
+                            <div className="link-category col-6 col-lg-4">
+                                <span className="category-heading">Community Engagement</span>
+                                <Link to="">Local Outreach</Link>
+                                <Link to="">Events Calendar</Link>
+                                <Link to="">Media Resources</Link>
+                                <Link to="">Volunteer Opportunities</Link>
+                                <Link to="">Photo Gallery</Link>
+                            </div>
+                            <div className="link-category col-6 col-lg-4">
+                                <span className="category-heading">Support & Resources</span>
+                                <Link to="">Give</Link>
+                                <Link to="">Prayer Requests</Link>
+                                <Link to="">Join Us</Link>
+                                <Link to="">SOCITH</Link>
+                                <Link to="">SODIP</Link>
+                            </div>
+                            <div className="link-category col-6 col-lg-4">
+                                <span className="category-heading">Connect</span>
+                                <Link to="">Upcoming Events</Link>
+                                <Link to="">Latest Sermon</Link>
+                                <Link to="">Prayer Requests</Link>
+                                <Link to="">Join Us</Link>
+                                <Link to="">Contact Us</Link>
+                            </div>
+                            
                         </div>
                     </div>
 
-                    <div className="copy-right mt-3">
-                        <p>QuantumEx Capital Solutions &copy; 2024, All RIghts Reserved.</p>
-                    </div>
+
+
 
                 </div>
 
+            </div>
+            <div className="copy-right mt-3">
+                <p>Soteria Church &copy; 2024, All RIghts Reserved.</p>
             </div>
         </footer>
     )
