@@ -116,11 +116,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px 10px;
     gap: 20px;
-    background-color: var(--veryLightGray);
-    border-radius: 8px;
+    background-color: #CED0D4;
+    border-radius: 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     border: 1px solid transparent;
     aspect-ratio: 1 / 1;
@@ -167,12 +167,11 @@
     color: var(--white);
 }
 
-.about-us-page .row.special.directorates .list .directorate-card .card-content {
-    margin: auto;
-}
 
-.about-us-page .row.special.directorates .list .directorate-card .card-content .title {
-    color: var(--forestGreen);
+
+
+.about-us-page .row.special.directorates .list .directorate-card .icon {
+    color: var(--green);
 }
 
 .about-us-page .row.special.directorates .list .directorate-card .card-content p {
@@ -184,23 +183,6 @@
     text-align: center;
 }
 
-/* Connect */
-.about-us-page .row.special.connect .cards {
-    display: grid;
-    width: 100%;
-    padding: 0 20px;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-gap: 35px;
-    margin-top: 20px;
-}
-
-.about-us-page .row.special.connect .loader-wrapper {
-    width: 100%;
-    min-height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 /* Accordion */

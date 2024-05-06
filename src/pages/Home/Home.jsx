@@ -56,11 +56,7 @@ const Home = () => {
                 Soteria Church
               </h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Fusce malesuada in nunc a
-                placerat. In scelerisque eros et ipsum gravida
-                porta. Nullam volutpat eros a tempus
-                efficitur.
+                We're delighted to have you here. Step into a place where every soul is valued, every heart is heard, and every journey is embraced.
               </p>
             </div>
 

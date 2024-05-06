@@ -29,6 +29,10 @@ import Community from './pages/Community/Community';
 import Outreaches from './pages/Community/Outreaches/Outreaches';
 import PlanYourVisit from './pages/PlanYourVisit/PlanYourVisit';
 import MobileApp from './pages/Mobile-App/MobileApp';
+import DanielsMen from './pages/Fellowships/DanielsMen/DanielsMen';
+import Poiema from './pages/Fellowships/Poiema/Poiema';
+import Kiddies from './pages/Fellowships/Kiddies/Kiddies';
+import Sodip from './pages/Connect/Sodip/Sodip';
 
 
 const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s"
@@ -110,12 +114,28 @@ function App() {
                   element: <ExternalRedirectPage />,
                 },
                 {
+                  path: "daniels-men",
+                  element: <DanielsMen />
+                },
+                {
+                  path: "poiema",
+                  element: <Poiema />
+                },
+                {
+                  path: "kiddies",
+                  element: <Kiddies />
+                },
+                {
                   path: "sermons",
                   element: <ExternalRedirectPage />,
                 },
                 {
                   path: "prayer-requests",
                   element: <PrayerRequest />,
+                },
+                {
+                  path: "sodip",
+                  element: <Sodip />,
                 },
                 {
                   path: "contact-us",
@@ -156,6 +176,8 @@ function App() {
               path: "/mobile-app",
               element: <MobileApp />,
             },
+            
+            
       ]
     }
 

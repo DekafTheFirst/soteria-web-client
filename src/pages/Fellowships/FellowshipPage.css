@@ -1,22 +1,23 @@
 
-.directorates-page .container-fluid{
+.fellowship-page .container-fluid{
     margin-top: 70px;
     margin-bottom: 70px;
 
 }
-.directorates-page {
+.fellowship-page {
     flex-direction: row;
     align-items: center;
 }
 
 
-.directorates-page .text-col {
+.fellowship-page .text-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 20px;
 }
 
-.directorates-page  .text-col .description {
+.fellowship-page  .text-col .description {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -24,7 +25,7 @@
 
 }
 
-.directorates-page  span {
+.fellowship-page  span {
     color: var(--forestGreen);
     text-transform: capitalize;
     font-weight: 600;
@@ -32,14 +33,14 @@
 
 
 
-.directorates-page .image {
+.fellowship-page .image {
     padding: 0;
     margin-top: 30px;
     aspect-ratio: 16/9;
 }
 
 
-.directorates-page .learn-more {
+.fellowship-page .learn-more {
     margin-top: 20px;
     color: var(--forestGreen);
 }
@@ -49,11 +50,11 @@
 
 @media screen and (min-width: 768px) {
 
-    .directorates-page .container-fluid {
+    .fellowship-page .container-fluid {
         max-width: 800px;
     }
 
-    .directorates-page  .text-col {
+    .fellowship-page  .text-col {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -62,7 +63,7 @@
     
     
 
-    .directorates-page  {
+    .fellowship-page  {
         gap: 0;
     }
 }

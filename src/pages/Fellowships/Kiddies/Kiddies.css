@@ -1,0 +1,10 @@
+.fellowship-page.kiddies {
+    background-color: var(--veryLightGray);
+}
+
+.fellowship-page.kiddies .container-fluid {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}

@@ -375,11 +375,8 @@
 }
 
 @media screen and (min-width: 1200px) {
-
     .home .hero {
         height: 100vh;
-        background: var(--cl--5--);
-
     }
 
     .home .hero .container-fluid {
@@ -423,6 +420,7 @@
         display: flex;
         align-items: center;
         padding-left: 130px;
+        background-color: var(--veryLightGray);
     }
 
     .home .hero .event-countdown-card {

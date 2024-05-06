@@ -4,7 +4,6 @@ import OptimizedImage from '../../components/OptimizedImage/OptimizedImage'
 import { useNavigate } from 'react-router-dom';
 import { directoratesData } from './Directorates/Directorates';
 import { Diversity3, EmojiObjects, MenuBook, MusicNote, Security, VolunteerActivism, Whatshot } from '@mui/icons-material'
-import ConnectCard from '../../components/ConnectCard/ConnectCard';
 
 
 const AboutUs = () => {
@@ -13,11 +12,7 @@ const AboutUs = () => {
     name: "dekaf"
   }
 
-  const connectItems = [
-    { title: "Men's Fellowship(Daniel's Men)", route: '/connect/mens-fellowship', desc: 'The Daniel’s Men is the Men’s Brotherhood and Fellowship of Soteria Church.', imgUrl: '/assets/men.jpg' },
-    { title: "Women's Fellowship(POIEMA)", route: '/connect/womens-fellowship', desc: 'Poiema (Poy- ah- mah) is the Women’s Ministry of Soteria Church. ', imgUrl: '/assets/poima.jpg' },
-    { title: "Soteria kiddies", route: '/connect/kiddies', desc: 'Kiddies time with God.', imgUrl: '/assets/soteria-kiddies.jpg' },
-  ]
+
 
   return (
     <div className="about-us-page">
@@ -123,7 +118,6 @@ const AboutUs = () => {
             {directoratesData.map((item, index) => {
               return (
                 <div className={`directorate-card`} key={index} onClick={() => navigate('/about-us/directorates', { state: { slug: item.slug } })}>
-                  {item.icon}
                   <div className="card-content">
                     <h6 className='title'>{item.title}</h6>
                     <div className="go-corner" href="#">
@@ -138,22 +132,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <section className="row special cards-row connect ">
-          <div className="header">
-            <span>Our Fellowships</span>
-            <h4 className='title'>Get acquinted with soteria </h4>
-          </div>
-          {connectItems ? <div className="cards">
-            {connectItems.map((item, index) => (
-              <ConnectCard item={item} key={index} />
-            ))}
-          </div>
-            :
-            <div className='loader-wrapper'>
-              <CircularProgress color='success' />
-            </div>
-          }
-        </section>
+        
       </div>
     </div>
   )
