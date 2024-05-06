@@ -51,35 +51,33 @@ const Footer = () => {
                             </div>
                             <div className="link-category col-6 col-lg-4">
                                 <span className="category-heading">Ministries</span>
-                                <Link to="">Soteria King’s Kids</Link>
+                                <Link to="/connect/kiddies">Soteria King’s Kids</Link>
                                 <Link to="">Catalyst</Link>
-                                <Link to="">Daniel's Men</Link>
-                                <Link to="">Women Fellowship(Poiema)</Link>
-                                <Link to="">Project Management</Link>
+                                <Link to="/connect/daniels-men">Daniel's Men</Link>
+                                <Link to="/connect/poiema">Women Fellowship(Poiema)</Link>
                             </div>
                             <div className="link-category col-6 col-lg-4">
                                 <span className="category-heading">Community Engagement</span>
-                                <Link to="">Local Outreach</Link>
-                                <Link to="">Events Calendar</Link>
-                                <Link to="">Media Resources</Link>
-                                <Link to="">Volunteer Opportunities</Link>
+                                <Link to="/community-engagement/outreaches">Outreaches</Link>
+                                <Link to="/events">Events Calendar</Link>
+                                <Link to="/community-engagement">Volunteer Opportunities</Link>
                                 <Link to="">Photo Gallery</Link>
                             </div>
                             <div className="link-category col-6 col-lg-4">
                                 <span className="category-heading">Support & Resources</span>
-                                <Link to="">Give</Link>
-                                <Link to="">Prayer Requests</Link>
-                                <Link to="">Join Us</Link>
+                                <Link to="https://www.paypal.com/us/home">Give</Link>
+                                <Link to="/connect/prayer-requests">Prayer Requests</Link>
+                                <Link to="/join-us">Join Us</Link>
                                 <Link to="">SOCITH</Link>
-                                <Link to="">SODIP</Link>
+                                <Link to="/connect/sodip">SODIP</Link>
                             </div>
                             <div className="link-category col-6 col-lg-4">
                                 <span className="category-heading">Connect</span>
-                                <Link to="">Upcoming Events</Link>
+                                <Link to="/events">Upcoming Events</Link>
                                 <Link to="">Latest Sermon</Link>
-                                <Link to="">Prayer Requests</Link>
-                                <Link to="">Join Us</Link>
-                                <Link to="">Contact Us</Link>
+                                <Link to="/connect/prayer-requests">Prayer Requests</Link>
+                                <Link to="/join-us">Join Us</Link>
+                                <Link to="/connect/contact-us">Contact Us</Link>
                             </div>
                             
                         </div>

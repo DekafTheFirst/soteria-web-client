@@ -33,6 +33,7 @@ import DanielsMen from './pages/Fellowships/DanielsMen/DanielsMen';
 import Poiema from './pages/Fellowships/Poiema/Poiema';
 import Kiddies from './pages/Fellowships/Kiddies/Kiddies';
 import Sodip from './pages/Connect/Sodip/Sodip';
+import ScrollToTop from './components/ScrollToTop';
 
 
 const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s"
@@ -53,6 +54,7 @@ const Layout = ({ scrolled }) => {
 
   return (
     <div className="app">
+      <ScrollToTop />
       <Navbar scrolled={scrolled} />
       {pathname !== "/" && <Banner pathname={pathname} title={title} />}
       <div className="content">

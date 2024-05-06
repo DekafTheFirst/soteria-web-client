@@ -25,21 +25,18 @@ const PrayerRequest = () => {
       toast.error(error.message, {
         position: "top-right",
       });
-      console.log("toast")
     }
 
     else {
       toast.success(message ? message : 'Prayer Request Made Successfuly', {
         position: "top-right",
       });
-      console.log("toast")
     }
 
   };
 
   const createPrayerRequest = async (data) => {
     const { error, response, message } = await createPrayerRequestEntry(data);
-    // console.log(message, error, response)
     showToastMessage(error, message)
   }
 
