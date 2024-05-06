@@ -20,12 +20,12 @@ export default function App() {
         pagination={{
           clickable: true
         }}
-        // autoplay={{
+        autoplay={{
           
-        //   delay: 2000,
-        //   disableOnInteraction: false,
-        //   pauseOnMouseEnter: false
-        // }}
+          delay: 2000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false
+        }}
         keyboard={
           true
         }

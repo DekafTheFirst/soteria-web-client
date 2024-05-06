@@ -43,7 +43,6 @@ const AboutUs = () => {
           <div className="header">
             <span>Our Values</span>
             <h4 className='title'>The 7 W’s of Soteria Church </h4>
-            {/* <p>At Soteria Church, our vision is clear: To be and to make devoted disciples of Jesus Christ and Transformational Servant-Leaders.</p> */}
           </div>
           <div className="list">
             <div className="value-card">

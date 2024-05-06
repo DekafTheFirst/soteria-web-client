@@ -46,11 +46,11 @@ export const getEventVideo = async (id) => {
 export const createPrayerRequestEntry = async (data) => {
     try {
         const response = await api.post(`/api/prayer-requests`, { data })
-        return response.data
+        return {response: response.data, message: 'Prayer Request Made Successfuly', error: null}
 
     } catch (error) {
-        console.error('Error creating prayer request:', error);
-        throw error
+        // console.error('Error creating prayer request:', error);
+        return {response: null, message: 'Problem Sending Prayer Request', error}
     }
 }
 

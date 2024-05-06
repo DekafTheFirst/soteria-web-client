@@ -357,8 +357,12 @@
         color: var(--black);
     }
 
-    .navbar.home-page-is-active:not(.scrolled) .right .user-auth .user-icon{
+    .navbar.home-page-is-active:not(.scrolled) .right .user-auth .user-icon, .navbar.home-page-is-active:not(.scrolled) .right .user-auth .username{
         color: var(--veryLightGray);
+    }
+
+    .navbar.home-page-is-active:not(.scrolled) .right .user-auth .dropdown-icon {
+        color: #fff;
     }
 
 

@@ -20,22 +20,27 @@ const PrayerRequest = () => {
   const [error, setError] = useState(null)
 
 
-  const showToastMessage = () => {
-    toast.success("Success Notification !", {
-      position: "top-right",
-    });
-    console.log("toast")
+  const showToastMessage = (error, message) => {
+    if(error) {
+      toast.error(error.message, {
+        position: "top-right",
+      });
+      console.log("toast")
+    }
+
+    else {
+      toast.success(message ? message : 'Prayer Request Made Successfuly', {
+        position: "top-right",
+      });
+      console.log("toast")
+    }
+
   };
 
   const createPrayerRequest = async (data) => {
-    try {
-      const createdPrayerRequest = await createPrayerRequestEntry(data);
-      showToastMessage()
-    } catch (error) {
-      setError(error)
-      console.log(error)
-      return error
-    }
+    const { error, response, message } = await createPrayerRequestEntry(data);
+    // console.log(message, error, response)
+    showToastMessage(error, message)
   }
 
 
@@ -78,7 +83,7 @@ const PrayerRequest = () => {
       initialValue: '',
     },
     {
-      name:'lastName',
+      name: 'lastName',
       label: 'Last Name',
       type: 'text',
       placeholder: '',
@@ -122,7 +127,7 @@ const PrayerRequest = () => {
             <h2 className='text-center'>Do you have a prayer request?</h2>
             <p className='text-center mt-2'>Tell us about it and we will join you in prayer.</p>
 
-            <FormComponent items={items} onSubmit={onSubmit} validationSchema={validationSchema} submitBtnText="Submit Prayer Request"/>
+            <FormComponent items={items} onSubmit={onSubmit} validationSchema={validationSchema} submitBtnText="Submit Prayer Request" />
           </div>
 
         </div>

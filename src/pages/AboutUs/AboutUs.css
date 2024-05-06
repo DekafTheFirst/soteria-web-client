@@ -3,8 +3,8 @@
 .about-us-page .container {
     display: flex;
     flex-direction: column;
-    gap: 55px;
-    margin-top: 50px;
+    gap: 35px;
+    margin-top: 10px;
     margin-bottom: 70px;
 
 }
@@ -13,6 +13,7 @@
     max-width: 1100px;
     margin: auto;
     gap: 10px;
+    margin-top: 30px;
 }
 
 .about-us-page .row>* {
@@ -21,6 +22,7 @@
 
 .about-us-page .row .image-col .image {
     height: 100%;
+    width: 100%;
     aspect-ratio: 16 / 9;
 }
 
@@ -49,7 +51,6 @@
 /* Special Row  */
 .about-us-page .row.special {
     flex-direction: row;
-    margin-top: 70px;
 }
 
 .about-us-page .row.special.cards-row .header {
@@ -69,7 +70,7 @@
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 35px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .about-us-page .row.special.values .list .value-card {
@@ -81,6 +82,13 @@
     margin: auto;
 }
 
+.about-us-page .row.special.values .list .value-card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .about-us-page .row.special.values .list .value-card .card-content>* {
     text-align: center;
 }
@@ -88,6 +96,12 @@
 .about-us-page .row.special.values .list .value-card .icon {
     color: var(--green);
 }
+
+.about-us-page .row.special.values .list .value-card p{
+    color: var(--gray);
+    width: 80%;
+}
+
 
 
 
@@ -344,8 +358,19 @@
     }
 
     .about-us-page .row {
+        margin-top: 0;
         gap: 0;
     }
+
+    .about-us-page .row.special {
+        margin-top: 70px;
+    }
+
+    .about-us-page .row.special.cards-row.values .list {
+        margin-top: 40px;
+    }
+
+
 
     .about-us-page .row.special.leadership .image-col .image {
         padding: 0;
@@ -354,6 +379,7 @@
 
     .about-us-page .row .image-col .image {
         height: 100%;
+
         aspect-ratio: 4 / 4;
     }
 

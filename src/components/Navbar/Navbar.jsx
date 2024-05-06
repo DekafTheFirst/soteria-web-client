@@ -78,7 +78,7 @@ const Navbar = ({ scrolled }) => {
           <div className="right">
             <div className='user-auth'><AccountCircleRounded className='user-icon' /> <span className='username'>{username}</span> <ArrowDropDown className='dropdown-icon' fontSize='small' /></div>
             <li className="nav-item-special">
-              <NavLink className="nav-link-special" to="/connect/contact-us" onClick={() => { setShow(false) }}>Give</NavLink>
+              <NavLink className="nav-link-special" to="https://www.paypal.com/us/home" onClick={() => { setShow(false) }}>Give</NavLink>
             </li>
           </div>
 

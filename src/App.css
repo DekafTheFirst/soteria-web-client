@@ -222,14 +222,14 @@ section {
 }
 
 
-.image-col {
+.form-page .image-col {
     padding: 0;
+    display: none;
 }
 
-.image-col .form-image {
+.form-page .image-col .form-image {
     height: 100%;
     width: 100%;
-    display: none;
 }
 
 .illustration-col {
@@ -654,7 +654,7 @@ footer .page-btn:hover {
 @media screen and (max-width: 991px) and (orientation: landscape) {}
 
 @media screen and (min-width: 992px) {
-    .image-col .form-image {
+    .form-page .image-col {
         display: block;
     }
 
