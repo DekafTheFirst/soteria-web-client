@@ -56,7 +56,7 @@ const PrayerRequest = () => {
       /^(\+\d{1,3})?(\d{10,14})$/, // Regex for phone number with or without country code
       'Invalid phone number'
     ),
-    prayerRequest: yup.string().required("prayer request required")
+    prayerRequest: yup.string().required("Prayer request required")
   })
 
 
@@ -117,13 +117,12 @@ const PrayerRequest = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 image-col">
+          <div className="col-lg-5 image-col">
             <OptimizedImage src="/assets/abstract-4-medium.jpg" className='form-image' />
           </div>
-          <div className="col-lg-6 form-col">
-            <h2 className='text-center'>Do you have a prayer request?</h2>
+          <div className="col-lg-7 form-col">
+            <h3 className='text-center'>Do you have a prayer request?</h3>
             <p className='text-center mt-2'>Tell us about it and we will join you in prayer.</p>
-
             <FormComponent items={items} onSubmit={onSubmit} validationSchema={validationSchema} submitBtnText="Submit Prayer Request" />
           </div>
 

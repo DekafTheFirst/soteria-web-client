@@ -1,0 +1,8 @@
+.login-page .image-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(43, 103, 27 , 0.2);
+}
+
+

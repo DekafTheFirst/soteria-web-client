@@ -4,6 +4,10 @@ import { menuItemsData } from './menuItemsData';
 import MenuItem from './MenuItem';
 import './Navbar.css'
 import { AccountCircleRounded, ArrowDropDown } from '@mui/icons-material/';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { useAuth } from '../../context/AuthContext';
 // const routes = [
 //   { name: "home", path: "/", component: <Home /> }
 // ]
@@ -13,7 +17,9 @@ const Navbar = ({ scrolled }) => {
   // console.log(scrolled)
   const [show, setShow] = useState(false);
   const location = useLocation();
+  const [toggleUserAuthdropdown, setToggleUserAuthDropdown] = useState(false)
 
+  console.log(toggleUserAuthdropdown)
   const isHomepageActive = location.pathname === "/";
 
 
@@ -47,6 +53,10 @@ const Navbar = ({ scrolled }) => {
 
   }, []);
 
+
+  const { currentUser } = useAuth()
+  console.log(currentUser)
+
   const username = "SoteriaUser";
   return (
     <nav className={`navbar navbar-expand-md fixed-top navbar-dark ${scrolled ? 'scrolled bg-dark' : ''} ${isHomepageActive ? 'home-page-is-active' : ''} `}>
@@ -76,7 +86,41 @@ const Navbar = ({ scrolled }) => {
 
           </ul>
           <div className="right">
-            <div className='user-auth'><AccountCircleRounded className='user-icon' /> <span className='username'>{username}</span> <ArrowDropDown className='dropdown-icon' fontSize='small' /></div>
+              {currentUser ?
+                <div className='user-auth'>
+                  <div className="preview" onClick={() => setToggleUserAuthDropdown((prev) => !prev)}>
+                    <img src="/assets/profile-picture.jpg" />
+                    <span className='username'>{username}</span>
+                    <ArrowDropDown className='dropdown-icon' fontSize='small' />
+                  </div>
+                  <div className={`user-auth-dropdown ${toggleUserAuthdropdown ? 'show' : ''}`}>
+                    <div className="wrapper">
+                      <div className="links">
+                        <Link className="item">
+                          <div className="icon-wrapper">
+                            <ManageAccountsIcon className='icon' />
+                          </div>
+                          <span className='title'>Edit Profile</span>
+                          <KeyboardArrowRightIcon className='right-arrow' fontSize='large' />
+                        </Link>
+                        <Link className="item">
+                          <div className="icon-wrapper">
+                            <LogoutIcon className='icon' fontSize='large' />
+                          </div>
+                          <span className='title'>Logout</span>
+                          <KeyboardArrowRightIcon className='right-arrow' />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                :
+                <div className="nav-item auth-nav-item">
+                  <NavLink to="/login" className="nav-link">
+                    Sign In
+                  </NavLink>
+                </div>
+                }
             <li className="nav-item-special">
               <NavLink className="nav-link-special" to="https://www.paypal.com/us/home" onClick={() => { setShow(false) }}>Give</NavLink>
             </li>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link, NavLink, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './Home.css'
 
@@ -29,7 +29,6 @@ const Home = () => {
   const fetchEventsData = async () => {
     const { response, error } = await fetchUpcomingEvents(3)
     if (error) {
-      console.log(error)
       setError(error)
     }
     else {

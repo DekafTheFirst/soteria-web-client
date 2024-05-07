@@ -11,6 +11,11 @@
      overflow: hidden;
  }
 
+ .lazy-load-image {
+    object-fit: cover;
+    overflow: hidden;
+ }
+
   .image-placeholder {
      z-index: 20;
      position: absolute !important;

@@ -7,7 +7,6 @@ const Directorates = () => {
 
   const slug = useLocation().state?.slug || directoratesData[0].slug
   const directorate = directoratesData.filter((item) => item.slug === slug)[0]
-  console.log(directorate)
 
   const description = { __html: directorate.description }
   return (

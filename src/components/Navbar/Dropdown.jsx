@@ -11,7 +11,6 @@ const Dropdown = ({ menu, submenus, dropdown, show, setShow, }) => {
           </li>
         )}
       </div>
-
     </ul>
   )
 }

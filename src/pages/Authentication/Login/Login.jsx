@@ -1,23 +1,23 @@
 import React, { useRef, useState } from 'react'
 
-import "./JoinUs.css"
-import OptimizedImage from '../../components/OptimizedImage/OptimizedImage';
+import "./Login.css"
+import OptimizedImage from '../../../components/OptimizedImage/OptimizedImage';
 
 import { useFormik } from 'formik'
 import { CircularProgress } from '@mui/material';
-import { createMemberEntry, createPrayerRequestEntry } from '../../api/strapi';
+import { createMemberEntry, createPrayerRequestEntry } from '../../../api/strapi';
 
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 import * as yup from "yup";
-import FormComponent from '../../components/Form/Form';
+import FormComponent from '../../../components/Form/Form';
 import { useNavigate } from 'react-router-dom';
 
 
 
 
-const JoinUs = () => {
+const Login = () => {
   const navigate = useNavigate()
   const [error, setError] = useState(null)
 
@@ -114,7 +114,7 @@ const JoinUs = () => {
   ]
 
   return (
-    <div className="form-page join-us-page">
+    <div className="form-page login-page">
       <ToastContainer />
 
       <div className="container">
@@ -135,4 +135,4 @@ const JoinUs = () => {
   )
 }
 
-export default JoinUs
+export default Login

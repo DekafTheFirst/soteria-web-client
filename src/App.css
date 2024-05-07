@@ -21,6 +21,7 @@ body {
     --black: #000000;
     --veryLightGray: #f5f5f5;
     --lightGray: #BDC1C6;
+    --platinum: #E5E4E2;
     --gray: gray;
     --darkGray: #131314;
     --lightGold: #955B00;
@@ -30,7 +31,7 @@ body {
     --lightGreen: #2B671B;
     --forestGreen: #228B22;
     --darkGreen: #1B3D0A;
-    --offWhite: #f8f8f8;
+    --offWhite: #FAF9F6;
 
 
 
@@ -108,9 +109,8 @@ ul {
 
 
 #content {
-    min-height: 90vh;
+    min-height: 20vh;
     position: relative;
-
 }
 
 
@@ -132,6 +132,8 @@ section {
 
 .btn-green-solid {
     display: flex;
+    font-size: 15px;
+    font-weight: 400;
     align-items: center;
     justify-content: center;
     background-color: var(--green);
@@ -150,6 +152,8 @@ section {
 
 .btn-green-outline {
     display: flex;
+    font-size: 15px;
+    font-weight: 400;
     align-items: center;
     justify-content: center;
     border: 2px solid var(--green);
@@ -169,6 +173,7 @@ section {
 
 .btn-gold-solid {
     display: flex;
+    font-size: 15px;
     align-items: center;
     justify-content: center;
     background-color: var(--gold);
@@ -187,6 +192,7 @@ section {
 
 .btn-gold-outline {
     display: flex;
+    font-size: 15px;
     align-items: center;
     justify-content: center;
     border: 2px solid var(--gold);
@@ -211,26 +217,45 @@ section {
 
 
 .form-page {
-    background-color: var(--veryLightGray);
+    background-color: var(--offWhite);
 
 }
 
 .form-page .container {
     background-color: var(--white);
-
     padding: 0;
+    
 }
 
 
 .form-page .image-col {
     padding: 0;
     display: none;
+    background-color: rgba(43, 103, 27 , 0.3);
 }
 
 .form-page .image-col .form-image {
     height: 100%;
     width: 100%;
 }
+
+.form-page .image-col.png-image-col {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(43, 103, 27 , 0.2);
+}
+
+.form-page .image-col.png-image-col .png-img {
+    height: 75%;
+    width: 75%;
+}
+
+.form-page .image-col .form-image.png-img img{
+    object-fit: contain;
+}
+
+
 
 .illustration-col {
     padding: 60px;
@@ -260,15 +285,22 @@ form {
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    column-gap: 15px;
+    row-gap: 3px;
 }
 
 
 form .input-item {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
 }
+
+form .input-item {
+    font-size: 14px;
+}
+
+
 
 form .input-item.text-area {
     grid-column: 1 /-1;
@@ -287,6 +319,8 @@ form input,
 form select,
 form textarea {
     padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 400;
     width: 100%;
     background-color: var(--veryLightGray);
     border: 1px solid var(--lightGray);
@@ -303,11 +337,14 @@ form textarea {
 
 form .error-message-container {
     color: #fc8181;
-    font-size: 14px;
-    min-height: 24px;
+    font-size: 12px;
     width: 100%;
     text-align: start;
+    min-height: 18px;
 }
+
+
+
 
 form input:focus-visible,
 form select:focus-visible,
@@ -388,8 +425,7 @@ form button {
 
 
 footer {
-    background-color: var(--offWhite);
-    border-top: 1px solid var(--lightGray);
+    background-color: var(--platinum);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -596,7 +632,9 @@ footer .page-btn:hover {
 
     .form-page .container {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
+        max-width: 900px;
+        border-radius: 10px;
+        overflow: hidden;
     }
 
     .form-page .form-col {
@@ -624,6 +662,7 @@ footer .page-btn:hover {
 
 
 @media screen and (min-width: 768px) {
+
     .container-fluid {
         width: 90%;
     }
@@ -656,6 +695,10 @@ footer .page-btn:hover {
 @media screen and (min-width: 992px) {
     .form-page .image-col {
         display: block;
+    }
+    
+    .form-page .image-col.png-image-col {
+        display: flex;
     }
 
 }

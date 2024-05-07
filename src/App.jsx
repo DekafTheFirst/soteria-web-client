@@ -3,20 +3,19 @@ import {
   createBrowserRouter,
   Outlet,
   useLocation,
-  useParams,
-  isRouteErrorResponse,
-  useRoutes,
-  useRouteError,
+
 
 } from 'react-router-dom';
+import { useEffect, useState } from 'react'
+import { initializeApp } from "firebase/app";
+
+;
+import "./App.css"
 import Home from './pages/Home/Home';
 import Navbar from './components/Navbar/Navbar';
-import "./App.css"
 import Footer from './components/Footer';
-import { useEffect, useState } from 'react';
 import Events from './pages/Events/Events';
 import Banner from './components/Banner/Banner';
-import Watch from './pages/Connect/Watch/Watch';
 import EventDetails from './pages/Events/EventDetails/EventDetails';
 import Connect from './pages/Connect/Connect';
 import PrayerRequest from './pages/Connect/PrayerRequest/PrayerRequest';
@@ -34,9 +33,16 @@ import Poiema from './pages/Fellowships/Poiema/Poiema';
 import Kiddies from './pages/Fellowships/Kiddies/Kiddies';
 import Sodip from './pages/Connect/Sodip/Sodip';
 import ScrollToTop from './components/ScrollToTop';
+import { AuthProvider } from './context/AuthContext';
+import { firebaseConfig } from './utils/firebaseConfig';
+import Login from './pages/Authentication/Login/Login';
 
 
-const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s"
+const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s";
+
+
+export const firebaseApp = initializeApp(firebaseConfig);
+
 
 const Layout = ({ scrolled }) => {
   const { pathname, state } = useLocation()
@@ -54,13 +60,15 @@ const Layout = ({ scrolled }) => {
 
   return (
     <div className="app">
-      <ScrollToTop />
-      <Navbar scrolled={scrolled} />
-      {pathname !== "/" && <Banner pathname={pathname} title={title} />}
-      <div className="content">
-        <Outlet />
-      </div>
-      <Footer />
+      <AuthProvider >
+        <ScrollToTop />
+        <Navbar scrolled={scrolled} />
+        {pathname !== "/" && <Banner pathname={pathname} title={title} />}
+        <div id="content">
+          <Outlet />
+        </div>
+        <Footer />
+      </AuthProvider>
     </div>
   )
 }
@@ -85,102 +93,105 @@ function App() {
     {
       path: '/',
       element: <Layout scrolled={scrolled} />,
-      children:  [
+      children: [
+        {
+          path: "",
+          element: <Home />,
+        },
+
+        {
+          path: "/about-us",
+          children: [
             {
-              path: "",
-              element: <Home />,
-            },
-            
-            {
-              path: "/about-us",
-              children: [
-                {
-                  index: true,
-                  element: <AboutUs />
-                },
-                {
-                  path: "directorates",
-                  element: <Directorates />,
-                },
-              ]
+              index: true,
+              element: <AboutUs />
             },
             {
-              path: "/connect",
-              children: [
-                {
-                  index: true,
-                  element: <Connect />,
-                },
-                {
-                  path: "live-stream",
-                  element: <ExternalRedirectPage />,
-                },
-                {
-                  path: "daniels-men",
-                  element: <DanielsMen />
-                },
-                {
-                  path: "poiema",
-                  element: <Poiema />
-                },
-                {
-                  path: "kiddies",
-                  element: <Kiddies />
-                },
-                {
-                  path: "sermons",
-                  element: <ExternalRedirectPage />,
-                },
-                {
-                  path: "prayer-requests",
-                  element: <PrayerRequest />,
-                },
-                {
-                  path: "sodip",
-                  element: <Sodip />,
-                },
-                {
-                  path: "contact-us",
-                  element: <ContactUs />,
-                },
-              ],
+              path: "directorates",
+              element: <Directorates />,
+            },
+          ]
+        },
+        {
+          path: "/connect",
+          children: [
+            {
+              index: true,
+              element: <Connect />,
             },
             {
-              path: "/join-us",
-              element: <JoinUs />,
+              path: "live-stream",
+              element: <ExternalRedirectPage />,
             },
             {
-              path: "/events",
-              element: <Events />,
+              path: "daniels-men",
+              element: <DanielsMen />
             },
             {
-              path: "/events/:eventId",
-              element: <EventDetails />, // Route for individual event pages
+              path: "poiema",
+              element: <Poiema />
             },
             {
-              path: "/community-engagement",
-              children: [
-                {
-                  index: true,
-                  element: <Community />,
-                },
-                {
-                  path: "outreaches",
-                  element: <Outreaches />,
-                },
-              ],
+              path: "kiddies",
+              element: <Kiddies />
             },
             {
-              path: "/plan-your-visit",
-              element: <PlanYourVisit />,
+              path: "sermons",
+              element: <ExternalRedirectPage />,
             },
             {
-              path: "/mobile-app",
-              element: <MobileApp />,
+              path: "prayer-requests",
+              element: <PrayerRequest />,
             },
-            
-            
-            
+            {
+              path: "sodip",
+              element: <Sodip />,
+            },
+            {
+              path: "contact-us",
+              element: <ContactUs />,
+            },
+          ],
+        },
+        {
+          path: "/join-us",
+          element: <JoinUs />,
+        },
+        {
+          path: "/events",
+          element: <Events />,
+        },
+        {
+          path: "/events/:eventId",
+          element: <EventDetails />, // Route for individual event pages
+        },
+        {
+          path: "/community-engagement",
+          children: [
+            {
+              index: true,
+              element: <Community />,
+            },
+            {
+              path: "outreaches",
+              element: <Outreaches />,
+            },
+          ],
+        },
+        {
+          path: "/plan-your-visit",
+          element: <PlanYourVisit />,
+        },
+        {
+          path: "/mobile-app",
+          element: <MobileApp />,
+        },
+        {
+          path: "/login",
+          element: <Login/> ,
+        },
+
+
       ]
     }
 

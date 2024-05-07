@@ -33,7 +33,7 @@ const OptimizedImage = ({ src, blurhash, height, width, wrapperClassName, classN
         < div className={`optimized-image-wrapper ${className}`} style={style}>
             <LazyLoadImage
                 wrapperClassName={wrapperClassName}
-                style={{objectFit:'cover', overflow:'hidden'}}
+                className={`lazy-load-image`}
                 alt={alt}
                 src={src}
                 effect='blur'
