@@ -93,6 +93,7 @@ function App() {
     {
       path: '/',
       element: <Layout scrolled={scrolled} />,
+      errorElement: <NotFoundPage />,
       children: [
         {
           path: "",

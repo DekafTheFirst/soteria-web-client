@@ -116,7 +116,6 @@ const Login = () => {
   return (
     <div className="form-page login-page">
       <ToastContainer />
-
       <div className="container">
         <div className="row">
           <div className="col-lg-6 image-col png-image-col illustration-col">
