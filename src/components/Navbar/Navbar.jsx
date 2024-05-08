@@ -19,7 +19,6 @@ const Navbar = ({ scrolled }) => {
   const location = useLocation();
   const [toggleUserAuthdropdown, setToggleUserAuthDropdown] = useState(false)
 
-  console.log(toggleUserAuthdropdown)
   const isHomepageActive = location.pathname === "/";
 
 
@@ -55,7 +54,6 @@ const Navbar = ({ scrolled }) => {
 
 
   const { currentUser } = useAuth()
-  console.log(currentUser)
 
   const username = "SoteriaUser";
   return (
