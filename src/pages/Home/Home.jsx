@@ -19,6 +19,7 @@ import EventCard from '../../components/EventCard/EventCard';
 import EventsList from '../../components/EventsList/EventsList';
 import { Skeleton } from '@mui/material';
 import ReplayIcon from '@mui/icons-material/Replay';
+import { formatDate } from '../../utils/time';
 
 const Home = () => {
   const [events, setEvents] = useState(null)
@@ -32,7 +33,7 @@ const Home = () => {
       setError(error)
     }
     else {
-      const eventsData = response.data
+      const eventsData = response.data;
       setEvents(eventsData)
     }
   }
@@ -42,7 +43,8 @@ const Home = () => {
     if (!events) fetchEventsData()
   }, [events])
 
-  const upcomingEvent = events && events[0].attributes
+  const upcomingEvent = events && events[0].attributes;
+  console.log(upcomingEvent)
 
   return (
     <div className="home">
@@ -68,16 +70,16 @@ const Home = () => {
             <div className="event-countdown-card">
               <OptimizedImage src="/assets/sermon-thumbnail.jpg" className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" />
               <div className="details">
-                <h5 className='title'>Upcoming Event With A Title</h5>
+                <h5 className='title'>{upcomingEvent && upcomingEvent.title}</h5>
                 <div className="item">
                   <TodayIcon className="icon" />
-                  <span>Monday 20th - Teusday 21 April 2021</span>
+                  <span>{upcomingEvent && formatDate(upcomingEvent.date)}</span>
                 </div>
                 <div className="item">
                   <LocationOnOutlinedIcon className="icon" />
                   <span>Woodlawn, Maryland, Baltimore, USA.</span>
                 </div>
-                <div className="register"><Link>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>
+                <div className="register"><Link to={`${upcomingEvent?.registerationLink ? upcomingEvent.registerationLink : ''}`}>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>
               </div>
               <div className="countdown">
                 {upcomingEvent && <Timer targetDateStr={`${upcomingEvent?.date}T${upcomingEvent?.time}`} />}
@@ -114,14 +116,10 @@ const Home = () => {
             <div className="col-md-6 content">
               <h2>The Church that Cares</h2>
               <p>
-                Soteria Church is a multiracial, multi-ethnic, multicultural and multigenerational community of people who know Jesus personally, love Jesus passionately, serve Jesus purposefully and share Jesus powerfully!               </p>
-              <p>
                 Soteria Church is a place where diversity is celebrated and unity is cherished. As a multiracial, multi-ethnic, multicultural, and multigenerational community, we come together with a shared passion for knowing Jesus personally, loving Him passionately, serving Him purposefully, and sharing His transformative power with others. Our vibrant congregation is a reflection of the rich tapestry of God's creation, and we are committed to walking alongside one another, supporting and encouraging each other as we journey together in faith.              </p>
               <Link to="/about-us"><PlayCircleIcon fontSize='large' /> Learn More </Link>
             </div>
           </div>
-
-
         </div>
       </section>
 

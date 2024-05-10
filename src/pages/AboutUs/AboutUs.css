@@ -87,6 +87,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 8px;
 }
 
 .about-us-page .row.special.values .list .value-card .card-content>* {

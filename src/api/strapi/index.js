@@ -1,4 +1,5 @@
 import axios from "axios"
+import { formatDate } from "../../utils/time"
 
 
 const api = axios.create({
@@ -16,9 +17,13 @@ export const fetchEvents = async () => {
 }
 
 export const fetchUpcomingEvents = async (noOfUpcomingEvents) => {
+
     try {
-        const events = await api.get(`/api/events?populate=image&sort=date:asc&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
+        const currentDate = new Date().toISOString();
+        console.log(formatDate(currentDate))
+        const events = await api.get(`/api/events?populate=image&sort=date:asc&filters[date][$gte]=${currentDate}&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
         return { response: events.data, error: null }
+
     } catch (error) {
         console.log('error fetching upcoming events', error)
         return { response: null, error: error }

@@ -520,14 +520,14 @@ footer .page-btn:hover {
 .media-links .links {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
 }
 
 .media-links a {
     color: var(--green);
 }
 
-.media-links .media-icon {
+.media-links img {
     width: 32px;
     max-width: unset;
 }

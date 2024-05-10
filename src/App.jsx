@@ -36,6 +36,7 @@ import ScrollToTop from './components/ScrollToTop';
 import { AuthProvider } from './context/AuthContext';
 import { firebaseConfig } from './utils/firebaseConfig';
 import Login from './pages/Authentication/Login/Login';
+import Catalyst from './pages/Fellowships/Catalyst/Catalyst';
 
 
 const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s";
@@ -93,8 +94,8 @@ function App() {
     {
       path: '/',
       element: <Layout scrolled={scrolled} />,
-      errorElement: <NotFoundPage />,
       children: [
+        
         {
           path: "",
           element: <Home />,
@@ -135,6 +136,10 @@ function App() {
             {
               path: "kiddies",
               element: <Kiddies />
+            },
+            {
+              path: "catalyst",
+              element: <Catalyst />
             },
             {
               path: "sermons",
@@ -191,7 +196,11 @@ function App() {
           path: "/login",
           element: <Login/> ,
         },
+        {
+          path: "*",
+          element: <NotFoundPage />
 
+        },
 
       ]
     }

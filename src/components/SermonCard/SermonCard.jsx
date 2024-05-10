@@ -16,10 +16,11 @@ const SermonCard = ({ sermon, shouldIncludeDescription }) => {
             <div className="details">
                 <div className='item preacher'> <PersonOutlineIcon /> <span>{sermon.preacher}</span></div>
                 <div className='item date'> <TodayIcon /><span>{sermon.date}</span></div>
+                <p>
+                    {sermon.desc}
+                </p>
             </div>
-            <p>
-                {sermon.desc}
-            </p>
+
         </div>
     )
 }

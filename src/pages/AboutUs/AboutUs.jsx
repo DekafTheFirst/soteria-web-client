@@ -24,7 +24,7 @@ const AboutUs = () => {
           <div className=" col-md-6 text-col">
             <span>Get to know us</span>
             <h4 className='title'>About Soteria Church</h4>
-            <p>Welcome to Soteria Church, a vibrant and diverse community dedicated to knowing, loving, and serving Jesus Christ. We are a multiracial, multi-ethnic, multicultural, and multigenerational family of believers united by our faith in Christ and our passion for making His love known in the world.</p>
+            <p>Welcome to Soteria Church, a vibrant and diverse community dedicated to  personally knowing, passionately loving, purposefully serving, and powerfully sharing Jesus. We are a multiracial, multi-ethnic, multicultural, and multigenerational family of believers united by our faith in Christ and our passion for making His love known in the world.</p>
           </div>
         </div>
         <div className="row">

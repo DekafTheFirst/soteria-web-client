@@ -15,24 +15,22 @@ const Footer = () => {
                         <div className="media-links">
                             <div className="links">
 
-                                <Link to="#">
-                                    <FacebookOutlined />
+                                <Link to="https://www.facebook.com/soteriachurchmd?mibextid=ZbWKwL">
+                                    <img src="/assets/facebook.png" />
                                 </Link>
-                                <Link to="#">
-                                    <Instagram />
+                                <Link to="https://www.instagram.com/soteria_church_md?igsh=b2Q0dmdjY2U0aXZ2&utm_source=qr ">
+                                <img src="/assets/instagram.png" />
                                 </Link>
-                                <Link to="#">
-                                    <YouTube />
+                                <Link to="https://www.youtube.com/@soteriachurchmarylandusa7385">
+                                <img src="/assets/youtube.png" />
                                 </Link>
-                                <Link to="#">
-                                    <WhatsApp />
-                                </Link>
+                                
                             </div>
                         </div>
 
 
                         <div className="company-info">
-                            <div className='item'><PhoneOutlined fontSize='small' className='icon' /> <Link to="tel:+2348039490323">+ 180 394 9032</Link></div>
+                            <div className='item'><PhoneOutlined fontSize='small' className='icon' /> <Link to="tel:14438933710">+1 (443) 893-3710</Link></div>
                             <div className='item'><EmailOutlined fontSize='small' className='icon' /><Link to="mailto:info@soteriachurch.org">info@soteriachurch.org</Link></div>
                             <div className='item'><MyLocation fontSize='small' className='icon' /><Link to="https://maps.app.goo.gl/VWzpguSG6oZGoiXb8"> 1928 Woodlawn Dr, Woodlawn, MD 21207, USA</Link></div>
                         </div>

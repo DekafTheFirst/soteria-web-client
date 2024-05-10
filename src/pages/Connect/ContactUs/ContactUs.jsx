@@ -127,8 +127,8 @@ const ContactUs = () => {
 
       <div className="container">
         <div className="row">
-          <div className="col-lg-6 image-col illustration-col">
-            <OptimizedImage src="/assets/contact-us-bro.png" className='form-image' />
+          <div className="col-lg-6 image-col png-image-col illustration-col">
+            <OptimizedImage src="/assets/contact-us-bro.png" className='form-image png-img' />
           </div>
           <div className="col-lg-6 form-col">
             <h2 className='text-center'>Need to get in touch us?</h2>

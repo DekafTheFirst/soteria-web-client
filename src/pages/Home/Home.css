@@ -206,17 +206,15 @@
 .home .about-us .content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .home .about-us .section-heading {
-    color: var(--cl--2--);
 }
 
 
-.home .about-us .content h1 {
+.home .about-us .content h2 {
     /* font-size: 40px; */
-    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .home .about-us .content p {
