@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 yarn.lock
+.env.local
 
 # Editor directories and files
 .vscode/*
