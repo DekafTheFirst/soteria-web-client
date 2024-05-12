@@ -45,7 +45,7 @@ const Home = () => {
   }, [events])
 
   const upcomingEvent = events && events[0].attributes;
-
+  console.log(upcomingEvent)
 
   // Fetch Latest Sermon
   const fetchLatestSermon = async () => {
@@ -60,7 +60,6 @@ const Home = () => {
 
   useEffect(() => {
     if (!latestSermon) fetchLatestSermon()
-      console.log(latestSermon)
   }, [latestSermon])
 
   return (
