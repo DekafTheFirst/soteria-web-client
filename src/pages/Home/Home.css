@@ -179,6 +179,10 @@
     margin-right: 5px;
 }
 
+.home .hero .event-countdown-card .details .item span {
+    width: 100%;
+}
+
 
 
 
@@ -186,6 +190,8 @@
 .home .hero .event-countdown-card .register .icon {
     color: var(--green);
 }
+
+
 
 .home .hero .event-countdown-card .countdown {
     grid-row: 2 / 3;
@@ -219,6 +225,11 @@
 
 .home .about-us .content p {
     margin-bottom: 9px;
+}
+
+.home .about-us .content span {
+    color: var(--forestGreen);
+    font-weight: 600;
 }
 
 

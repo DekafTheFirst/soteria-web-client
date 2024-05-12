@@ -11,7 +11,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import Timer from '../../components/Timer/Timer';
 
-import { fetchEvents, fetchUpcomingEvents } from '../../api/strapi';
+import { fetchEvents, fetchUpcomingEvents, getLatestSermon } from '../../api/strapi';
 
 import MySwiper from '../../components/Swiper/MySwiper';
 import SermonCard from '../../components/SermonCard/SermonCard';
@@ -23,9 +23,11 @@ import { formatDate } from '../../utils/time';
 
 const Home = () => {
   const [events, setEvents] = useState(null)
-  const [error, setError] = useState(null)
+  const [latestSermon, setLatestSermon] = useState(null)
 
-  const location = useLocation()
+  const [error, setError] = useState(null)
+  const [latestSermonError, setLatestSermonError] = useState(null)
+
 
   const fetchEventsData = async () => {
     const { response, error } = await fetchUpcomingEvents(3)
@@ -39,12 +41,27 @@ const Home = () => {
   }
 
   useEffect(() => {
-
     if (!events) fetchEventsData()
   }, [events])
 
   const upcomingEvent = events && events[0].attributes;
-  console.log(upcomingEvent)
+
+
+  // Fetch Latest Sermon
+  const fetchLatestSermon = async () => {
+    const { latestSermon, error } = await getLatestSermon()
+    if (error) {
+      setLatestSermonError(error)
+    }
+    else {
+      setLatestSermon(latestSermon)
+    }
+  }
+
+  useEffect(() => {
+    if (!latestSermon) fetchLatestSermon()
+      console.log(latestSermon)
+  }, [latestSermon])
 
   return (
     <div className="home">
@@ -70,19 +87,20 @@ const Home = () => {
             <div className="event-countdown-card">
               <OptimizedImage src="/assets/sermon-thumbnail.jpg" className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" />
               <div className="details">
-                <h5 className='title'>{upcomingEvent && upcomingEvent.title}</h5>
+                <h5 className='title'>{upcomingEvent ? upcomingEvent.title : <Skeleton variant="text" sx={{ fontSize: '24px' }} />
+}</h5>
                 <div className="item">
                   <TodayIcon className="icon" />
-                  <span>{upcomingEvent && formatDate(upcomingEvent.date)}</span>
+                  <span>{upcomingEvent ? formatDate(upcomingEvent.date) : <Skeleton variant="text" sx={{ fontSize: '14px'}} />}</span>
                 </div>
                 <div className="item">
                   <LocationOnOutlinedIcon className="icon" />
-                  <span>Woodlawn, Maryland, Baltimore, USA.</span>
+                  <span>{upcomingEvent ? upcomingEvent.venue : <Skeleton variant="text" sx={{ fontSize: '14px'}} />}</span>
                 </div>
                 <div className="register"><Link to={`${upcomingEvent?.registerationLink ? upcomingEvent.registerationLink : ''}`}>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>
               </div>
               <div className="countdown">
-                {upcomingEvent && <Timer targetDateStr={`${upcomingEvent?.date}T${upcomingEvent?.time}`} />}
+                {upcomingEvent && <Timer date={upcomingEvent?.date} time={upcomingEvent?.time}  />}
 
               </div>
             </div>
@@ -102,18 +120,13 @@ const Home = () => {
       <section className="about-us">
         <div className="container-fluid">
           <div className="row ">
-            <div className="col-md-6 media-card-wrapper">
+            <div className="col-md-6 media-card-wrapper d-flex justify-content-center">
               <SermonCard sermon={
-                {
-                  title: 'Trusting the word of God',
-                  preacher: 'Pst. John Doe',
-                  date: '12-09-2024', id: 1,
-                  youtubeLink: "https://www.youtube.com/watch?v=dew9OyZTRAs",
-                  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum, leo ultricies imperdiet elementum, diam justo euismod odio, in ultrices urna quam non libero. Duis et erat congue, semper arcu sit amet, dapibus eros. Vivamus convallis ipsum est, eu pellentesque ante congue sed. "
-                }
+                latestSermon
               } />
             </div>
             <div className="col-md-6 content">
+              <span>Welcome To Soteria Church</span>
               <h2>The Church that Cares</h2>
               <p>
                 Soteria Church is a place where diversity is celebrated and unity is cherished. As a multiracial, multi-ethnic, multicultural, and multigenerational community, we come together with a shared passion for knowing Jesus personally, loving Him passionately, serving Him purposefully, and sharing His transformative power with others. Our vibrant congregation is a reflection of the rich tapestry of God's creation, and we are committed to walking alongside one another, supporting and encouraging each other as we journey together in faith.              </p>

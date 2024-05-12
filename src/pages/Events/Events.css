@@ -6,6 +6,7 @@
 
 .events-page .filter{
     border-bottom: 1.5px solid var(--lightGray);
+
 }
 
 
@@ -51,7 +52,7 @@
     position: fixed;
     top: var(--nav-height);
     width: 100%;
-    z-index: 10;
+    z-index: 30;
     transition: all .3s ease-in; /* Ensure the filter is above other content */
     /* Additional styling for when it's sticky */
   }

@@ -11,7 +11,7 @@ const EventCard = ({ eventObject }) => {
     
     const event = eventObject.attributes;
     const navigate = useNavigate()
-    console.log(event);
+    // console.log(event);
 
 
     useEffect(()=>{

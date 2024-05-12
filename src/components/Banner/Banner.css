@@ -1,5 +1,5 @@
 .banner {
-    height: 25vh;
+    height: 30vh;
     padding-top: calc(var(--nav-height) / 2);
     background-position: center;
     display: flex;
@@ -53,11 +53,13 @@
     flex-direction: column;
     justify-content: center;
     z-index: 2;
+    padding: 10px;
 }
 
 .banner .banner-heading .title {
     color: var(--white);
     text-align: center;
+    font-size: clamp(20px, 4vw, 26px);
 }
 
 .banner .background-img {

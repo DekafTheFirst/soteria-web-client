@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./Timer.css"
 import { CircularProgress } from "@mui/material";
-const Timer = ({ targetDateStr }) => {
+const Timer = ({ date, time }) => {
     const [timeRemaining, setTimeRemaining] = useState(null);
-
+    const targetDateStr= time ? `${date}T${time}` : date
 
     useEffect(() => {
         // Parse the target date string into a Date object

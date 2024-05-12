@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   Outlet,
   useLocation,
+  ScrollRestoration,
 
 
 } from 'react-router-dom';
@@ -48,11 +49,8 @@ export const firebaseApp = initializeApp(firebaseConfig);
 const Layout = ({ scrolled }) => {
   const { pathname, state } = useLocation()
 
-  let title;
-  if (state?.title) {
-    title = state?.title;
-  }
-
+  
+  const title = state?.event?.title;
   // List of all routes that should make the navbar stay black on mobile screens, !!!Especially Form pages like
   // const routesWithSpecialHeader = ['/connect/prayer-requests', '/connect/prayer-requests'];
 

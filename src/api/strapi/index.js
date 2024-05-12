@@ -20,7 +20,6 @@ export const fetchUpcomingEvents = async (noOfUpcomingEvents) => {
 
     try {
         const currentDate = new Date().toISOString();
-        console.log(formatDate(currentDate))
         const events = await api.get(`/api/events?populate=image&sort=date:asc&filters[date][$gte]=${currentDate}&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
         return { response: events.data, error: null }
 
@@ -70,13 +69,13 @@ export const createMemberEntry = async (data) => {
     }
 }
 
-export const getLiveStream = async () => {
+export const getLatestSermon = async () => {
     try {
-        const response = await api.get(`/api/live-stream`);
-        const liveStreamID = response.data.data.attributes.youtubeVideoID
-        return liveStreamID
+        const response = await api.get(`/api/latest-sermon`);
+        return({latestSermon: response.data.data.attributes, error: null})
     } catch (error) {
         console.log(error)
-        return error
+        return({latestSermon: null, error})
+
     }
 }
