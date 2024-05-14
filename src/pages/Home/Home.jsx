@@ -17,7 +17,7 @@ import MySwiper from '../../components/Swiper/MySwiper';
 import SermonCard from '../../components/SermonCard/SermonCard';
 import EventCard from '../../components/EventCard/EventCard';
 import EventsList from '../../components/EventsList/EventsList';
-import { Skeleton } from '@mui/material';
+import { CircularProgress, Skeleton } from '@mui/material';
 import ReplayIcon from '@mui/icons-material/Replay';
 import { formatDate } from '../../utils/time';
 
@@ -44,8 +44,17 @@ const Home = () => {
     if (!events) fetchEventsData()
   }, [events])
 
-  const upcomingEvent = events && events[0].attributes;
-  console.log(upcomingEvent)
+
+
+  let upcomingEvent, upcomingEventThumbnailFormatUrl, upcomingEventImageSmallFormatUrl;
+
+  if (events) {
+    upcomingEvent = events && events[0].attributes;
+    upcomingEventThumbnailFormatUrl = upcomingEvent.image.data.attributes.formats.thumbnail?.url
+    upcomingEventImageSmallFormatUrl = upcomingEvent.image.data.attributes.formats.small?.url
+    console.log(upcomingEvent)
+  }
+
 
   // Fetch Latest Sermon
   const fetchLatestSermon = async () => {
@@ -84,22 +93,24 @@ const Home = () => {
 
           <div className="event-countdown-card-wrapper">
             <div className="event-countdown-card">
-              <OptimizedImage src="/assets/sermon-thumbnail.jpg" className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" />
+              <div className="image-container">
+                {upcomingEvent ? <OptimizedImage src={`${import.meta.env.VITE_BASE_URL}${upcomingEventImageSmallFormatUrl ? upcomingEventImageSmallFormatUrl : upcomingEventThumbnailFormatUrl}`} className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" /> : <CircularProgress color='success' />}
+              </div>
               <div className="details">
                 <h5 className='title'>{upcomingEvent ? upcomingEvent.title : <Skeleton variant="text" sx={{ fontSize: '24px' }} />
-}</h5>
+                }</h5>
                 <div className="item">
                   <TodayIcon className="icon" />
-                  <span>{upcomingEvent ? formatDate(upcomingEvent.date) : <Skeleton variant="text" sx={{ fontSize: '14px'}} />}</span>
+                  <span>{upcomingEvent ? formatDate(upcomingEvent.date) : <Skeleton variant="text" sx={{ fontSize: '14px' }} />}</span>
                 </div>
                 <div className="item">
                   <LocationOnOutlinedIcon className="icon" />
-                  <span>{upcomingEvent ? (upcomingEvent.venue === null ? '1928 Woodlawn Dr, Woodlawn, MD 21207, USA' :upcomingEvent.venue ) : <Skeleton variant="text" sx={{ fontSize: '14px'}} />}</span>
+                  <span>{upcomingEvent ? (upcomingEvent.venue === null ? '1928 Woodlawn Dr, Woodlawn, MD 21207, USA' : upcomingEvent.venue) : <Skeleton variant="text" sx={{ fontSize: '14px' }} />}</span>
                 </div>
                 <div className="register"><Link to={`${upcomingEvent?.registerationLink ? upcomingEvent.registerationLink : ''}`}>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>
               </div>
               <div className="countdown">
-                {upcomingEvent && <Timer date={upcomingEvent?.date} time={upcomingEvent?.time}  />}
+                {upcomingEvent && <Timer date={upcomingEvent?.date} time={upcomingEvent?.time} />}
               </div>
             </div>
           </div>
