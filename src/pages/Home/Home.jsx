@@ -130,9 +130,7 @@ const Home = () => {
         <div className="container-fluid">
           <div className="row ">
             <div className="col-md-6 media-card-wrapper d-flex justify-content-center">
-              <SermonCard sermon={
-                latestSermon
-              } />
+              {latestSermonError ? <span className='text-danger'>Error Fetching Latest Sermon;</span> : <SermonCard sermon={latestSermon}/>}
             </div>
             <div className="col-md-6 content">
               <span>Welcome To Soteria Church</span>
