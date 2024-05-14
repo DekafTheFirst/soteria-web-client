@@ -50,10 +50,12 @@ const Home = () => {
 
   if (events) {
     upcomingEvent = events && events[0].attributes;
-    upcomingEventThumbnailFormatUrl = upcomingEvent.image.data.attributes.formats.thumbnail?.url
-    upcomingEventImageSmallFormatUrl = upcomingEvent.image.data.attributes.formats.small?.url
+    upcomingEventThumbnailFormatUrl = upcomingEvent?.image.data.attributes.formats.thumbnail?.url
+    upcomingEventImageSmallFormatUrl = upcomingEvent?.image.data.attributes.formats.small?.url
     console.log(upcomingEvent)
   }
+
+  
 
 
   // Fetch Latest Sermon
