@@ -25,8 +25,8 @@ const EventDetails = () => {
                                 {event.title}
                             </h2>
                             {/* <div className='item preacher'> <PersonOutlineIcon /> <span>{sermon.preacher}</span></div> */}
-                            <div className='item item-with-icon date'> <Today className='icon'/> <span>{formatDate(event.date)}</span></div>
-                            <div className='item item-with-icon time'> <AccessTimeIcon className='icon'/> <span>{formatTime(event.time)}</span></div>
+                            {event.date && <div className='item item-with-icon date'> <Today className='icon'/> <span>{formatDate(event.date)}</span></div>}
+                            {event.time && <div className='item item-with-icon time'> <AccessTimeIcon className='icon'/> <span>{formatTime(event.time)}</span></div>}
 
                             <div className='item mt-2 overview'>
                                 <span className='fw-bold'>Overview: </span>

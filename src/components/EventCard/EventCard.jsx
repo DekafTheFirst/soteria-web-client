@@ -26,8 +26,8 @@ const EventCard = ({ eventObject }) => {
             <h5 className='title'>
                 {event.title}
             </h5>
-            <span className='date'><TodayIcon /> {formatDate(event.date)}</span>
-            <span className='date'><AccessTimeIcon /> {formatTime(event.time)}</span>
+            {event.date && <span className='date'><TodayIcon /> {formatDate(event.date)}</span>}
+            {event.time && <span className='date'><AccessTimeIcon /> { formatTime(event.time)}</span>}
         </div>
     )
 }

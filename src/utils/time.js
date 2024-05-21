@@ -12,7 +12,7 @@ export const formatDate = (dateString) => {
 
 export const formatTime = (timeString) => {
     // Split the time string into hours, minutes, and seconds
-    const [hours, minutes, seconds] = timeString.split(':');
+    const [hours, minutes, seconds] = timeString.split(':'); 
   
     // Create a new Date object with today's date and the provided time
     const date = new Date();
