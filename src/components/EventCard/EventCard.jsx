@@ -26,7 +26,7 @@ const EventCard = ({ eventObject }) => {
             <h5 className='title'>
                 {event.title}
             </h5>
-            {event.date && <span className='date'><TodayIcon /> {formatDate(event.date)}</span>}
+            {event.startDate && <span className='date'><TodayIcon /> {`${formatDate(event.startDate)}  ${event.endDate ? `- ${formatDate(event.endDate)}` : ''}`}</span>}
             {event.time && <span className='date'><AccessTimeIcon /> { formatTime(event.time)}</span>}
         </div>
     )

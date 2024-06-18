@@ -19,7 +19,7 @@ import EventCard from '../../components/EventCard/EventCard';
 import EventsList from '../../components/EventsList/EventsList';
 import { CircularProgress, Skeleton } from '@mui/material';
 import ReplayIcon from '@mui/icons-material/Replay';
-import { formatDate } from '../../utils/time';
+import { formatDate, formatDateWithoutWeekday } from '../../utils/time';
 
 const Home = () => {
   const [events, setEvents] = useState(null)
@@ -46,13 +46,13 @@ const Home = () => {
 
 
 
-  let upcomingEvent, upcomingEventThumbnailFormatUrl, upcomingEventImageSmallFormatUrl;
+  let upcomingEvent, upcomingEventThumbnailFormatUrl, upcomingEventImageSmallFormatUrl, upcomingEventDate;
 
   if (events) {
     upcomingEvent = events && events[0].attributes;
     upcomingEventThumbnailFormatUrl = upcomingEvent?.image.data.attributes.formats.thumbnail?.url
     upcomingEventImageSmallFormatUrl = upcomingEvent?.image.data.attributes.formats.small?.url
-    console.log(upcomingEvent)
+    upcomingEventDate = upcomingEvent?.endDate ? formatDateWithoutWeekDay : formatDate(upcomingEvent.startDate);
   }
 
   
@@ -103,7 +103,7 @@ const Home = () => {
                 }</h5>
                 <div className="item">
                   <TodayIcon className="icon" />
-                  <span>{upcomingEvent ? formatDate(upcomingEvent.date) : <Skeleton variant="text" sx={{ fontSize: '14px' }} />}</span>
+                  <span>{upcomingEvent ? upcomingEventDate : <Skeleton variant="text" sx={{ fontSize: '14px' }} />}</span>
                 </div>
                 <div className="item">
                   <LocationOnOutlinedIcon className="icon" />
@@ -112,7 +112,7 @@ const Home = () => {
                 <div className="register"><Link to={`${upcomingEvent?.registerationLink ? upcomingEvent.registerationLink : ''}`}>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>
               </div>
               <div className="countdown">
-                {upcomingEvent && <Timer date={upcomingEvent?.date} time={upcomingEvent?.time} />}
+                {upcomingEvent && <Timer date={upcomingEvent?.startDate} time={upcomingEvent?.time} />}
               </div>
             </div>
           </div>
