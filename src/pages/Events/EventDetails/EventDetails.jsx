@@ -30,7 +30,7 @@ const EventDetails = () => {
 
                             <div className='item mt-2 overview'>
                                 <span className='fw-bold'>Overview: </span>
-                                <div dangerouslySetInnerHTML={event.description}></div>
+                                <div dangerouslySetInnerHTML={event && event.description}></div>
                             </div>
                             {event.registerationLink && <Link className="registeration-btn btn-green-solid mt-4" to={event.registerationLink}>
                                 Register
