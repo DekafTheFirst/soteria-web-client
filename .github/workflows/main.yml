@@ -20,7 +20,7 @@ jobs:
 
       - name: 🔨 Build Project
         run: |
-          npm install --production
+          npm install --only=prod
           npm run build
 
       - name: 📂 Sync files
