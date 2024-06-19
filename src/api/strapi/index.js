@@ -8,7 +8,7 @@ const api = axios.create({
 
 export const fetchEvents = async () => {
     try {
-        const events = await api.get(`/api/events?populate=*&sort=startDate:ASC`)
+        const events = await api.get(`/api/events?populate=*&sort=date:ASC`)
         return { response: events.data, error: null }
     } catch (error) {
         console.log('error fetching events', error)
@@ -20,7 +20,7 @@ export const fetchUpcomingEvents = async (noOfUpcomingEvents) => {
 
     try {
         const currentDate = new Date().toISOString();
-        const events = await api.get(`/api/events?populate=image&sort=startDate:asc&filters[startDate][$gte]=${currentDate}&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
+        const events = await api.get(`/api/events?populate=image&sort=date:asc&filters[startDate][$gte]=${currentDate}&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
         return { response: events.data, error: null }
 
     } catch (error) {
