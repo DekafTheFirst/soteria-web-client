@@ -8,7 +8,7 @@ import OptimizedImage from '../../../components/OptimizedImage/OptimizedImage';
 import { formatDate, formatTime } from '../../../utils/time';
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+// import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 
 const EventDetails = () => {
@@ -33,7 +33,7 @@ const EventDetails = () => {
 
                             <div className='item mt-2 overview'>
                                 <span className='fw-bold mb-2'>Overview: </span>
-                                {event && <BlocksRenderer content={event.desc} />}
+                                {/* {event && <BlocksRenderer content={event.desc} />} */}
                             </div>
                             {event.registerationLink && <Link className="registeration-btn btn-green-solid mt-4" to={event.registerationLink}>
                                 Register
