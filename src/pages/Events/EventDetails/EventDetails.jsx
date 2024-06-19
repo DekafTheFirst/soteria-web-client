@@ -6,6 +6,9 @@ import Today from '@mui/icons-material/Today';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import OptimizedImage from '../../../components/OptimizedImage/OptimizedImage';
 import { formatDate, formatTime } from '../../../utils/time';
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 
 const EventDetails = () => {
@@ -30,7 +33,8 @@ const EventDetails = () => {
 
                             <div className='item mt-2 overview'>
                                 <span className='fw-bold'>Overview: </span>
-                                <div dangerouslySetInnerHTML={event && event.description}></div>
+                                
+                                {event && <BlocksRenderer content={event.desc} />}
                             </div>
                             {event.registerationLink && <Link className="registeration-btn btn-green-solid mt-4" to={event.registerationLink}>
                                 Register
