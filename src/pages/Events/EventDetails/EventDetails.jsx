@@ -32,8 +32,7 @@ const EventDetails = () => {
                             {event.time && <div className='item item-with-icon time'> <AccessTimeIcon className='icon'/> <span>{formatTime(event.time)}</span></div>}
 
                             <div className='item mt-2 overview'>
-                                <span className='fw-bold'>Overview: </span>
-                                
+                                <span className='fw-bold mb-2'>Overview: </span>
                                 {event && <BlocksRenderer content={event.desc} />}
                             </div>
                             {event.registerationLink && <Link className="registeration-btn btn-green-solid mt-4" to={event.registerationLink}>

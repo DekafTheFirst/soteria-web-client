@@ -42,6 +42,12 @@
     color: var(--green);
 }
 
+.event-details-page .details .item.overview {
+    display: flex;
+    flex-direction: column;
+}
+
+
 .event-details-page .details .item.overview p{
     font-weight: normal;
     font-size: 15px;
