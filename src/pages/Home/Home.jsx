@@ -19,7 +19,7 @@ import EventCard from '../../components/EventCard/EventCard';
 import EventsList from '../../components/EventsList/EventsList';
 import { CircularProgress, Skeleton } from '@mui/material';
 import ReplayIcon from '@mui/icons-material/Replay';
-import { formatDate, formatDateWithoutWeekday } from '../../utils/time';
+import { formatDate, rangeOfDates} from '../../utils/time';
 
 const Home = () => {
   const [events, setEvents] = useState(null)
@@ -52,7 +52,7 @@ const Home = () => {
     upcomingEvent = events && events[0].attributes;
     upcomingEventThumbnailFormatUrl = upcomingEvent?.image.data.attributes.formats.thumbnail?.url
     upcomingEventImageSmallFormatUrl = upcomingEvent?.image.data.attributes.formats.small?.url
-    upcomingEventDate = upcomingEvent?.endDate ? formatDateWithoutWeekDay : formatDate(upcomingEvent.startDate);
+    upcomingEventDate = upcomingEvent?.endDate ? rangeOfDates(upcomingEvent.startDate, upcomingEvent.endDate) : formatDate(upcomingEvent.startDate);
   }
 
   

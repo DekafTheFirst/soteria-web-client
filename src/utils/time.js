@@ -10,16 +10,25 @@ export const formatDate = (dateString) => {
     return (date)
 }
 
-export const formatDateWithoutWeekday = (dateString) => {
+export const formatDateWithoutYear = (dateString) => {
     const dateObject = new Date(dateString);
     const date = dateObject.toLocaleDateString('en-US', {
-        weekday: false, // Display the full name of the weekday
-        year: 'numeric', // Display the year
+        weekday: 'short',
         month: 'long', // Display the full name of the month
         day: 'numeric',// Display the day of the month
     });
 
     return (date)
+}
+
+export const rangeOfDates = ( startDate, endDate) => {
+    const startDateWithoutWeekday = formatDateWithoutYear(startDate)
+    const endDateWithoutWeekday = formatDateWithoutYear(endDate)
+    const year = new Date(startDate).getFullYear()
+    
+    return(`${startDateWithoutWeekday} - ${endDateWithoutWeekday}, ${year}`)
+
+    // return (date)
 }
 
 export const formatTime = (timeString) => {
