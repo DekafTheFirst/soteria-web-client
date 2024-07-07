@@ -13,7 +13,7 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 const EventDetails = () => {
     const event = useLocation().state.event;
-    console.log(event)
+
     return (
         <div className="event-details-page">
             <div className='container-fluid'>
@@ -34,7 +34,7 @@ const EventDetails = () => {
                             <div className='item mt-2 overview'>
                                 <span className='fw-bold mb-2'>Overview: </span>
 
-                                {event && <BlocksRenderer content={event.desc} />}
+                                {event.desc && <BlocksRenderer content={event.desc} />}
                                 {/* {event && <Markdown children={event.description} remarkPlugins={[remarkGfm]}/>} */}
                                 {/* {event && <div dangerouslySetInnerHTML={{ __html: event.description}} ></div>} */}
 
