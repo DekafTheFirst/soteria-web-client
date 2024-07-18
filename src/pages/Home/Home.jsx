@@ -19,43 +19,64 @@ import EventCard from '../../components/EventCard/EventCard';
 import EventsList from '../../components/EventsList/EventsList';
 import { CircularProgress, Skeleton } from '@mui/material';
 import ReplayIcon from '@mui/icons-material/Replay';
-import { formatDate, rangeOfDates} from '../../utils/time';
+import { formatDate, rangeOfDates } from '../../utils/time';
 
 const Home = () => {
-  const [events, setEvents] = useState(null)
+  const [upcomingEvents, setUpcomingEvents] = useState(null)
+  const [recentEvents, setRecentEvents] = useState(null)
+
   const [latestSermon, setLatestSermon] = useState(null)
 
   const [error, setError] = useState(null)
   const [latestSermonError, setLatestSermonError] = useState(null)
 
 
+  // const getRecentEventsInstead = async () => {
+  //   const { response, error } = await fetchRecentEvents(3);
+  //   const recentEventsArray = response.data;
+
+  //   if (error) {
+  //     setError(error);
+  //   }
+  //   else {
+  //     console.log(recentEventsArray)
+  //     setUpcomingEvents(recentEventsArray)
+  //   }
+  // }
+  console.log(upcomingEvents)
+  console.log(error)
   const fetchEventsData = async () => {
     const { response, error } = await fetchUpcomingEvents(3)
     if (error) {
       setError(error)
     }
     else {
-      const eventsData = response.data;
-      setEvents(eventsData)
+      const upcomingEventsArray = response.data;
+      if (upcomingEventsArray.length <= 0) {
+        setUpcomingEvents(null)
+      }
+      else {
+        setUpcomingEvents(upcomingEventsArray)
+      }
     }
   }
 
   useEffect(() => {
-    if (!events) fetchEventsData()
-  }, [events])
+    if (!upcomingEvents) fetchEventsData()
+  }, [upcomingEvents])
 
 
 
   let upcomingEvent, upcomingEventThumbnailFormatUrl, upcomingEventImageSmallFormatUrl, upcomingEventDate;
-
-  if (events) {
-    upcomingEvent = events && events[0].attributes;
+  // console.log(upcomingEvents)
+  if (upcomingEvents && upcomingEvents.length) {
+    upcomingEvent = upcomingEvents && upcomingEvents[0].attributes;
     upcomingEventThumbnailFormatUrl = upcomingEvent?.image.data.attributes.formats.thumbnail?.url
     upcomingEventImageSmallFormatUrl = upcomingEvent?.image.data.attributes.formats.small?.url
     upcomingEventDate = upcomingEvent?.endDate ? rangeOfDates(upcomingEvent.startDate, upcomingEvent.endDate) : formatDate(upcomingEvent.startDate);
   }
 
-  
+
 
 
   // Fetch Latest Sermon
@@ -94,27 +115,29 @@ const Home = () => {
           </div>
 
           <div className="event-countdown-card-wrapper">
-            <div className="event-countdown-card">
-              <div className="image-container">
-                {upcomingEvent ? <OptimizedImage src={`${import.meta.env.VITE_BASE_URL}${upcomingEventImageSmallFormatUrl ? upcomingEventImageSmallFormatUrl : upcomingEventThumbnailFormatUrl}`} className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" /> : <CircularProgress color='success' />}
-              </div>
-              <div className="details">
-                <h5 className='title'>{upcomingEvent ? upcomingEvent.title : <Skeleton variant="text" sx={{ fontSize: '24px' }} />
-                }</h5>
-                <div className="item">
-                  <TodayIcon className="icon" />
-                  <span>{upcomingEvent ? upcomingEventDate : <Skeleton variant="text" sx={{ fontSize: '14px' }} />}</span>
+            {upcomingEvent ?
+              (<div className="event-countdown-card">
+                <div className="image-container">
+                  {upcomingEvent ? <OptimizedImage src={`${import.meta.env.VITE_BASE_URL}${upcomingEventImageSmallFormatUrl ? upcomingEventImageSmallFormatUrl : upcomingEventThumbnailFormatUrl}`} className="img" alt="event-countdown-card-img" blurhash="LcLEHB~pIUIU_4xvt7j@E2NHRjof" /> : <CircularProgress color='success' />}
                 </div>
-                <div className="item">
-                  <LocationOnOutlinedIcon className="icon" />
-                  <span>{upcomingEvent ? (upcomingEvent.venue === null ? '1928 Woodlawn Dr, Woodlawn, MD 21207, USA' : upcomingEvent.venue) : <Skeleton variant="text" sx={{ fontSize: '14px' }} />}</span>
+                <div className="details">
+                  <h5 className='title'>{upcomingEvent ? upcomingEvent.title : <Skeleton variant="text" sx={{ fontSize: '24px' }} />
+                  }</h5>
+                  <div className="item">
+                    <TodayIcon className="icon" />
+                    <span>{upcomingEvent ? upcomingEventDate : <Skeleton variant="text" sx={{ fontSize: '14px' }} />}</span>
+                  </div>
+                  <div className="item">
+                    <LocationOnOutlinedIcon className="icon" />
+                    <span>{upcomingEvent ? (upcomingEvent.venue === null ? '1928 Woodlawn Dr, Woodlawn, MD 21207, USA' : upcomingEvent.venue) : <Skeleton variant="text" sx={{ fontSize: '14px' }} />}</span>
+                  </div>
+                  <div className="register"><Link to={`${upcomingEvent?.registerationLink ? upcomingEvent.registerationLink : ''}`}>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>
                 </div>
-                <div className="register"><Link to={`${upcomingEvent?.registerationLink ? upcomingEvent.registerationLink : ''}`}>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>
-              </div>
-              <div className="countdown">
-                {upcomingEvent && <Timer date={upcomingEvent?.startDate} time={upcomingEvent?.time} />}
-              </div>
-            </div>
+                <div className="countdown">
+                  {upcomingEvent && <Timer date={upcomingEvent?.startDate} time={upcomingEvent?.time} />}
+                </div>
+              </div>) : (<CircularProgress color='success' />)
+            }
           </div>
 
         </div>
@@ -132,7 +155,7 @@ const Home = () => {
         <div className="container-fluid">
           <div className="row ">
             <div className="col-md-6 media-card-wrapper d-flex justify-content-center">
-              {latestSermonError ? <span className='text-danger'>Error Fetching Latest Sermon;</span> : <SermonCard sermon={latestSermon}/>}
+              {latestSermonError ? <span className='text-danger'>Error Fetching Latest Sermon;</span> : <SermonCard sermon={latestSermon} />}
             </div>
             <div className="col-md-6 content">
               <span>Welcome To Soteria Church</span>
@@ -145,13 +168,14 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="events">
+      {upcomingEvents && <section className="upcomingEvents">
         <div className="container-fluid">
           <h4>Upcoming Events</h4>
-          <EventsList events={events} error={error} />
+
+          <EventsList events={upcomingEvents} error={error} />
         </div>
         {/* <EventCard /> */}
-      </section>
+      </section>}
 
     </div>
 

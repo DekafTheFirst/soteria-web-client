@@ -17,17 +17,48 @@ export const fetchEvents = async () => {
 }
 
 export const fetchUpcomingEvents = async (noOfUpcomingEvents) => {
-
     try {
         const currentDate = new Date().toISOString();
+
         const events = await api.get(`/api/events?populate=image&sort=startDate:asc&filters[startDate][$gte]=${currentDate}&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
-        return { response: events.data, error: null }
+        console.log(events)
+
+        // if (events.data.data.length < 1) {
+        //     // console.log('no upcoming events')
+        //     const recentEvents = await api.get(`/api/events?populate=*&sort=startDate:ASC`)
+        //     // console.log(recentEvents.data)
+        //     return { response: recentEvents.data, error: null }
+        // }
+        // else {
+            return { response: events.data, error: null }
+        // }
 
     } catch (error) {
         console.log('error fetching upcoming events', error)
         return { response: null, error: error }
     }
 }
+
+// export const fetchLatestEvents = async (noOfUpcomingEvents) => {
+//     try {
+//         const currentDate = new Date().toISOString();
+
+//         const events = await api.get(`/api/events?populate=image&sort=startDate:asc&filters[startDate][$lte]=${currentDate}&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
+//         console.log(events)
+
+//         // if(events.data.data.length < 1) {
+//         //     console.log('no upcoming events')
+//         //     const recentEvents = await api.get(`/api/events?populate=*&sort=startDate:ASC`)
+//         //     console.log(recentEvents.data)
+//         //     return { response: recentEvents.data, error: null }
+//         // }
+//         return { response: events.data, error: null }
+
+//     } catch (error) {
+//         console.log('error fetching upcoming events', error)
+//         return { response: null, error: error }
+//     }
+// }
 
 export const getEventVideo = async (id) => {
     try {
@@ -50,11 +81,11 @@ export const getEventVideo = async (id) => {
 export const createPrayerRequestEntry = async (data) => {
     try {
         const response = await api.post(`/api/prayer-requests`, { data })
-        return {response: response.data, message: 'Prayer Request Made Successfuly', error: null}
+        return { response: response.data, message: 'Prayer Request Made Successfuly', error: null }
 
     } catch (error) {
         // console.error('Error creating prayer request:', error);
-        return {response: null, message: 'Problem Sending Prayer Request', error}
+        return { response: null, message: 'Problem Sending Prayer Request', error }
     }
 }
 
@@ -72,10 +103,10 @@ export const createMemberEntry = async (data) => {
 export const getLatestSermon = async () => {
     try {
         const response = await api.get(`/api/latest-sermon`);
-        return({latestSermon: response.data.data.attributes, error: null})
+        return ({ latestSermon: response.data.data.attributes, error: null })
     } catch (error) {
         console.log(error)
-        return({latestSermon: null, error})
+        return ({ latestSermon: null, error })
 
     }
 }

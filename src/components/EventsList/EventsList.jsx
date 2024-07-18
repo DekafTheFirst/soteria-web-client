@@ -6,6 +6,7 @@ const EventCard = lazy(() => import('../EventCard/EventCard'))
 
 const EventsList = ({ events, error }) => {
   const [isRetrying, setIsRetrying] = useState(false)
+  console.log(events)
   // const events = [
   //   {
   //     title: "Women\'s Breakfast Meeting",
