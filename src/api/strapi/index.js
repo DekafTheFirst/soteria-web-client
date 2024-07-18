@@ -23,15 +23,15 @@ export const fetchUpcomingEvents = async (noOfUpcomingEvents) => {
         const events = await api.get(`/api/events?populate=image&sort=startDate:asc&filters[startDate][$gte]=${currentDate}&pagination[start]=0&pagination[limit]=${noOfUpcomingEvents}`)
         console.log(events)
 
-        // if (events.data.data.length < 1) {
-        //     // console.log('no upcoming events')
-        //     const recentEvents = await api.get(`/api/events?populate=*&sort=startDate:ASC`)
-        //     // console.log(recentEvents.data)
-        //     return { response: recentEvents.data, error: null }
-        // }
-        // else {
+        if (events.data.data.length < 1) {
+            // console.log('no upcoming events')
+            const recentEvents = await api.get(`/api/events?populate=*&sort=startDate:ASC`)
+            // console.log(recentEvents.data)
+            return { response: recentEvents.data, error: null }
+        }
+        else {
             return { response: events.data, error: null }
-        // }
+        }
 
     } catch (error) {
         console.log('error fetching upcoming events', error)
