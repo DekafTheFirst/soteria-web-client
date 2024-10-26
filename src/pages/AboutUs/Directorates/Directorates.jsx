@@ -13,8 +13,12 @@ const Directorates = () => {
     <div className="directorates-page">
       <div className="container-fluid">
         <div className="text-col">
-          <span>Directorate of</span>
-          <h4 className='title'>{directorate.title}</h4>
+        {directorate.slug !== 'catalyst' && 
+          <>
+            <span>Directorate of</span>
+            <h4 className='title'>{directorate.title}</h4>
+          </>
+        }
           <div className="description" dangerouslySetInnerHTML={description}></div>
         </div>
         <OptimizedImage src={directorate.imgUrl} className="image" />
@@ -114,9 +118,43 @@ export const directoratesData = [
   {
     title: 'Catalyst',
     slug: 'catalyst',
-    description: `
-    <p>Catalyst is the Youth Ministry of Soteria Church. Our group has a wide range of vibrant Jesus-lovers all the way from High School to early/mid-career individuals. Our mission is to truly be catalysts for Christ. To be people who will enforce the Kingdom of God in all our spheres, while remaining steadfast and grounded in the Word of God, despite our ever-changing world.</p>
-    `,
+    description: `<h1>Welcome to CATALYST Youth Ministry at Soteria Church</h1>
+    <p>
+        At CATALYST, our youth ministry at Soteria Church, we’re dedicated to building a generation of young people rooted in the principles of righteousness and empowered to impact their communities. Our mission is to disciple each member to reflect the image of Christ, fostering a faith that’s lived out boldly and purposefully.
+    </p>
+
+    <h2>Our Purpose</h2>
+    <p>
+        CATALYST is more than just a youth group; it’s a community where faith meets action. We aim to cultivate a safe, welcoming environment where young people, aged 13-34, can deepen their relationship with God, grow in spiritual maturity, and connect with others. Together, we seek to nurture lives that will shine the light of Christ in every sphere of influence.
+    </p>
+
+    <h2>Our Programs</h2>
+    <p>CATALYST operates through four core arms, each designed to meet the diverse needs of today’s youth:</p>
+    <ul>
+        <li>
+            <strong>YARD (Young Anointed Redeemed Disciples) - Bible Study</strong><br>
+            Join us for topical, interactive Bible studies every Sunday, where we explore God's Word in ways that connect to real-life issues and help build a strong, scriptural foundation.
+        </li>
+        <li>
+            <strong>ZOOM (Zoned in On Our Matters) - Community Events</strong><br>
+            This is where we come together every month to build relationships and strengthen our community bonds. Our events are packed with fun, fellowship, and opportunities to connect with like-minded peers.
+        </li>
+        <li>
+            <strong>PRESS-IN (Prayers, Entreating, Supplications, and Intercessions) - Prayer Meetings</strong><br>
+            Once a month, we gather to deepen our commitment to prayer, learning to seek God in all things and standing in intercession for our lives, our church, and the world.
+        </li>
+        <li>
+            <strong>FRAME (Friendships, Relationships, Associations, Mentorships, and Engagements) - Young Adults and Singles Ministry</strong><br>
+            Focusing on college-aged members and up, FRAME offers support and insight into navigating singlehood and adulthood. We discuss the power, purpose, and challenges of these stages of life.
+        </li>
+    </ul>
+
+    <h2>Get Involved</h2>
+    <p>
+        Whether it’s through Bible study, community events, prayer, or mentorship, CATALYST provides numerous ways to connect, grow, and serve. We invite you to become a part of our family and join us in this exciting journey of faith, friendship, and transformation.
+    </p`,
+    imgUrl: '/assets/catalyst-2-medium.jpg'
+
   },
   {
     title: 'Family Life and Marriage Enrichment (FLAME)',

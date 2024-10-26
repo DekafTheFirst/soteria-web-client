@@ -84,7 +84,7 @@ const Navbar = ({ scrolled }) => {
 
           </ul>
           <div className="right">
-              {/* {currentUser ?
+            {/* {currentUser ?
                 <div className='user-auth'>
                   <div className="preview" onClick={() => setToggleUserAuthDropdown((prev) => !prev)}>
                     <img src="/assets/profile-picture.jpg" />
@@ -120,8 +120,22 @@ const Navbar = ({ scrolled }) => {
                 </div>
                 } */}
             <li className="nav-item-special">
-              <NavLink className="nav-link-special" to="https://www.paypal.com/us/home" onClick={() => { setShow(false) }}>Give</NavLink>
+              <NavLink
+                className="nav-link-special"
+                to="#"
+                onClick={() => {
+                  setShow(false);
+                  window.open(
+                    "https://www.paypal.com/donate?hosted_button_id=WHXGNPKXJNNX2",
+                    "_blank"
+                  );
+                }}
+              >
+                Give
+              </NavLink>
+              {/* <NavLink className="nav-link-special" to="https://www.paypal.com/us/home" onClick={() => { setShow(false) }}>Give</NavLink> */}
             </li>
+          
           </div>
 
         </div>
