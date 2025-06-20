@@ -18,15 +18,12 @@ jobs:
         with:
           node-version: '18'
 
-      - name: 🧼 Clean up Darwin-native modules
-        run: |
-          echo "Stripping macOS-native Rollup bindings"
-          sed -i '/@rollup\\/rollup-darwin-/d' package.json
-          rm -rf node_modules package-lock.json
-          npm install --omit=optional
-
       - name: 🔨 Build Project
-        run: npm run build
+        run: 
+            rm -rf node_modules package-lock.json
+            npm install --omit=optional
+            npm run build
+
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
