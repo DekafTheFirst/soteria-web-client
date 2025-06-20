@@ -9,10 +9,28 @@ import { formatDate, formatTime } from '../../../utils/time';
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { BlocksRenderer } from '@strapi/blocks-react-renderer';
+import { Share } from '@mui/icons-material';
 
 
 const EventDetails = () => {
     const event = useLocation().state.event;
+
+    const handleShare = () => {
+        const shareUrl = window.location.href; // dynamically gets current URL
+
+        if (navigator.share) {
+            navigator
+                .share({
+                    title: 'Check out this event!',
+                    text: 'Here’s an event you might be interested in:',
+                    url: shareUrl,
+                })
+                .then(() => console.log('Shared successfully'))
+                .catch((error) => console.error('Share failed:', error));
+        } else {
+            alert('Sharing is not supported in this browser.');
+        }
+    };
 
     return (
         <div className="event-details-page">
@@ -24,12 +42,17 @@ const EventDetails = () => {
                     </div>
                     <div className="col-xl-6 p-3">
                         <div className="details">
-                            <h2 className='item title'>
-                                {event.title}
-                            </h2>
+                            <div className='d-flex mb-2 align-items-center gap-2'>
+                                <h2 className='item title m-0'>
+                                    {event.title}
+                                </h2>
+
+                                <Share onClick={() => handleShare()} role="button"/>
+
+                            </div>
                             {/* <div className='item preacher'> <PersonOutlineIcon /> <span>{sermon.preacher}</span></div> */}
-                            {event.startDate && <div className='item item-with-icon date'> <Today className='icon'/> <span>{`${formatDate(event.startDate)}  ${event.endDate ? `- ${formatDate(event.endDate)}` : ''}`}</span></div>}
-                            {event.time && <div className='item item-with-icon time'> <AccessTimeIcon className='icon'/> <span>{formatTime(event.time)}</span></div>}
+                            {event.startDate && <div className='item item-with-icon date'> <Today className='icon' /> <span>{`${formatDate(event.startDate)}  ${event.endDate ? `- ${formatDate(event.endDate)}` : ''}`}</span></div>}
+                            {event.time && <div className='item item-with-icon time'> <AccessTimeIcon className='icon' /> <span>{formatTime(event.time)}</span></div>}
 
                             <div className='item mt-2 overview'>
                                 <span className='fw-bold mb-2'>Overview: </span>
@@ -54,7 +77,7 @@ const EventDetails = () => {
 
             </div>
         </div>
-        
+
     )
 }
 
