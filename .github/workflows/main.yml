@@ -22,8 +22,8 @@ jobs:
       - name: 🔨 Build Project
         run: |
           rm -rf node_modules package-lock.json
-          npm install --omit=optional
-          ROLLUP_USE_NODE_BUILTINS=true npm run build
+          npm install
+          npm run build
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
