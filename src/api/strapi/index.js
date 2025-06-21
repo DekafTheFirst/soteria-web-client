@@ -16,6 +16,17 @@ export const fetchEvents = async () => {
     }
 }
 
+export const fetchEventDetails = async (id) => {
+    console.log('fetch details')
+    try {
+        const events = await api.get(`/api/events/${id}?populate=*&sort=startDate:ASC`)
+        return { response: events.data, error: null }
+    } catch (error) {
+        console.log('error fetching events', error)
+        return { response: null, error: error }
+    }
+}
+
 export const fetchUpcomingEvents = async (noOfUpcomingEvents) => {
     try {
         const currentDate = new Date().toISOString();

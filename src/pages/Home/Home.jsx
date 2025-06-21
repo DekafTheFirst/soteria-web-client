@@ -131,7 +131,7 @@ const Home = () => {
                     <LocationOnOutlinedIcon className="icon" />
                     <span>{upcomingEvent ? (upcomingEvent.venue === null ? '1928 Woodlawn Dr, Woodlawn, MD 21207, USA' : upcomingEvent.venue) : <Skeleton variant="text" sx={{ fontSize: '14px' }} />}</span>
                   </div>
-                  <div className="register"><Link to={`${upcomingEvent?.registerationLink ? upcomingEvent.registerationLink : ''}`}>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>
+                  {upcomingEvent?.registerationLink && <div className="register"><Link to={`${upcomingEvent?.registerationLink ? upcomingEvent?.registerationLink : ''}`}>Register</Link><KeyboardArrowRightOutlinedIcon className='icon' /> </div>}
                 </div>
                 <div className="countdown">
                   {upcomingEvent && <Timer date={upcomingEvent?.startDate} time={upcomingEvent?.time} />}
