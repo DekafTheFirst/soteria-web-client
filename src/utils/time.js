@@ -41,9 +41,10 @@ export const formatTime = (timeString) => {
     date.setMinutes(parseInt(minutes, 10));
     date.setSeconds(parseInt(seconds, 10));
   
-    // Format the time string using toLocaleTimeString
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-}
+    // Format the time string using toLocaleTimeString with AM/PM
+    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
+  }
+  
 
 
 

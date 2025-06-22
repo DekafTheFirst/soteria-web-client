@@ -167,7 +167,7 @@ function App() {
           element: <Events />,
         },
         {
-          path: "/events/:eventId",
+          path: "/event-details",
           element: <EventDetails />, // Route for individual event pages
         },
         {

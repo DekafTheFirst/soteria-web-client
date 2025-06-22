@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./EventDetails.css";
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useSearchParams } from 'react-router-dom';
 import Today from '@mui/icons-material/Today';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { Share } from '@mui/icons-material';
@@ -11,7 +11,9 @@ import { fetchEventDetails } from '../../../api/strapi';
 import { CircularProgress } from '@mui/material';
 
 const EventDetails = () => {
-  const { eventId } = useParams();
+  // const { id } = useSearchParams();
+  const [searchParams] = useSearchParams();
+  const id = searchParams.get("id");
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -22,7 +24,7 @@ const EventDetails = () => {
       navigator
         .share({
           title: 'Check out this event!',
-          text: 'Here’s an event you might be interested in:',
+          text: 'Soteria Church MD is inviting you',
           url: shareUrl,
         })
         .then(() => console.log('Shared successfully'))
@@ -35,7 +37,7 @@ const EventDetails = () => {
   useEffect(() => {
     const fetchEventsData = async () => {
       setLoading(true);
-      const { response, error } = await fetchEventDetails(eventId);
+      const { response, error } = await fetchEventDetails(id);
 
       if (error) {
         console.error(error);
@@ -49,7 +51,7 @@ const EventDetails = () => {
     };
 
     fetchEventsData();
-  }, [eventId]);
+  }, [id]);
 
   if (loading) {
     return (
@@ -96,7 +98,7 @@ const EventDetails = () => {
               {event?.time && (
                 <div className='item item-with-icon time'>
                   <AccessTimeIcon className='icon' />
-                  <span>{formatTime(event?.time)}</span>
+                  <span style={{ textTransform: 'uppercase' }}>{formatTime(event?.time)}</span>
                 </div>
               )}
 

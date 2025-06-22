@@ -21,7 +21,7 @@ const EventCard = ({ eventObject }) => {
     const smallFormatUrl = event.image.data.attributes.formats.small?.url
     // console.log(event.title, 'thumbnail:', thumbnailFormatUrl, 'small:', smallFormatUrl, )
     return (
-        <div className="card-component event-card" onClick={() => navigate(`/events/${eventObject.id}`, { state: { event } })}>
+        <div className="card-component event-card" onClick={() => navigate(`/event-details?title=${event.slug}&id=${eventObject.id}`, { state: { event } })}>
             <OptimizedImage src={`${import.meta.env.VITE_BASE_URL}${smallFormatUrl ? smallFormatUrl : thumbnailFormatUrl}`} className='img' />
             <h5 className='title'>
                 {event.title}
