@@ -16,6 +16,16 @@ export const fetchEvents = async () => {
     }
 }
 
+export const fetchSermons = async () => {
+    try {
+        const sermons = await api.get(`/api/sermons?populate=*`)
+        return { response: sermons.data, error: null }
+    } catch (error) {
+        console.log('error fetching sermons', error)
+        return { response: null, error: error }
+    }
+}
+
 export const fetchEventDetails = async (id) => {
     console.log('fetch details')
     try {

@@ -3,10 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { menuItemsData } from './menuItemsData';
 import MenuItem from './MenuItem';
 import './Navbar.css'
-import { AccountCircleRounded, ArrowDropDown } from '@mui/icons-material/';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import LogoutIcon from '@mui/icons-material/Logout';
+
 import { useAuth } from '../../context/AuthContext';
 // const routes = [
 //   { name: "home", path: "/", component: <Home /> }

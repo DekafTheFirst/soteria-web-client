@@ -13,7 +13,14 @@ export default defineConfig({
   ],
   ignorePatterns: ['dist', '.eslint.config.js'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  settings: { react: { version: '18.2' } },
+  settings: { 
+    react: { version: '18.2' } ,
+    'import/resolver': {
+    node: {
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css']
+    }
+  }
+  },
   plugins: ['react-refresh', 'import'],
   rules: {
     'react/jsx-no-target-blank': 'off',

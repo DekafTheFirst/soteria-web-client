@@ -38,9 +38,10 @@ import { AuthProvider } from './context/AuthContext';
 import { firebaseConfig } from './utils/firebaseConfig';
 import Login from './pages/Authentication/Login/Login';
 import Catalyst from './pages/Fellowships/Catalyst/Catalyst';
+import Sermons from './pages/Sermons/Sermons';
 
 
-const soteriaYoutubeLink = "https://www.youtube.com/watch?v=mqi0J4trN8Q&t=5412s";
+const soteriaYoutubeLink = "https://www.youtube.com/@SoteriaChurchMD/streams";
 
 
 export const firebaseApp = initializeApp(firebaseConfig);
@@ -142,7 +143,7 @@ function App() {
             },
             {
               path: "sermons",
-              element: <ExternalRedirectPage />,
+              element: <Sermons />,
             },
             {
               path: "prayer-requests",
