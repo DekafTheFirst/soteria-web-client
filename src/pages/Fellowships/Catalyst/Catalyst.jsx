@@ -17,6 +17,9 @@ const Catalyst = () => {
                 </div>
 
                 <OptimizedImage src="/assets/catalyst-1-medium.jpg" className="image" />
+                <OptimizedImage src="/assets/catalyst-new-2.jpeg" className="image mt-5" />
+                <OptimizedImage src="/assets/catalyst-new-3.jpeg" className="image mt-5" />
+                <OptimizedImage src="/assets/catalyst-new-1.jpeg" className="image mt-5" />
 
 
             </div>
